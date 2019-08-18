@@ -4,7 +4,7 @@ title: Gélules
 
 ## Gélules
 
-Le sujet principal de ce site repose sur des articles spécialisés sur de la simple programmation, en tant le plus minimaliste possible.
+Le sujet principal de ce site repose sur des articles spécialisés sur de la simple programmation, en étant le plus minimaliste possible.
 
 C'est du dév sur Unix : scripts Shell, C, ...
 
