@@ -2,7 +2,7 @@
 title: Gélules
 ---
 
-## Gélules Blog
+## Gélules
 
 Le sujet principal de ce site repose sur des articles spécialisés sur de la simple programmation, en tant le plus minimaliste possible.
 
