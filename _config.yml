@@ -1,5 +1,0 @@
-theme: jekyll-theme-minimal
-title: Gélules
-description: Un simple blog minimaliste sur des trucs de programmation simples et minimalistes. 
-plugins:
-  - jekyll-sitemap
