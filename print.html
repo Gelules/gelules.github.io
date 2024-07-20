@@ -904,6 +904,11 @@ manuel.</p>
 9   Kernel routines [Non standard]
 </code></pre>
 <p>Pour ta picine, les 3 premières sections seront à consulter.</p>
+<p>La 1ere contient celle des <strong>binaires</strong> (des programmes) que tu utilises depuis
+ton shell.</p>
+<p>La 2eme et la 3eme contiennet des fonctions que tu peux appeler quand tu fais
+du langage C. La 2eme est celle des fonctions que ton Kernel te propose, la 3eme
+sont les fonctions de la libc (bibliothèque C).</p>
 <p>Un exemple. Si tu veux afficher le manuel de la fonction C printf (tu ne sais
 peut-être pas encore ce que c'est, ce n'est pas grave), tu serais tenté
 d'exécuter.</p>
@@ -912,10 +917,12 @@ d'exécuter.</p>
 <p>Si tu le fais, tu verras en haut à gauche <strong>printf(1)</strong>, le '1' entre
 parenthèses signifie que tu es dans la <strong>1</strong>ère section du manuel. Ce que tu
 veux c'est la <strong>3</strong>ème, pour les appels de la bibliothèque C (library calls).</p>
+<p><img src="shell/./rtfm/printf_wrong.png" alt="mauvais printf" title="mauvais printf" /></p>
 <p>Il faut alors utiliser une de ces deux notations :</p>
 <pre><code class="language-sh">$ man 3 printf
 $ man printf.3
 </code></pre>
+<p><img src="shell/./rtfm/printf_good.png" alt="bon printf" title="bon printf" /></p>
 <p>A partir de maintenant, pour toutes les commandes que tu as vues et verras, je
 t'invite très fortement à lire le manuel à chaque fois.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="lire-et-écrire-dans-des-fichiers"><a class="header" href="#lire-et-écrire-dans-des-fichiers">Lire et écrire dans des fichiers</a></h1>
