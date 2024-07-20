@@ -659,6 +659,10 @@ le nouveau répertoire. Utilise la commande <strong>ls</strong> dans ton termina
 que ton terminal le voit également.</p>
 <p>Sache que tu peux créer plusieurs répertoires d'un coup en les donnant à <strong>ls</strong>.</p>
 <pre><code class="language-sh">$ mkdir Je suis un seul appel a mkdir
+
+# Cache-cache
+
+Il y a une dernière chose dont je ne t'ai pas parlé. Les fichiers cachés.
 </code></pre>
 <p>Les commandes shell ont pour habitude de ne rien afficher si tout se passe bien.
 En cas d'erreur, un message s'affichera. Lis toujours tes messages, il ne faut
@@ -688,6 +692,46 @@ créer des fichiers vides.</p>
 <pre><code class="language-sh">$ touch je_suis_un_fichier
 $ ls
 </code></pre>
+<h1 id="listing-long-format"><a class="header" href="#listing-long-format">Listing long format</a></h1>
+<p>Jusqu'ici tu as dû voir les différences entre fichier et répertoire aux couleurs
+affichées sur le terminal avec <strong>ls</strong>. Cette coloration est dûe à une
+configuration de <strong>ls</strong>.</p>
+<p>Dans mon cas, si j'exécuter <strong>which ls</strong> pour en savoir plus sur la commande
+<strong>ls</strong>, j'ai ceci :</p>
+<pre><code class="language-sh">$ which ls
+ls: aliased to ls --color=auto
+$
+</code></pre>
+<p>Ca veut dire que <strong>ls</strong> utilise par défaut le paramètre <strong>--color=auto</strong> qui
+colore les noms des fichiers et répertoires dans ton terminal.</p>
+<p>Exécute maintenant ceci, je fais exprès de cacher certains informations pour te
+forcer à exécuter les commandes :</p>
+<pre><code class="language-sh">$ ls
+$ mkdir repertoire
+$ touch fichier
+$ /bin/ls
+repertoire fichier
+$
+</code></pre>
+<p>Tu vois maintenant que tout s'affiche en blanc. Ce que tu as fait, c'est
+exécuter le programme <strong>ls</strong> directement depuis là où il est installé, sans la
+configuration de coloration automatique de ton shell.</p>
+<p>Imagine tomber un jour sur une distribution Linux qui n'affiche pas les couleurs
+par défaut, comment savoir si ce que tu listes et un fichier ou un répertoire ?</p>
+<p>Tu vas utiliser le paramètre <strong>-l</strong> à <strong>ls</strong> pour afficher le <em>long listing
+format</em>, pour afficher plein d'informations sur le répertoire où tu te trouves.</p>
+<p>Exécute</p>
+<pre><code class="language-sh">$ ls -l
+total 0
+-rw-r--r-- 1 gelules wheel  0 Jul 20 18:56 fichier
+drwxr-xr-x 2 gelules wheel 40 Jul 20 18:55 repertoire
+</code></pre>
+<p>La première ligne indique combien de place sur le disque prend ce que tu listes.
+Pour l'instant c'est 0 car c'est vide.</p>
+<p>Mainenant, pour chaque ligne, regarder le tout premier caractère. Si c'est un
+tirer '-', c'est que tu listes un fichier, si c'est un 'd' minuscule, c'est que
+c'est un répertoire.</p>
+<p>Tu apprendras le reste des informations listées dans un prochain chapitre.</p>
 <h2 id="lister-récursivement"><a class="header" href="#lister-récursivement">Lister récursivement</a></h2>
 <p>Pour atteindre graphiquement la fin de l'arborescence, ça demande quelques
 clics. Alors que pour le shell, il suffit de donner le paramètre <strong>-R</strong> à ls
@@ -837,6 +881,7 @@ ou <strong>comportement indéfini</strong>.</p>
 $ cd toto
 $ rmdir ../toto
 $ cd .
+$ pwd
 </code></pre>
 <p>Que se passe t-il ? Tout dépend de ton shell, certains feront avec à leur
 manière, d'autres afficheront une erreur. C'est un comportement indéfini, le
@@ -872,6 +917,35 @@ $ reboot
 $ cd /tmp
 $ ls
 </code></pre>
+<h1 id="cache-cache"><a class="header" href="#cache-cache">Cache-cache</a></h1>
+<p>Il y a une dernière chose dont je ne t'ai pas parlé. Les fichiers cachés.</p>
+<p>Je vais exprès de cacher certains informations pour te forcer à pratiquer.</p>
+<p>Exécute ces commandes depuis ton <strong>HOME</strong> :</p>
+<pre><code class="language-sh">$ mkdir Test
+$ cd Test
+$ touch .cache affiche
+$ ls
+???
+$
+</code></pre>
+<p>Où est le fichier <strong>.cache</strong> ? Il est <strong>caché</strong>. Les fichiers et répertoires
+dont le nom commencent par un point '.' ne sont pas affichés, car il s'agit en
+général de fichier de configuration personnelle pour tes programmes et c'est
+plus élégant de ne pas toujours les afficher.</p>
+<p>Si tu veux les afficher, exécute :</p>
+<pre><code class="language-sh">$ ls -a
+. .. .cache affiche
+</code></pre>
+<p>Mais que sont '.' et '..' ? Rappelle toi, le '.' représente le répertoire dans
+lequel tu te trouves et '..' représente le répertoire parent.</p>
+<p>Si tu veux afficher tout ce qui est caché sauf '.' et '..', exécute :</p>
+<pre><code class="language-sh">$ ls -A
+.cache affiche
+</code></pre>
+<p>Je te laisse maintenant exécuter cette dernière commande <strong>dans ton HOME</strong>. Tu
+verras que même ton explorateur graphique ne t'affiche pas tout par défaut (mais
+c'est configurable).</p>
+<p><img src="shell/./deplacements/thunar_hidden_files.png" alt="Fichiers cachés dans Thunar" title="Fichiers cachés dans Thunar" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rtfm--read-the-fucking-manual"><a class="header" href="#rtfm--read-the-fucking-manual">RTFM : Read The Fucking Manual</a></h1>
 <p>Pour en apprendre d'avantages quant aux commandes que tu ne maitrises pas, il
 faut que tu fasses confiance à ton meilleur ami : <del>Google</del> le manuel.</p>
