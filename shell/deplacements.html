@@ -183,12 +183,254 @@ apprendre quelques manoeuvres de base.</p>
 graphique (le programme qui te permet de voir tes documents graphiquement) d'un
 côté et ton shell de l'autre côté. Ca te permettra de faire le lien entre ce
 que tu tapes et ce qu'il se passe dans ton système à chaque commande.</p>
-<p>Ton explorateur graphique ne ressemblera peut-être pas au mien, ce n'est pas
-grave. Dans tous les cas tu verras des dossiers et des fichiers et tu devras
+<p>Ton explorateur graphique ne ressemblera peut-être pas au mien qui est Thunar.
+Et j'aurai probablement à certains endroits des fichiers que tu n'as pas.
+Ce n'est pas grave.</p>
+<p>Dans tous les cas tu verras des dossiers et des fichiers et tu devras
 double-cliquer pour te déplacer. Qui a dit que Windows avait l'exclusivité du
 clique ?</p>
+<p>Je te conseille de faire les mêmes commandes que moi, pour que ça rentre ! Ne
+fais pas que lire. L'apprentissage vient surtout par la pratique, même si c'est
+jouer au miroir.</p>
+<p><img src="./deplacements/init.png" alt="Explorateur et shell" title="Explorateur et shell" /></p>
+<p>Tu vois que dans mon exemple, mon shell se trouve dans mon <strong>HOME</strong> et Thunar
+aussi. La différence c'est que Thunar me liste directement tous mes fichiers.</p>
 <h2 id="lister-un-répertoire"><a class="header" href="#lister-un-répertoire">Lister un répertoire</a></h2>
-<p>Pour lister un répertoire sur Linux, utilises la commande <strong>ls</strong>.</p>
+<p>Pour lister ton répertoire courant, utilises la commande <strong>ls</strong>.</p>
+<pre><code class="language-sh">$ ls
+Desktop  Development  Documents  Downloads  Formation  mount_vbox_share.sh  Music  Pictures  Public  School  Templates  Videos
+$
+</code></pre>
+<p>Tu peux donner un ou plusieurs noms de fichiers et répertoires à <strong>ls</strong> pour
+lister leurs contenus.</p>
+<p>Depuis ton HOME, exécute</p>
+<pre><code class="language-sh">ls Desktop Documents Downloads
+</code></pre>
+<p>Si ces répertoires n'existent pas chez toi, attends de savoir en créer pour
+tester <strong>ls</strong> avec des noms de fichiers et répertoires donnés en paramètres.</p>
+<h2 id="créer-un-répertoire"><a class="header" href="#créer-un-répertoire">Créer un répertoire</a></h2>
+<p>Pour créer un répertoire, utilise la commande <strong>mkdir</strong>.</p>
+<pre><code class="language-sh">mkdir Test
+</code></pre>
+<p><img src="./deplacements/mkdir_test.png" alt="mkdir Test" title="mkdir Test" /></p>
+<p>Comme tu peux le voir, mon explorateur de fichiers s'est actualisé pour afficher
+le nouveau répertoire. Utilise la commande <strong>ls</strong> dans ton terminal pour valider
+que ton terminal le voit également.</p>
+<p>Sache que tu peux créer plusieurs répertoires d'un coup en les donnant à <strong>ls</strong>.</p>
+<pre><code class="language-sh">$ mkdir Je suis un seul appel a mkdir
+</code></pre>
+<p>Les commandes shell ont pour habitude de ne rien afficher si tout se passe bien.
+En cas d'erreur, un message s'affichera. Lis toujours tes messages, il ne faut
+pas avoir peur. C'est justement une aide pour comprendre ce qu'il se passe.</p>
+<p><img src="./deplacements/remkdir_test.png" alt="mkdir Test deux fois" title="mkdir Test 2 fois" /></p>
+<p>Ici, j'ai voulu créer le répertoire <strong>Test</strong> alors qu'il existe déjà.</p>
+<h1 id="se-déplacer-dans-un-répertoire"><a class="header" href="#se-déplacer-dans-un-répertoire">Se déplacer dans un répertoire</a></h1>
+<p>Pour te déplacer dans un répertoire graphiquement, c'est facile, tu
+doubles-cliques dessus.</p>
+<p>Pour te déplacer dans un répertoire en terminal, c'est facile, tu utilises la
+commande <strong>cd</strong>.</p>
+<pre><code class="language-sh">$ cd Test
+</code></pre>
+<p>Déplace toi dans le répertoire <strong>Test</strong>.</p>
+<p><img src="./deplacements/cd_test.png" alt="cd Test" title="cd Test" /></p>
+<p>Ton shell affiche maintenant <strong>~/Test</strong>. Ca veut dire qu'il se situe dans le
+répertoire <strong>Test</strong> lui-même situé dans ton <strong>HOME</strong>.</p>
+<p>Tu peux créer une arborescence complète en donnant le paramètre <strong>-p</strong> à mkdir.</p>
+<pre><code class="language-sh">$ mkdir -p je/suis/une/longue/arborescence
+$
+</code></pre>
+<p><img src="./deplacements/mkdir_path.png" alt="mkdir path" title="mkdir path" /></p>
+<h2 id="créer-des-fichiers"><a class="header" href="#créer-des-fichiers">Créer des fichiers</a></h2>
+<p>Tu ne vas pas encore voir comment éditer des fichiers. Tu vas commencer par
+créer des fichiers vides.</p>
+<p>Pour se faire, utilise la commande <strong>touch</strong>.</p>
+<pre><code class="language-sh">$ touch je_suis_un_fichier
+$ ls
+</code></pre>
+<h2 id="lister-récursivement"><a class="header" href="#lister-récursivement">Lister récursivement</a></h2>
+<p>Pour atteindre graphiquement la fin de l'arborescence, ça demande quelques
+clics. Alors que pour le shell, il suffit de donner le paramètre <strong>-R</strong> à ls
+pour lui demander de lister <strong>récursivement</strong> les répertoires.</p>
+<p><img src="./deplacements/ls_recursif.png" alt="ls récursif" title="ls récursif" /></p>
+<p>Pour information, le '.' situé au début de chaque résultat représente ton
+dossier courant (le <em>working directory</em>). Ca veut dire que si tu fais la
+commande</p>
+<pre><code class="language-sh">$ cd .
+</code></pre>
+<p>Tu te déplaceras... où tu te trouves.</p>
+<p>J'ai un exemple pratique qui sera présenté plus tard.</p>
+<h2 id="supprimer-des-fichiers-et-répertoires"><a class="header" href="#supprimer-des-fichiers-et-répertoires">Supprimer des fichiers et répertoires</a></h2>
+<p>Pour supprimer des répertoires, il existe deux commandes. *<em>rmdir</em> et <strong>rm</strong>.</p>
+<p><strong>rmdir</strong> va supprimer un répertoire <strong>vide</strong> et <strong>rm</strong> avec les bons paramètres
+va supprimer un répertoire et toute son arborescence récursivement.</p>
+<p>Essaie le commandes suivantes, je n'affiche pas le résultat pour te forcer à
+visualiser par toi-même ce qu'il se passe.</p>
+<pre><code class="language-sh">$ ls
+je je_suis_un_fichier
+$ rmdir je_suis_un_fichier
+??? # Mais diantre, que se passe t-il ?
+$ rm je_suis_un_fichier
+$ ls
+je
+$ ls -R
+.:
+je
+
+./je:
+suis
+
+./je/suis:
+une
+
+./je/suis/une:
+longue
+
+./je/suis/une/longue:
+arborescence
+
+./je/suis/une/longue/arborescence:
+$ rmdir je
+??? # Mais diantre, que se passe t-il ?
+$ rmdir je/suis/une/longue/arborescence
+$ ls -R
+???
+$ rm -r je
+$ ls -R
+$
+</code></pre>
+<p>Tu l'as compris, le paramètre <strong>-r</strong> de <strong>rm</strong> supprime toute une arborescence.</p>
+<p><strong>rm</strong> peut aussi être utilisé pour supprimer des fichiers, mais nous n'avons
+pas encore vu ce cas.</p>
+<p>Tu peux également donner plusieurs répertoires à <strong>rmdir</strong> et <strong>rm</strong> pour en
+supprimer plusieurs. Attention, <strong>rm</strong> doit toujours avoir son paramètre <strong>-r</strong>
+si tu supprimes des répertoires. Dans le cas de fichiers, tu n'as pas besoin de
+l'utiliser.</p>
+<pre><code class="language-sh">$ rmdir Je suis un seul appel a mkdir
+</code></pre>
+<p>ou</p>
+<pre><code class="language-sh">$ rm -r Je suis un seul appel a mkdir
+</code></pre>
+<h2 id="renommer-des-fichiers-et-répertoires"><a class="header" href="#renommer-des-fichiers-et-répertoires">Renommer des fichiers et répertoires</a></h2>
+<p>Pour renommer ou déplacer un répertoire ou un fichier, utilise la commande
+<strong>mv</strong>, pour <em>M</em>o<em>V</em>e.</p>
+<pre><code class="language-sh">$ touch gato
+$ ls
+gato
+$ mv gato gateau
+$ ls
+gateau
+$ mkdir ventre
+$ mv gateau ventre
+$ ls
+ventre
+$ ls ventre
+gateau
+$
+</code></pre>
+<h2 id="cd-en-arrière"><a class="header" href="#cd-en-arrière">cd en arrière</a></h2>
+<p>Tu sais avancer dans des répertoires, mais comment revenir en arrière ?</p>
+<p>Il faut donner <strong>..</strong> à cd pour revenir en arrière. Chaque <strong>..</strong> part en
+arrière d'un niveau.</p>
+<p>Un exemple sera plus parlant.</p>
+<pre><code class="language-sh">$ mkdir -p toto/titi/tutu
+$ cd toto/titi/tutu
+$ cd ..
+$ ls
+tutu
+$ cd ../..
+$ ls
+toto
+$
+</code></pre>
+<h2 id="retourner-au-dernier-répertoire-visité-avec-cd"><a class="header" href="#retourner-au-dernier-répertoire-visité-avec-cd">Retourner au dernier répertoire visité avec cd</a></h2>
+<p>Si tu veux basculer vers le dernier répertoire visité, donne <strong>-</strong> en paramètre
+à <strong>cd</strong>.</p>
+<p>Je te laisse faire les commandes pour apprécier, j'ai caché exprès les parties
+intéressantes.</p>
+<pre><code class="language-sh">$ mkdir -p je/suis/un/humain tu/es/un/gateau
+$ cd je/suis/un/humain
+$ cd ../../../tu/es/un/gateau
+$ pwd
+???
+$ cd -
+$ pwd
+???
+$ cd -
+$ pwd
+???
+$
+</code></pre>
+<h2 id="retourner-dans-le-home-avec-cd"><a class="header" href="#retourner-dans-le-home-avec-cd">Retourner dans le HOME avec cd</a></h2>
+<p>Si tu veux retourner rapidement dans ton <strong>HOME</strong>, tu peux le faire en appellant
+simplement <strong>cd</strong> sans paramètre.</p>
+<p>Je te laisse faire les commandes pour apprécier, j'ai caché exprès les parties
+intéressantes.</p>
+<pre><code class="language-sh">$ cd je/suis/un/humain
+$ pwd
+???
+$ cd
+$ pwd
+???
+$
+</code></pre>
+<h3 id="cas-particuliers"><a class="header" href="#cas-particuliers">Cas particuliers</a></h3>
+<p>Crée le répertoire <strong>canare</strong> et <strong>cd</strong> y toi dedans.</p>
+<pre><code class="language-sh">~ $ mkdir canare
+~ $ cd canare
+~/canare $
+</code></pre>
+<p>Tu te rends compte que tu as fait une faute de frappe.</p>
+<p>Renomme le répertoire dans lequel tu te trouves ainsi :</p>
+<pre><code class="language-sh">~/canare $ mv ../canare ../canard
+~/canare $
+</code></pre>
+<p>Horreur et damnation, ton shell affiche encore <strong>canare</strong>. Il faut que tu
+exécutes <strong>cd .</strong> pour que ton shell se mette à jour.</p>
+<pre><code class="language-sh">~/canare $ cd .
+~/canard $
+</code></pre>
+<p>Maintenant plus drôle. Tu vas créer ce qu'on appelle un <strong>undefined behavior</strong>
+ou <strong>comportement indéfini</strong>.</p>
+<p>Voici quelques commandes :</p>
+<pre><code class="language-sh">$ mkdir toto
+$ cd toto
+$ rmdir ../toto
+$ cd .
+</code></pre>
+<p>Que se passe t-il ? Tout dépend de ton shell, certains feront avec à leur
+manière, d'autres afficheront une erreur. C'est un comportement indéfini, le
+langage shell n'a pas défini quoi faire dans ce cas, chaque interpréteur a un
+comportement différent.</p>
+<h2 id="le-système-de-fichier"><a class="header" href="#le-système-de-fichier">Le système de fichier</a></h2>
+<p>Tu l'as peut-être vu en exécutant la commande <strong>pwd</strong>, ton chemin commence
+<strong>toujours</strong> par un slash '/'.</p>
+<p>Ton <strong>HOME</strong> se trouve dans un autre répertoire appelé <strong>home</strong> qui se trouve
+lui-même dans un répertoire nommé <strong>/</strong> (slash).</p>
+<p>Exécute la commande <strong>ls /</strong> pour voir ce qui se trouve à la racine de ton
+système de fichier (filesystem).</p>
+<pre><code class="language-sh">$ ls /
+bin  boot  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+</code></pre>
+<p>Tu n'as peut-être pas exactement le même résultat. Ce n'est pas grave. Tu
+devrais quand même y voir des similarités.</p>
+<p>Pour les utilisateurs Windows, le répertoire racine est <strong>un peu</strong> équivalent au
+disque C qui contient tous les répertoires de configuration. C'est faux sur
+beaucoup d'aspects techniques que tu n'as pas encore besoin de connaître. Je
+veux juste que tu saches qu'il existe un répertoire racine depuis lequel tu peux
+te déplacer et lister ce qu'il s'y trouve.</p>
+<p>Si jamais tu dois faire des tests temporaires, je te renvoie au répertoire
+<strong>/tmp</strong> qui est, dans beaucoup de distributions Linux, remis à zéro à chaque
+démarrage. Il peut être configuré pour être remis à zéro tous les jours,
+semaines, mois...</p>
+<pre><code class="language-sh">$ cd /tmp
+$ touch je_vais_disparaitre
+$ ls
+je_vais_disparaitre
+$ reboot
+...
+$ cd /tmp
+$ ls
+</code></pre>
 
                     </main>
 
