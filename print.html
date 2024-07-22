@@ -1,0 +1,3020 @@
+<!DOCTYPE HTML>
+<html lang="fr" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Pédiluve</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction/introduction.html">Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Préliminaires</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="preliminaires/base_10.html"><strong aria-hidden="true">1.1.</strong> Base 10</a></li><li class="chapter-item expanded "><a href="preliminaires/base_2.html"><strong aria-hidden="true">1.2.</strong> Base 2</a></li><li class="chapter-item expanded "><a href="preliminaires/base_16.html"><strong aria-hidden="true">1.3.</strong> Base 16</a></li><li class="chapter-item expanded "><a href="preliminaires/bit_byte.html"><strong aria-hidden="true">1.4.</strong> Bit et octet</a></li><li class="chapter-item expanded "><a href="preliminaires/logic.html"><strong aria-hidden="true">1.5.</strong> Portes logiques</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Système</li><li class="chapter-item expanded "><a href="linux/systeme.html"><strong aria-hidden="true">2.</strong> Choix du système</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="linux/ubuntu.html"><strong aria-hidden="true">2.1.</strong> Ubuntu</a></li><li class="chapter-item expanded "><a href="linux/arch.html"><strong aria-hidden="true">2.2.</strong> Arch Linux</a></li><li class="chapter-item expanded "><a href="linux/manjaro.html"><strong aria-hidden="true">2.3.</strong> Manjaro</a></li><li class="chapter-item expanded "><a href="linux/fedora.html"><strong aria-hidden="true">2.4.</strong> Fedora</a></li><li class="chapter-item expanded "><a href="linux/nixos.html"><strong aria-hidden="true">2.5.</strong> NixOS</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Shell</li><li class="chapter-item expanded "><a href="shell/introduction.html"><strong aria-hidden="true">3.</strong> Shell</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="shell/usage.html"><strong aria-hidden="true">3.1.</strong> Utilisation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="shell/deplacements.html"><strong aria-hidden="true">3.1.1.</strong> Se déplacer</a></li><li class="chapter-item expanded "><a href="shell/rtfm.html"><strong aria-hidden="true">3.1.2.</strong> RTFM : Read The Fucking Manual</a></li><li class="chapter-item expanded "><a href="shell/read_write_files.html"><strong aria-hidden="true">3.1.3.</strong> Lire et écrire dans des fichiers</a></li><li class="chapter-item expanded "><a href="shell/permissions.html"><strong aria-hidden="true">3.1.4.</strong> Permissions</a></li><li class="chapter-item expanded "><a href="shell/tips_tricks.html"><strong aria-hidden="true">3.1.5.</strong> Tips and tricks</a></li></ol></li><li class="chapter-item expanded "><a href="shell/editors.html"><strong aria-hidden="true">3.2.</strong> Editeurs de texte</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="shell/vscode.html"><strong aria-hidden="true">3.2.1.</strong> VSCode</a></li><li class="chapter-item expanded "><a href="shell/vim.html"><strong aria-hidden="true">3.2.2.</strong> Vim</a></li></ol></li><li class="chapter-item expanded "><a href="shell/run_command.html"><strong aria-hidden="true">3.3.</strong> Run Command</a></li><li class="chapter-item expanded "><a href="shell/wm.html"><strong aria-hidden="true">3.4.</strong> Window Manager</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="shell/awesome.html"><strong aria-hidden="true">3.4.1.</strong> Awesome</a></li></ol></li><li class="chapter-item expanded "><a href="shell/shell.html"><strong aria-hidden="true">3.5.</strong> Programmation Shell</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="shell/flux.html"><strong aria-hidden="true">3.5.1.</strong> Flux systèmes</a></li><li class="chapter-item expanded "><a href="shell/job_control.html"><strong aria-hidden="true">3.5.2.</strong> Job control</a></li><li class="chapter-item expanded "><a href="shell/scripts.html"><strong aria-hidden="true">3.5.3.</strong> Scripts</a></li><li class="chapter-item expanded "><a href="shell/variable.html"><strong aria-hidden="true">3.5.4.</strong> Variables</a></li><li class="chapter-item expanded "><a href="shell/maths.html"><strong aria-hidden="true">3.5.5.</strong> Mathématiques</a></li><li class="chapter-item expanded "><a href="shell/env.html"><strong aria-hidden="true">3.5.6.</strong> Variables d'environnement</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="shell/path.html"><strong aria-hidden="true">3.5.6.1.</strong> PATH</a></li></ol></li><li class="chapter-item expanded "><a href="shell/quotting.html"><strong aria-hidden="true">3.5.7.</strong> Quotting</a></li><li class="chapter-item expanded "><a href="shell/tests.html"><strong aria-hidden="true">3.5.8.</strong> Tests et conditions</a></li><li class="chapter-item expanded "><a href="shell/loops.html"><strong aria-hidden="true">3.5.9.</strong> Boucles</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git/introduction.html"><strong aria-hidden="true">4.</strong> Git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="git/bases.html"><strong aria-hidden="true">4.1.</strong> Commandes de bases</a></li><li class="chapter-item expanded "><a href="git/github.html"><strong aria-hidden="true">4.2.</strong> Cas pratique avec GitHub</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Langage C</li><li class="chapter-item expanded "><a href="c/introduction.html"><strong aria-hidden="true">5.</strong> Langage C</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="c/abecedaire.html"><strong aria-hidden="true">5.1.</strong> Abécédaire</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="c/compilation_test.html"><strong aria-hidden="true">5.1.1.</strong> Compilation de test</a></li><li class="chapter-item expanded "><a href="c/main.html"><strong aria-hidden="true">5.1.2.</strong> La fonction main et l'environnement de développement</a></li><li class="chapter-item expanded "><a href="c/types.html"><strong aria-hidden="true">5.1.3.</strong> Types prédéfinis</a></li><li class="chapter-item expanded "><a href="c/functions.html"><strong aria-hidden="true">5.1.4.</strong> Fonctions</a></li><li class="chapter-item expanded "><a href="c/maths.html"><strong aria-hidden="true">5.1.5.</strong> Mathématiques</a></li><li class="chapter-item expanded "><a href="c/if_else_switch.html"><strong aria-hidden="true">5.1.6.</strong> Structures de contrôles</a></li><li class="chapter-item expanded "><a href="c/arrays.html"><strong aria-hidden="true">5.1.7.</strong> Tableaux</a></li><li class="chapter-item expanded "><a href="c/string.html"><strong aria-hidden="true">5.1.8.</strong> Chaîne de caractères</a></li><li class="chapter-item expanded "><a href="c/pointers.html"><strong aria-hidden="true">5.1.9.</strong> Pointeurs</a></li><li class="chapter-item expanded "><a href="c/loops.html"><strong aria-hidden="true">5.1.10.</strong> Boucles</a></li><li class="chapter-item expanded "><a href="c/struct.html"><strong aria-hidden="true">5.1.11.</strong> Structures de données</a></li></ol></li><li class="chapter-item expanded "><a href="c/advanced_notions.html"><strong aria-hidden="true">5.2.</strong> Notions avancées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="c/compilation_flags.html"><strong aria-hidden="true">5.2.1.</strong> Flags de compilation</a></li><li class="chapter-item expanded "><a href="c/multiple_files.html"><strong aria-hidden="true">5.2.2.</strong> Plusieurs fichiers</a></li><li class="chapter-item expanded "><a href="c/makefile.html"><strong aria-hidden="true">5.2.3.</strong> Makefile</a></li><li class="chapter-item expanded "><a href="c/recursive.html"><strong aria-hidden="true">5.2.4.</strong> Récursivité</a></li><li class="chapter-item expanded "><a href="c/advanced_pointers.html"><strong aria-hidden="true">5.2.5.</strong> Pointeurs avancés</a></li><li class="chapter-item expanded "><a href="c/memory.html"><strong aria-hidden="true">5.2.6.</strong> Mémoire</a></li><li class="chapter-item expanded "><a href="c/linked_lists.html"><strong aria-hidden="true">5.2.7.</strong> Listes chainées</a></li><li class="chapter-item expanded "><a href="c/gdb.html"><strong aria-hidden="true">5.2.8.</strong> Débug</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">TODO: Assembleur</li><li class="chapter-item expanded "><a href="asm/introduction.html"><strong aria-hidden="true">6.</strong> Assembleur</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><a href="misc/authors.html">Auteurs</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Pédiluve</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>Cet e-bouquin a pour objectif de préparer les étudiants à l'épreuve
+d'informatique communément appelée "Piscine", qu'importe l'école.</p>
+<p>Il utilise des connaissances également présentes sur <a href="https://www.youtube.com/@gelules">cette chaine Youtube</a></p>
+<p>Je pars du fait que je peux te tutoyer et que ton épreuve demande d'apprendre le
+langage C sur un système UNIX (genre MacOS) ou UNIX-like (genre GNU/Linux).</p>
+<p>Pour être sûr de n'oublier personne, je repars de zéro ici. J'assume que tu ne
+sais rien. Ne t'étonne pas si j'ai l'air de raconter des banalités, tout le
+monde n'a pas tes connaissances. J'ai l'habitude de prendre mes étudiants pour
+des cons. Ca fonctionne plutôt bien quant à leur apprentissage.</p>
+<p>Le but de l'e-bouquin n'est pas te de rendre bon sur le champs, mais de t'aider
+à appréhender les notions difficiles qui t'attendent et d'avoir des outils pour
+les travailler. Tu gagneras en compétences dans le temps. Cependant, je présente
+un nombre de notions assez important.</p>
+<p>Je ne peux pas présenter tous les exercices des piscines ; ce serait de la
+triche. Mais je peux présenter les exercices communs à chaque école, des tous
+petits exercices qui sont des classiques.</p>
+<p>Je présente également des outils que j'utilise au quotidien (awesomewm, vim,
+...), qui ne sont pas toujours présentés dans les piscines. Ca te servira à
+avoir des références en plus pour travailler efficacement.</p>
+<p>Tu sortiras de ce cours avec plus qu'il n'en faut pour attaque la Piscine
+d'EPITA, Epitech, 42, ou une autre école qui a également repris le concept.
+<strong>Pour l'instant</strong>, seule l'école 2600 échappe à l'objectif de ce document, car
+elle a de l'assembleur dans son bootcampt d'entrée que je ne présente pas encore.</p>
+<p>J'essaie d'être le plus simple et pratique possible. Pour les professionnels du
+métier, il y a des parties laissées de côté pour ne pas alourdir la
+compréhension des notions aux nouveaux étudiants. Je préfère mettre en avant
+l'exemple et la compréhension par la pratique avec des petits codes de test
+plutôt que des longs chapitres magistraux. Il <em>manque</em> également des parties
+pour compléter des notions, mais ce sont des notions que les étudiants
+aborderont pendant leur Piscine, elles ne sont pas réellement manquantes pour un
+Pédiluve.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vous-navez-pas-les-bases"><a class="header" href="#vous-navez-pas-les-bases">Vous n'avez pas les bases</a></h1>
+<p>\[ chiffre * base ^{indice} \]</p>
+<p>Avant d'attaquer la pratique, il faut revoir quelques préliminaires
+mathématiques.</p>
+<p>En informatique, plusieurs bases sont utilisées pour travailler avec des
+données. Les bases 2, 16 et 8. Cette dernière est plus rarement utilisée et ne
+sera pas abordée dans ce cours. Mais avec les connaissances que tu auras en
+travaillant les bases 2 et 16, tu sauras travailler avec la base 8 simplement.</p>
+<p>Avant de travailler les autres bases, tu vas revoir la base 10 que tu utilises
+tous les jours.</p>
+<p>La base 10 possède 10 chiffres : 0, 1, 2, 3, 4, 5, 6, 7, 8 et 9.</p>
+<p>La base 10 utilise les puissances de 10. Prends ce tableau en référence :</p>
+<div class="table-wrapper"><table><thead><tr><th>Indice</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th></tr></thead><tbody>
+<tr><td>Notation</td><td>\[ 10^4\]</td><td>\[ 10^3\]</td><td>\[ 10^2\]</td><td>\[ 10^1\]</td><td>\[ 10^0\]</td></tr>
+<tr><td>Valeur</td><td>10000</td><td>1000</td><td>100</td><td>10</td><td>1</td></tr>
+</tbody></table>
+</div>
+<p>Tu peux voir que \[ 10^3 = 1000\]</p>
+<p>La base 10 ne fait que se multiplier par 10 pour passer à l'indice suivant.</p>
+<p>Ce tableau est à utiliser pour décomposer n'importe quel nombre.</p>
+<p>Prenons un nombre pris au hasard : 4269.</p>
+<p>Pour décomposer ton nombre tu vas d'abord reporter le nombre sous le tableau en
+partant de la droite, ce qui donne :</p>
+<div class="table-wrapper"><table><thead><tr><th>Indice</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th></tr></thead><tbody>
+<tr><td>Notation</td><td>\[ 10^4\]</td><td>\[ 10^3\]</td><td>\[ 10^2\]</td><td>\[ 10^1\]</td><td>\[ 10^0\]</td></tr>
+<tr><td>Valeur</td><td>10000</td><td>1000</td><td>100</td><td>10</td><td>1</td></tr>
+<tr><td>Nombre</td><td></td><td>4</td><td>2</td><td>6</td><td>9</td></tr>
+</tbody></table>
+</div>
+<p>Tu peux voir que <em>4</em> a comme indice <em>3</em>, que <em>2</em> a comme indice <em>2</em>, que <em>6</em> a
+comme indice <em>1</em> et que <em>9</em> a comme indice <em>0</em>.</p>
+<p>Décompose le nombre ainsi :
+\[ 4 * 10^3 + 2 * 10^2 + 6 * 10^1 + 9 * 10^0 \]</p>
+<p>Calcule les puissances :
+\[ 4 * 1000 + 2 * 100 + 6 * 10 + 9 * 1 \]</p>
+<p>Calcule les multiplications :
+\[ 4000 + 200 + 60 + 9 \]</p>
+<p>Tu as décomposé ton nombre en utilisant la base 10.</p>
+<p>Pourquoi tous ces efforts ?</p>
+<p>Pour te préparer aux bases 2 et 16.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="franklin-savait-compter-deux-par-deux"><a class="header" href="#franklin-savait-compter-deux-par-deux">Franklin savait compter deux par deux</a></h1>
+<h2 id="de-la-base-10-à-la-base-2"><a class="header" href="#de-la-base-10-à-la-base-2">De la base 10 à la base 2</a></h2>
+<p><a href="https://www.youtube.com/watch?v=bg8eyeYF7lw">Cours vidéo</a></p>
+<p>Maintenant que tu as compris comment décomposer un nombre en base 10, tu vas
+apprendre à transformer un nombre écrit en base 10 en base 2 et inversement.</p>
+<p>Pour rappel, la base 2 a deux chiffres : 0 et 1.</p>
+<p>Prends ce tableau en référence</p>
+<div class="table-wrapper"><table><thead><tr><th>Indice</th><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th></tr></thead><tbody>
+<tr><td>Notation</td><td>\[ 2^{10} \]</td><td>\[ 2^9\]</td><td>\[ 2^8\]</td><td>\[ 2^7\]</td><td>\[ 2^6\]</td><td>\[ 2^5\]</td><td>\[ 2^4\]</td><td>\[ 2^3\]</td><td>\[ 2^2\]</td><td>\[ 2^1\]</td><td>\[ 2^0\]</td></tr>
+<tr><td>Valeur</td><td>1024</td><td>512</td><td>256</td><td>128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>
+</tbody></table>
+</div>
+<p>La base 2 ne fait que se multiplier par 2 à chaque nouvel indice.</p>
+<p>Le tableau va jusqu'à 1024 car c'est le strict minimum à connaître par coeur.</p>
+<p>Prends un nombre, complètement au hasard : 651.</p>
+<p>Tu vas le soustraire par la puissance de 2 inférieure ou égale la plus proche.</p>
+<p>Reprends le tableau.
+La puissance de 2 inférieure ou égale la plus proche de 651 est... 512.</p>
+<p>\[ 651 - 512 = 139\]</p>
+<p>Tu as <strong>1</strong> fois 512 dans ton nombre de départ, reporte le chiffre 1 sous 512.</p>
+<div class="table-wrapper"><table><thead><tr><th>Indice</th><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th></tr></thead><tbody>
+<tr><td>Notation</td><td>\[ 2^{10} \]</td><td>\[ 2^9\]</td><td>\[ 2^8\]</td><td>\[ 2^7\]</td><td>\[ 2^6\]</td><td>\[ 2^5\]</td><td>\[ 2^4\]</td><td>\[ 2^3\]</td><td>\[ 2^2\]</td><td>\[ 2^1\]</td><td>\[ 2^0\]</td></tr>
+<tr><td>Valeur</td><td>1024</td><td>512</td><td>256</td><td>128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>
+<tr><td>Nombre</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
+</div>
+<p>Recommence avec le nouveau nombre qui est 139.
+La puissance de 2 inférieure ou égale la plus proche de 139 est... 128.
+Tu as <strong>1</strong> fois 128 dans ton nouveau nombre, reporte le chiffre 1 sous 128.</p>
+<p>\[ 139 - 128 = 11 \]</p>
+<div class="table-wrapper"><table><thead><tr><th>Indice</th><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th></tr></thead><tbody>
+<tr><td>Notation</td><td>\[ 2^{10} \]</td><td>\[ 2^9\]</td><td>\[ 2^8\]</td><td>\[ 2^7\]</td><td>\[ 2^6\]</td><td>\[ 2^5\]</td><td>\[ 2^4\]</td><td>\[ 2^3\]</td><td>\[ 2^2\]</td><td>\[ 2^1\]</td><td>\[ 2^0\]</td></tr>
+<tr><td>Valeur</td><td>1024</td><td>512</td><td>256</td><td>128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>
+<tr><td>Nombre</td><td></td><td>1</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
+</div>
+<p>Recommence avec le nouveau nombre qui est 11.
+La puissance de 2 inférieure ou égale la plus proche de 11 est... 8.
+Tu as <strong>1</strong> fois 8 dans ton nouveau nombre, reporte le chiffre 1 sous 8.</p>
+<p>\[ 11 - 8 = 3 \]</p>
+<div class="table-wrapper"><table><thead><tr><th>Indice</th><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th></tr></thead><tbody>
+<tr><td>Notation</td><td>\[ 2^{10} \]</td><td>\[ 2^9\]</td><td>\[ 2^8\]</td><td>\[ 2^7\]</td><td>\[ 2^6\]</td><td>\[ 2^5\]</td><td>\[ 2^4\]</td><td>\[ 2^3\]</td><td>\[ 2^2\]</td><td>\[ 2^1\]</td><td>\[ 2^0\]</td></tr>
+<tr><td>Valeur</td><td>1024</td><td>512</td><td>256</td><td>128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>
+<tr><td>Nombre</td><td></td><td>1</td><td></td><td>1</td><td></td><td></td><td></td><td>1</td><td></td><td></td><td></td></tr>
+</tbody></table>
+</div>
+<p>Recommence avec le nouveau nombre qui est 3.
+La puissance de 2 inférieure ou égale la plus proche de 3 est... 2.
+Tu as <strong>1</strong> fois 2 dans ton nouveau nombre, reporte le chiffre 1 sous 2.</p>
+<p>\[ 3 - 2 = 1 \]</p>
+<div class="table-wrapper"><table><thead><tr><th>Indice</th><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th></tr></thead><tbody>
+<tr><td>Notation</td><td>\[ 2^{10} \]</td><td>\[ 2^9\]</td><td>\[ 2^8\]</td><td>\[ 2^7\]</td><td>\[ 2^6\]</td><td>\[ 2^5\]</td><td>\[ 2^4\]</td><td>\[ 2^3\]</td><td>\[ 2^2\]</td><td>\[ 2^1\]</td><td>\[ 2^0\]</td></tr>
+<tr><td>Valeur</td><td>1024</td><td>512</td><td>256</td><td>128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>
+<tr><td>Nombre</td><td></td><td>1</td><td></td><td>1</td><td></td><td></td><td></td><td>1</td><td></td><td>1</td><td></td></tr>
+</tbody></table>
+</div>
+<p>Recommence avec le nouveau nombre qui est 1.
+La puissance de 2 inférieure ou égale la plus proche de 1 est... 1.
+Tu as <strong>1</strong> fois 1 dans ton nouveau nombre, reporte le chiffre 1 sous 1.</p>
+<p>\[ 1 - 1 = 0 \]</p>
+<div class="table-wrapper"><table><thead><tr><th>Indice</th><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th></tr></thead><tbody>
+<tr><td>Notation</td><td>\[ 2^{10} \]</td><td>\[ 2^9\]</td><td>\[ 2^8\]</td><td>\[ 2^7\]</td><td>\[ 2^6\]</td><td>\[ 2^5\]</td><td>\[ 2^4\]</td><td>\[ 2^3\]</td><td>\[ 2^2\]</td><td>\[ 2^1\]</td><td>\[ 2^0\]</td></tr>
+<tr><td>Valeur</td><td>1024</td><td>512</td><td>256</td><td>128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>
+<tr><td>Nombre</td><td></td><td>1</td><td></td><td>1</td><td></td><td></td><td></td><td>1</td><td></td><td>1</td><td>1</td></tr>
+</tbody></table>
+</div>
+<p>Il te reste 0, tu as terminé. Reprends le tableau et ajoute <strong>0</strong> aux cases où
+tu n'as pas écrit <strong>1</strong>.</p>
+<div class="table-wrapper"><table><thead><tr><th>Indice</th><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th></tr></thead><tbody>
+<tr><td>Notation</td><td>\[ 2^{10} \]</td><td>\[ 2^9\]</td><td>\[ 2^8\]</td><td>\[ 2^7\]</td><td>\[ 2^6\]</td><td>\[ 2^5\]</td><td>\[ 2^4\]</td><td>\[ 2^3\]</td><td>\[ 2^2\]</td><td>\[ 2^1\]</td><td>\[ 2^0\]</td></tr>
+<tr><td>Valeur</td><td>1024</td><td>512</td><td>256</td><td>128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>
+<tr><td>Nombre</td><td></td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+</tbody></table>
+</div>
+<p>Ce sont les puissances de 2 que tu n'as pu soustraire à chaque nombre que tu
+avais.</p>
+<p>Tu peux donc dire que 651 en base 10 s'écrit 1010001011 en base 2.</p>
+<h2 id="de-la-base-2-à-la-base-10"><a class="header" href="#de-la-base-2-à-la-base-10">De la base 2 à la base 10</a></h2>
+<p>Tu vas maintenant faire l'inverse, passer de la base 2 à la base 10. Toujours
+avec le tableau. Tu vas voir ça va être encore plus rapide.</p>
+<p>Prenons un nombre en base 2 complètement au hasard : 1010011010.</p>
+<p>Tu vas inscrire ce nombre dans le tableau le plus à droite possible.</p>
+<div class="table-wrapper"><table><thead><tr><th>Indice</th><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th></tr></thead><tbody>
+<tr><td>Notation</td><td>\[ 2^{10} \]</td><td>\[ 2^9\]</td><td>\[ 2^8\]</td><td>\[ 2^7\]</td><td>\[ 2^6\]</td><td>\[ 2^5\]</td><td>\[ 2^4\]</td><td>\[ 2^3\]</td><td>\[ 2^2\]</td><td>\[ 2^1\]</td><td>\[ 2^0\]</td></tr>
+<tr><td>Valeur</td><td>1024</td><td>512</td><td>256</td><td>128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>
+<tr><td>Nombre</td><td></td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+</tbody></table>
+</div>
+<p>Maintenant, tu n'as qu'à reprendre les puissances de 2 avec un <strong>1</strong> en dessous
+et les sommer ensemble.</p>
+<p>\[ 512 + 128 + 16 + 8 + 2 = 666 \]</p>
+<h2 id="dans-le-cas-de-grands-nombres"><a class="header" href="#dans-le-cas-de-grands-nombres">Dans le cas de grands nombres</a></h2>
+<p>Si tu dois passer de la base 10 à la base 2 mais avec un nombre plus grand que
+le tableau, il existe une technique pour généraliser la transformation.</p>
+<p>Prenons un nombre vraiment plus grand que 1024 : 6789.</p>
+<p>Tu vas diviser par 2 ton nombre et garder à chaque fois le <strong>reste</strong> de côté.
+Rappelle toi de tes cours de primaire, c'est une opération euclidienne.</p>
+<p>L'opération mathématique pour avoir le reste est %.</p>
+<p>Ainsi si j'écris
+\[ x \% 2 = 0 \]
+c'est qu'il reste 0 à la division <strong>x / 2</strong>. Tu peux aussi dire que <em>x</em> est pair.</p>
+<p>Et si j'écris
+\[ x \% 2 = 1 \]
+c'est qu'il reste 1 à la division <strong>x / 2</strong>. Tu peux aussi dire que <em>x</em> est impair.</p>
+<p>Tu vas faire apparaître le résultat petit à petit avec cet affichage :</p>
+<p>Résultat =</p>
+<p>Il se remplira à chaque itération de tes calculs en y inscrivant le reste que tu
+viens de calculer sur la gauche.</p>
+<p>\[ 6789 / 2 = 3394 \]
+\[ 6789 \% 2 = 1 \]
+Résultat = 1</p>
+<p>\[ 3394 / 2 = 1697 \]
+\[ 3394 \% 2 = 0 \]
+Résultat = 01</p>
+<p>\[ 1697 / 2 = 848 \]
+\[ 1697 \% 2 = 1 \]
+Résultat = 101</p>
+<p>\[ 848 / 2 = 424 \]
+\[ 848 \% 2 = 0 \]
+Résultat = 0101</p>
+<p>\[ 424 / 2 = 212 \]
+\[ 424 \% 2 = 0 \]
+Résultat = 00101</p>
+<p>\[ 212 / 2 = 106 \]
+\[ 212 \% 2 = 0 \]
+Résultat = 000101</p>
+<p>\[ 106 / 2 = 53 \]
+\[ 106 \% 2 = 0 \]
+Résultat = 0000101</p>
+<p>\[ 53 / 2 = 26 \]
+\[ 53 \% 2 = 1 \]
+Résultat = 10000101</p>
+<p>\[ 26 / 2 = 13 \]
+\[ 26 \% 2 = 0 \]
+Résultat = 010000101</p>
+<p>\[ 13 / 2 = 6 \]
+\[ 13 \% 2 = 1 \]
+Résultat = 1010000101</p>
+<p>\[ 6 / 2 = 3 \]
+\[ 6 \% 2 = 0 \]
+Résultat = 01010000101</p>
+<p>\[ 3 / 2 = 1 \]
+\[ 3 \% 2 = 1 \]
+Résultat = 101010000101</p>
+<p>\[ 1 / 2 = 0 \]
+\[ 1 \% 2 = 1 \]
+Résultat = 0101010000101</p>
+<p>Ta dernière division donne 0. Tu as terminé.</p>
+<p>Tu sais maintenant que 6789 s'écrit 0101010000101 en base 2.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cest-exact"><a class="header" href="#cest-exact">C'est exact</a></h1>
+<p>La notation en base 16 est appellée <em>héxadécimale</em>.</p>
+<p>Les plus avertis se demanderont comment écrire un nombre dans une base plus
+grande que 10. La base 2 utilise 0 et 1, la base 10 va de 0 et 9... mais
+qu'utiliser quand on va au delà de 9 ?</p>
+<p>Les lettres de l'alphabet !</p>
+<p>Ainsi la base 16 va de 0 à F. Voici les chiffres de la base 16 : 0, 1, 2, 3, 4,
+5, 6, 7, 8, 9, A, B, C, D, E et F.</p>
+<p>Voici un tableau de référence :</p>
+<div class="table-wrapper"><table><thead><tr><th>Base 2</th><th>Base 10</th><th>Base 16</th></tr></thead><tbody>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>10</td><td>2</td><td>2</td></tr>
+<tr><td>11</td><td>3</td><td>3</td></tr>
+<tr><td>100</td><td>4</td><td>4</td></tr>
+<tr><td>101</td><td>5</td><td>5</td></tr>
+<tr><td>110</td><td>6</td><td>6</td></tr>
+<tr><td>111</td><td>7</td><td>7</td></tr>
+<tr><td>1000</td><td>8</td><td>8</td></tr>
+<tr><td>1001</td><td>9</td><td>9</td></tr>
+<tr><td>1010</td><td>10</td><td>A</td></tr>
+<tr><td>1011</td><td>11</td><td>B</td></tr>
+<tr><td>1100</td><td>12</td><td>C</td></tr>
+<tr><td>1101</td><td>13</td><td>D</td></tr>
+<tr><td>1110</td><td>14</td><td>E</td></tr>
+<tr><td>1111</td><td>15</td><td>F</td></tr>
+<tr><td>10000</td><td>16</td><td>10</td></tr>
+<tr><td>10001</td><td>17</td><td>11</td></tr>
+<tr><td>10010</td><td>18</td><td>12</td></tr>
+<tr><td>10011</td><td>29</td><td>13</td></tr>
+<tr><td>10100</td><td>20</td><td>14</td></tr>
+<tr><td>10101</td><td>21</td><td>15</td></tr>
+<tr><td>10110</td><td>22</td><td>16</td></tr>
+<tr><td>10111</td><td>23</td><td>17</td></tr>
+<tr><td>11000</td><td>24</td><td>18</td></tr>
+<tr><td>11001</td><td>25</td><td>19</td></tr>
+<tr><td>11010</td><td>26</td><td>1A</td></tr>
+<tr><td>11011</td><td>27</td><td>1B</td></tr>
+<tr><td>11100</td><td>28</td><td>1C</td></tr>
+<tr><td>11101</td><td>29</td><td>1D</td></tr>
+<tr><td>11110</td><td>30</td><td>1E</td></tr>
+<tr><td>11111</td><td>31</td><td>1F</td></tr>
+<tr><td>100000</td><td>32</td><td>20</td></tr>
+</tbody></table>
+</div>
+<p>On dira ainsi qu'en base 16, A est un chiffre et le nombre 10 vaut 16 en base
+10.</p>
+<p>Tu peux réutiliser les notions vues en base 2 pour la base 16 pour passer de
+l'un à l'autre. Pas besoin d'alourdir le cours avec des calculs supplémentaires.</p>
+<p>Voici quelques valeurs à connaître par coeur.</p>
+<div class="table-wrapper"><table><thead><tr><th>Base 2</th><th>Base 10</th><th>Base 16</th></tr></thead><tbody>
+<tr><td>1010</td><td>10</td><td>A</td></tr>
+<tr><td>1111</td><td>15</td><td>F</td></tr>
+<tr><td>10000</td><td>16</td><td>10</td></tr>
+<tr><td>11000</td><td>24</td><td>18</td></tr>
+<tr><td>100000</td><td>32</td><td>20</td></tr>
+<tr><td>110000</td><td>48</td><td>30</td></tr>
+<tr><td>1000000</td><td>64</td><td>40</td></tr>
+<tr><td>10000000</td><td>128</td><td>80</td></tr>
+<tr><td>11111111</td><td>255</td><td>FF</td></tr>
+<tr><td>100000000</td><td>256</td><td>100</td></tr>
+<tr><td>10000000000</td><td>1024</td><td>400</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="bit-et-octet"><a class="header" href="#bit-et-octet">Bit et octet</a></h1>
+<h2 id="bit"><a class="header" href="#bit">Bit</a></h2>
+<p>Le bit est la quantité minimale d'information utilisable en informatique. Elle
+n'a que deux valeurs : 0 et 1.</p>
+<p>Si tu as mille bits, tu as un kilobit, que tu peux écrire avec un petit 'b' : 1
+kb.</p>
+<p>Si tu as un million de bits, tu écris un mégabit ou 1 Mb.</p>
+<p>Si tu as un milliard de bits, tu écris un gigabit ou 1 Gb.</p>
+<h2 id="octet"><a class="header" href="#octet">Octet</a></h2>
+<p>L'octet est composé de 8 bits. Sa traduction en Anglais est le byte.</p>
+<p>Tu peux utiliser la même notation qu'avec le bit mais en utilisant un 'o'
+minuscule ou un 'B' majuscule en Anglais.</p>
+<p>Si tu as mille octets, tu as un kilooctet ou un kilobyte, que tu peux écrire 1 ko ou 1 kB.</p>
+<p>Si tu as un million d'octets, tu écris un mégaoctet ou 1 megabyte, que tu peux écrire 1 Mo ou 1 MB.</p>
+<p>Si tu as un milliard d'octets, tu écris un gigaoctet ou 1 gigabyte, que tu peux écrire 1 Go ou 1 GB.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="portes-logiques"><a class="header" href="#portes-logiques">Portes logiques</a></h1>
+<p>Enfant, tu as appris les opérations mathématiques élémentaires : l'addition, la
+soustraction, la multiplication et la division.</p>
+<p>En informatique, il existe d'autres opérations élémentaires qu'on appelle des
+portes logiques.</p>
+<p>Tu vas appliquer ces portes logiques sur des bits, c'est à dire 0 et 1. Tu peux
+remplacer 0 par Faux et 1 par Vrai comme valeurs logiques.</p>
+<h2 id="not"><a class="header" href="#not">NOT</a></h2>
+<p>La porte NOT est un inverseur. Elle prend une entrée et une sortie. Son rôle est
+d'inverser la valeur en entrée.</p>
+<div class="table-wrapper"><table><thead><tr><th>Entrée</th><th>Sortie</th></tr></thead><tbody>
+<tr><td>0</td><td>1</td></tr>
+<tr><td>1</td><td>0</td></tr>
+</tbody></table>
+</div>
+<h2 id="and"><a class="header" href="#and">AND</a></h2>
+<p>La porte AND a deux entrées. Pour que le signal de sortie soit Vrai, il faut que
+les deux signaux aux entrées le soient également.</p>
+<div class="table-wrapper"><table><thead><tr><th>Entrée 1</th><th>Entrée 2</th><th>Sortie</th></tr></thead><tbody>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td><td>1</td></tr>
+</tbody></table>
+</div>
+<p>Si tu as besoin d'une phrase logique pour mieux comprendre, imagine que tu fais
+des courses pour faire un gâteau (miam). Dans une ville, il existe deux
+magasins, un spécialisé en lait et l'autre en farine.</p>
+<p>Il faut que les deux magasins possèdent les bons produits pour que tu puisses
+faire ton gâteau.</p>
+<h2 id="or"><a class="header" href="#or">OR</a></h2>
+<p>La porte OR a deux entrées. Pour que le signal de sortie soit Vrai, il faut
+qu'au moins une des entrées soit à Vrai.</p>
+<div class="table-wrapper"><table><thead><tr><th>Entrée 1</th><th>Entrée 2</th><th>Sortie</th></tr></thead><tbody>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>1</td><td>1</td><td>1</td></tr>
+</tbody></table>
+</div>
+<p>Si tu as besoin d'une phrase logique pour mieux comprendre, imagine que tu fais
+des courses pour acheter un gâteau (c'est plus rapide que de le préparer). Dans
+une ville, il existe deux magasins spécialisés en gâteaux.</p>
+<p>Il faut qu'au moins un des deux magasins soit ouvert pour que tu puisses avoir
+ton gâteau.</p>
+<h2 id="xor"><a class="header" href="#xor">XOR</a></h2>
+<p>La porte XOR est un <em>eXclusive OR</em>, ou un <em>OU eXclusif</em>. Elle agit comme la
+porte OR à condition d'avoir une exclusivité en entrée.</p>
+<div class="table-wrapper"><table><thead><tr><th>Entrée 1</th><th>Entrée 2</th><th>Sortie</th></tr></thead><tbody>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>1</td><td>1</td><td>0</td></tr>
+</tbody></table>
+</div>
+<p>Si tu as besoin d'une phrase logique pour mieux comprendre, imagine que tu fais
+des courses pour le dernier disque de musique de ton artiste préféré. Dans
+une ville, il existe deux magasins spécialisés en musique.</p>
+<p>Il faut qu'au moins un des deux magasins possède les droits exclusifs de vente
+pour qu'il existe une exclusivité. Si les deux magasins possèdent les droits de
+vente, alors il n'y a pas d'exclusivité.</p>
+<h1 id="autres-portes"><a class="header" href="#autres-portes">Autres portes</a></h1>
+<p>Il existe d'autres portes logiques qui ne sont pas présentées ici. Elles ne te
+seront pas utilises pour valider la piscine, mais elles pourraient l'êtres plus
+tard. Je te laisse voir la <a href="https://fr.wikipedia.org/wiki/Porte_logique">page Wikipédia à leur sujet</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="choix-du-système"><a class="header" href="#choix-du-système">Choix du système</a></h1>
+<p>Le choix du système n'est pas déterminant pour une piscine. Je conseille Ubuntu
+qui est la distribution Linux désignée pour les novices. Cependant, je présente
+également d'autres distributions qui ont leurs avantages et inconvénients. Les
+pages qui suivent ont un lien pour télécharger la distribution et une vidéo pour
+l'installer et la configurer.</p>
+<p>Si tu es débutant complet, préfère Ubuntu. Les paquets (programmes) ne seront
+pas toujours à jour, mais c'est une distribution d'une stabilité sans précédent
+quand on ne sait pas mettre à jour ses paquets.</p>
+<p>Si tu veux une distribution Linux toujours à jour et simple d'installation,
+préfère Manjaro ou Fedora.</p>
+<p>Si tu veux une distribution Linux toujours à jour et à installer à la main,
+préfère Arch Linux.</p>
+<p>Si tu veux une distribution qui isole tes paquets, qui t'assure une stabilité,
+mais qui est bien plus compliquée à prendre en main quand on n'a pas l'habitude,
+préfère NixOS.</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/4DGf1y_JLI8" title="0.0 - Choisir son système - Système" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ubuntu"><a class="header" href="#ubuntu">Ubuntu</a></h1>
+<p>ISO : <a href="https://www.ubuntu-fr.org/download">https://www.ubuntu-fr.org/download</a></p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/G8LGhxVbl0s" title="0.7 - Installer Ubuntu - Système" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="arch-linux"><a class="header" href="#arch-linux">Arch Linux</a></h1>
+<p>ISO : <a href="https://archlinux.org/download/">https://archlinux.org/download/</a></p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/BY3BW5zlkgE" title="0.1 - Installer Arch Linux et Awesome - Système" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="manjaro"><a class="header" href="#manjaro">Manjaro</a></h1>
+<p>ISO : <a href="https://manjaro.org/products/download/x86">https://manjaro.org/products/download/x86</a></p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/WvpLJIcO-zI" title="0.2 - Installer Manjaro XFCE - Système" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="fedora"><a class="header" href="#fedora">Fedora</a></h1>
+<p>ISO : <a href="https://fedoraproject.org/fr/workstation/download">https://fedoraproject.org/fr/workstation/download</a></p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/NeT_MnJIp9I" title="0.4 - Installer Fedora - Système" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="nixos"><a class="header" href="#nixos">NixOS</a></h1>
+<p>ISO : <a href="https://nixos.org/download">https://nixos.org/download</a></p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/jVqegtCbuGQ?list=PLb5GOuL68SxEdTQrpoMIp_8eUEqzHn7oI" title="0.8 - Installer NixOS Custom - Système" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="shell"><a class="header" href="#shell">Shell</a></h1>
+<p>Le Shell est un langage de programmation qui te permet de dialoguer avec ton
+système d'exploitation. Tu donnes des commandes à effectuer, et le système
+exécutera tes ordres.</p>
+<p>Le terminal graphique est ce qu'on appelle un émulateur de terminal, celui-ci va
+appeler un interpréteur shell (sh, bash, zsh, dash, ...) qui interprétera tes
+commandes.</p>
+<p>Tous les interpréteurs comprennent le Shell, mais certains ont des extensions
+qui te permettent une meilleure interactivité, avec de l'autocomplétion plus
+intelligente, une correction des fautes, une plus grande souplesse
+d'utilisation, etc.</p>
+<p>J'utilise zsh, mais tout ce que je vais présenter est valide avec d'autres
+interpréteurs.</p>
+<p>Les prochains chapitres t'apprendront à utiliser ton terminal.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="utilisation"><a class="header" href="#utilisation">Utilisation</a></h1>
+<p>Une fois sur ton shell, voici ce qui se présente à toi.</p>
+<pre><code class="language-sh">username@hostname:~$
+</code></pre>
+<p>Décortiquons tout ça.</p>
+<p><strong>username</strong> est ton nom d'utiisateur.</p>
+<p>Le arobase '@' veut dire que tu es connecté sur une machine.</p>
+<p><strong>hostname</strong> est le nom de cette machine.</p>
+<p>Le deux-points ':' est un simple séparateur pour la suite de la ligne.</p>
+<p>Le tilde '~' signifie que tu te trouves dans ton <strong>HOME</strong>. C'est ton répertoire
+personnel avec tes fichiers personnels.</p>
+<p>Le dollar '$' signifie que toutes les commandes que tu rentres sont exécutées
+comme simple utilisateur.</p>
+<p>Si tu avais un signe dièse '#' à la place, ça signifierait que les commandes
+seront exécutées en tant que <strong>root</strong> (admin).</p>
+<p>Pour simplifier la lecture des codes que je vais présenter, mon shell sera
+présenté ainsi :</p>
+<pre><code class="language-sh">$
+</code></pre>
+<p>Pour essayer, entre la commande <strong>pwd</strong>, et vois la différence de résultat avec
+la mienne.</p>
+<pre><code class="language-sh">$ pwd
+/home/gelules
+$
+</code></pre>
+<p>La commande <strong>pwd</strong> te dit où te trouves. C'est ton <strong>P</strong>ath <strong>W</strong>orking <strong>D</strong>irectory.</p>
+<h1 id="shutdown-et-reboot"><a class="header" href="#shutdown-et-reboot">Shutdown et reboot</a></h1>
+<p>Si tu veux arrêter ta machine, exécute la commande</p>
+<pre><code class="language-sh">$ shutdown now
+</code></pre>
+<p>Si tu veux rebooter ta machine, exécute la commande</p>
+<pre><code class="language-sh">$ reboot
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="se-déplacer"><a class="header" href="#se-déplacer">Se déplacer</a></h1>
+<h2 id="introduction-1"><a class="header" href="#introduction-1">Introduction</a></h2>
+<p>Maintenant que tu sais lire ce que t'affiche ton shell par défaut, tu vas
+apprendre quelques manoeuvres de base.</p>
+<p>Pour comprendre ce qu'il se passe, je te conseille d'ouvrir ton explorateur
+graphique (le programme qui te permet de voir tes documents graphiquement) d'un
+côté et ton shell de l'autre côté. Ca te permettra de faire le lien entre ce
+que tu tapes et ce qu'il se passe dans ton système à chaque commande.</p>
+<p>Ton explorateur graphique ne ressemblera peut-être pas au mien qui est Thunar.
+Et j'aurai probablement à certains endroits des fichiers que tu n'as pas.
+Ce n'est pas grave.</p>
+<p>Dans tous les cas tu verras des dossiers et des fichiers et tu devras
+double-cliquer pour te déplacer. Qui a dit que Windows avait l'exclusivité du
+clique ?</p>
+<p>Je te conseille de faire les mêmes commandes que moi, pour que ça rentre ! Ne
+fais pas que lire. L'apprentissage vient surtout par la pratique, même si c'est
+jouer au miroir.</p>
+<p><img src="shell/./deplacements/init.png" alt="Explorateur et shell" title="Explorateur et shell" /></p>
+<p>Tu vois que dans mon exemple, mon shell se trouve dans mon <strong>HOME</strong> et Thunar
+aussi. La différence c'est que Thunar me liste directement tous mes fichiers.</p>
+<h2 id="lister-un-répertoire"><a class="header" href="#lister-un-répertoire">Lister un répertoire</a></h2>
+<p>Pour lister ton répertoire courant, utilises la commande <strong>ls</strong>.</p>
+<pre><code class="language-sh">$ ls
+Desktop  Development  Documents  Downloads  Formation  mount_vbox_share.sh  Music  Pictures  Public  School  Templates  Videos
+$
+</code></pre>
+<p>Tu peux donner un ou plusieurs noms de fichiers et répertoires à <strong>ls</strong> pour
+lister leurs contenus.</p>
+<p>Depuis ton HOME, exécute</p>
+<pre><code class="language-sh">ls Desktop Documents Downloads
+</code></pre>
+<p>Si ces répertoires n'existent pas chez toi, attends de savoir en créer pour
+tester <strong>ls</strong> avec des noms de fichiers et répertoires donnés en paramètres.</p>
+<h2 id="créer-un-répertoire"><a class="header" href="#créer-un-répertoire">Créer un répertoire</a></h2>
+<p>Pour créer un répertoire, utilise la commande <strong>mkdir</strong>.</p>
+<pre><code class="language-sh">mkdir Test
+</code></pre>
+<p><img src="shell/./deplacements/mkdir_test.png" alt="mkdir Test" title="mkdir Test" /></p>
+<p>Comme tu peux le voir, mon explorateur de fichiers s'est actualisé pour afficher
+le nouveau répertoire. Utilise la commande <strong>ls</strong> dans ton terminal pour valider
+que ton terminal le voit également.</p>
+<p>Sache que tu peux créer plusieurs répertoires d'un coup en les donnant à <strong>ls</strong>.</p>
+<pre><code class="language-sh">$ mkdir Je suis un seul appel a mkdir
+
+# Cache-cache
+
+Il y a une dernière chose dont je ne t'ai pas parlé. Les fichiers cachés.
+</code></pre>
+<p>Les commandes shell ont pour habitude de ne rien afficher si tout se passe bien.
+En cas d'erreur, un message s'affichera. Lis toujours tes messages, il ne faut
+pas avoir peur. C'est justement une aide pour comprendre ce qu'il se passe.</p>
+<p><img src="shell/./deplacements/remkdir_test.png" alt="mkdir Test deux fois" title="mkdir Test 2 fois" /></p>
+<p>Ici, j'ai voulu créer le répertoire <strong>Test</strong> alors qu'il existe déjà.</p>
+<h1 id="se-déplacer-dans-un-répertoire"><a class="header" href="#se-déplacer-dans-un-répertoire">Se déplacer dans un répertoire</a></h1>
+<p>Pour te déplacer dans un répertoire graphiquement, c'est facile, tu
+doubles-cliques dessus.</p>
+<p>Pour te déplacer dans un répertoire en terminal, c'est facile, tu utilises la
+commande <strong>cd</strong>.</p>
+<pre><code class="language-sh">$ cd Test
+</code></pre>
+<p>Déplace toi dans le répertoire <strong>Test</strong>.</p>
+<p><img src="shell/./deplacements/cd_test.png" alt="cd Test" title="cd Test" /></p>
+<p>Ton shell affiche maintenant <strong>~/Test</strong>. Ca veut dire qu'il se situe dans le
+répertoire <strong>Test</strong> lui-même situé dans ton <strong>HOME</strong>.</p>
+<p>Tu peux créer une arborescence complète en donnant le paramètre <strong>-p</strong> à mkdir.</p>
+<pre><code class="language-sh">$ mkdir -p je/suis/une/longue/arborescence
+$
+</code></pre>
+<p><img src="shell/./deplacements/mkdir_path.png" alt="mkdir path" title="mkdir path" /></p>
+<h2 id="créer-des-fichiers"><a class="header" href="#créer-des-fichiers">Créer des fichiers</a></h2>
+<p>Tu ne vas pas encore voir comment éditer des fichiers. Tu vas commencer par
+créer des fichiers vides.</p>
+<p>Pour se faire, utilise la commande <strong>touch</strong>.</p>
+<pre><code class="language-sh">$ touch je_suis_un_fichier
+$ ls
+</code></pre>
+<h1 id="listing-long-format"><a class="header" href="#listing-long-format">Listing long format</a></h1>
+<p>Jusqu'ici tu as dû voir les différences entre fichier et répertoire aux couleurs
+affichées sur le terminal avec <strong>ls</strong>. Cette coloration est dûe à une
+configuration de <strong>ls</strong>.</p>
+<p>Dans mon cas, si j'exécuter <strong>which ls</strong> pour en savoir plus sur la commande
+<strong>ls</strong>, j'ai ceci :</p>
+<pre><code class="language-sh">$ which ls
+ls: aliased to ls --color=auto
+$
+</code></pre>
+<p>Ca veut dire que <strong>ls</strong> utilise par défaut le paramètre <strong>--color=auto</strong> qui
+colore les noms des fichiers et répertoires dans ton terminal.</p>
+<p>Exécute maintenant ceci, je fais exprès de cacher certains informations pour te
+forcer à exécuter les commandes :</p>
+<pre><code class="language-sh">$ ls
+$ mkdir repertoire
+$ touch fichier
+$ /bin/ls
+repertoire fichier
+$
+</code></pre>
+<p>Tu vois maintenant que tout s'affiche en blanc. Ce que tu as fait, c'est
+exécuter le programme <strong>ls</strong> directement depuis là où il est installé, sans la
+configuration de coloration automatique de ton shell.</p>
+<p>Imagine tomber un jour sur une distribution Linux qui n'affiche pas les couleurs
+par défaut, comment savoir si ce que tu listes et un fichier ou un répertoire ?</p>
+<p>Tu vas utiliser le paramètre <strong>-l</strong> à <strong>ls</strong> pour afficher le <em>long listing
+format</em>, pour afficher plein d'informations sur le répertoire où tu te trouves.</p>
+<p>Exécute</p>
+<pre><code class="language-sh">$ ls -l
+total 0
+-rw-r--r-- 1 gelules wheel  0 Jul 20 18:56 fichier
+drwxr-xr-x 2 gelules wheel 40 Jul 20 18:55 repertoire
+</code></pre>
+<p>La première ligne indique combien de place sur le disque prend ce que tu listes.
+Pour l'instant c'est 0 car c'est vide.</p>
+<p>Mainenant, pour chaque ligne, regarder le tout premier caractère. Si c'est un
+tirer '-', c'est que tu listes un fichier, si c'est un 'd' minuscule, c'est que
+c'est un répertoire.</p>
+<p>Tu apprendras le reste des informations listées dans un prochain chapitre.</p>
+<h2 id="lister-récursivement"><a class="header" href="#lister-récursivement">Lister récursivement</a></h2>
+<p>Pour atteindre graphiquement la fin de l'arborescence, ça demande quelques
+clics. Alors que pour le shell, il suffit de donner le paramètre <strong>-R</strong> à ls
+pour lui demander de lister <strong>récursivement</strong> les répertoires.</p>
+<p><img src="shell/./deplacements/ls_recursif.png" alt="ls récursif" title="ls récursif" /></p>
+<p>Pour information, le '.' situé au début de chaque résultat représente ton
+dossier courant (le <em>working directory</em>). Ca veut dire que si tu fais la
+commande</p>
+<pre><code class="language-sh">$ cd .
+</code></pre>
+<p>Tu te déplaceras... où tu te trouves.</p>
+<p>J'ai un exemple pratique qui sera présenté plus tard.</p>
+<h2 id="supprimer-des-fichiers-et-répertoires"><a class="header" href="#supprimer-des-fichiers-et-répertoires">Supprimer des fichiers et répertoires</a></h2>
+<p>Pour supprimer des répertoires, il existe deux commandes. *<em>rmdir</em> et <strong>rm</strong>.</p>
+<p><strong>rmdir</strong> va supprimer un répertoire <strong>vide</strong> et <strong>rm</strong> avec les bons paramètres
+va supprimer un répertoire et toute son arborescence récursivement.</p>
+<p>Essaie le commandes suivantes, je n'affiche pas le résultat pour te forcer à
+visualiser par toi-même ce qu'il se passe.</p>
+<pre><code class="language-sh">$ ls
+je je_suis_un_fichier
+$ rmdir je_suis_un_fichier
+??? # Mais diantre, que se passe t-il ?
+$ rm je_suis_un_fichier
+$ ls
+je
+$ ls -R
+.:
+je
+
+./je:
+suis
+
+./je/suis:
+une
+
+./je/suis/une:
+longue
+
+./je/suis/une/longue:
+arborescence
+
+./je/suis/une/longue/arborescence:
+$ rmdir je
+??? # Mais diantre, que se passe t-il ?
+$ rmdir je/suis/une/longue/arborescence
+$ ls -R
+???
+$ rm -r je
+$ ls -R
+$
+</code></pre>
+<p>Tu l'as compris, le paramètre <strong>-r</strong> de <strong>rm</strong> supprime toute une arborescence.</p>
+<p><strong>rm</strong> peut aussi être utilisé pour supprimer des fichiers, mais nous n'avons
+pas encore vu ce cas.</p>
+<p>Tu peux également donner plusieurs répertoires à <strong>rmdir</strong> et <strong>rm</strong> pour en
+supprimer plusieurs. Attention, <strong>rm</strong> doit toujours avoir son paramètre <strong>-r</strong>
+si tu supprimes des répertoires. Dans le cas de fichiers, tu n'as pas besoin de
+l'utiliser.</p>
+<pre><code class="language-sh">$ rmdir Je suis un seul appel a mkdir
+</code></pre>
+<p>ou</p>
+<pre><code class="language-sh">$ rm -r Je suis un seul appel a mkdir
+</code></pre>
+<h2 id="copier-des-fichiers-et-répertoires"><a class="header" href="#copier-des-fichiers-et-répertoires">Copier des fichiers et répertoires</a></h2>
+<p>Pour copier des fichiers et des répertoires, tu peux utiliser la commande
+<strong>cp</strong>.</p>
+<pre><code class="language-sh">$ ls
+$ touch fichier_1
+$ cp fichier_1 fichier_2
+$ mkdir repertoire_1
+$ cp fichier_1 fichier_2 repertoire_1
+$ cp -r repertoire_1 repertoire_2
+$ ls
+fichier_1  fichier_2  repertoire_1  repertoire_2
+$ ls repertoire_1 repertoire_2
+repertoire_1:
+fichier_1  fichier_2
+
+repertoire_2:
+fichier_1  fichier_2
+$ mkdir repertoire_3
+$ cp -r repertoire_1 repertoire_2 repertoire_3
+$ ls repertoire_3
+repertoire_1  repertoire_2
+$
+</code></pre>
+<p>Comme tu peux le constater, si tu veux copier un répertoire, il faut le faire
+récursivement avec l'option <strong>-r</strong>.</p>
+<h2 id="renommer-des-fichiers-et-répertoires"><a class="header" href="#renommer-des-fichiers-et-répertoires">Renommer des fichiers et répertoires</a></h2>
+<p>Pour renommer ou déplacer un répertoire ou un fichier, utilise la commande
+<strong>mv</strong>, pour <em>M</em>o<em>V</em>e.</p>
+<pre><code class="language-sh">$ touch gato
+$ ls
+gato
+$ mv gato gateau
+$ ls
+gateau
+$ mkdir ventre
+$ mv gateau ventre
+$ ls
+ventre
+$ ls ventre
+gateau
+$
+</code></pre>
+<p>En réalité quand tu <em>renommes</em> un fichier, tu le déplaces dans le même
+répertoire avec un nouveau nom.</p>
+<h2 id="cd-en-arrière"><a class="header" href="#cd-en-arrière">cd en arrière</a></h2>
+<p>Tu sais avancer dans des répertoires, mais comment revenir en arrière ?</p>
+<p>Il faut donner <strong>..</strong> à cd pour revenir en arrière. Chaque <strong>..</strong> part en
+arrière d'un niveau.</p>
+<p>Un exemple sera plus parlant.</p>
+<pre><code class="language-sh">$ mkdir -p toto/titi/tutu
+$ cd toto/titi/tutu
+$ cd ..
+$ ls
+tutu
+$ cd ../..
+$ ls
+toto
+$
+</code></pre>
+<h2 id="retourner-au-dernier-répertoire-visité-avec-cd"><a class="header" href="#retourner-au-dernier-répertoire-visité-avec-cd">Retourner au dernier répertoire visité avec cd</a></h2>
+<p>Si tu veux basculer vers le dernier répertoire visité, donne <strong>-</strong> en paramètre
+à <strong>cd</strong>.</p>
+<p>Je te laisse faire les commandes pour apprécier, j'ai caché exprès les parties
+intéressantes.</p>
+<pre><code class="language-sh">$ mkdir -p je/suis/un/humain tu/es/un/gateau
+$ cd je/suis/un/humain
+$ cd ../../../tu/es/un/gateau
+$ pwd
+???
+$ cd -
+$ pwd
+???
+$ cd -
+$ pwd
+???
+$
+</code></pre>
+<h2 id="retourner-dans-le-home-avec-cd"><a class="header" href="#retourner-dans-le-home-avec-cd">Retourner dans le HOME avec cd</a></h2>
+<p>Si tu veux retourner rapidement dans ton <strong>HOME</strong>, tu peux le faire en appellant
+simplement <strong>cd</strong> sans paramètre.</p>
+<p>Je te laisse faire les commandes pour apprécier, j'ai caché exprès les parties
+intéressantes.</p>
+<pre><code class="language-sh">$ cd je/suis/un/humain
+$ pwd
+???
+$ cd
+$ pwd
+???
+$
+</code></pre>
+<h3 id="cas-particuliers"><a class="header" href="#cas-particuliers">Cas particuliers</a></h3>
+<p>Crée le répertoire <strong>canare</strong> et <strong>cd</strong> y toi dedans.</p>
+<pre><code class="language-sh">~ $ mkdir canare
+~ $ cd canare
+~/canare $
+</code></pre>
+<p>Tu te rends compte que tu as fait une faute de frappe.</p>
+<p>Renomme le répertoire dans lequel tu te trouves ainsi :</p>
+<pre><code class="language-sh">~/canare $ mv ../canare ../canard
+~/canare $
+</code></pre>
+<p>Horreur et damnation, ton shell affiche encore <strong>canare</strong>. Il faut que tu
+exécutes <strong>cd .</strong> pour que ton shell se mette à jour.</p>
+<pre><code class="language-sh">~/canare $ cd .
+~/canard $
+</code></pre>
+<p>Maintenant plus drôle. Tu vas créer ce qu'on appelle un <strong>undefined behavior</strong>
+ou <strong>comportement indéfini</strong>.</p>
+<p>Voici quelques commandes :</p>
+<pre><code class="language-sh">$ mkdir toto
+$ cd toto
+$ rmdir ../toto
+$ cd .
+$ pwd
+</code></pre>
+<p>Que se passe t-il ? Tout dépend de ton shell, certains feront avec à leur
+manière, d'autres afficheront une erreur. C'est un comportement indéfini, le
+langage shell n'a pas défini quoi faire dans ce cas, chaque interpréteur a un
+comportement différent.</p>
+<h2 id="le-système-de-fichier"><a class="header" href="#le-système-de-fichier">Le système de fichier</a></h2>
+<p>Tu l'as peut-être vu en exécutant la commande <strong>pwd</strong>, ton chemin commence
+<strong>toujours</strong> par un slash '/'.</p>
+<p>Ton <strong>HOME</strong> se trouve dans un autre répertoire appelé <strong>home</strong> qui se trouve
+lui-même dans un répertoire nommé <strong>/</strong> (slash).</p>
+<p>Exécute la commande <strong>ls /</strong> pour voir ce qui se trouve à la racine de ton
+système de fichier (filesystem).</p>
+<pre><code class="language-sh">$ ls /
+bin  boot  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+</code></pre>
+<p>Tu n'as peut-être pas exactement le même résultat. Ce n'est pas grave. Tu
+devrais quand même y voir des similarités.</p>
+<p>Pour les utilisateurs Windows, le répertoire racine est <strong>un peu</strong> équivalent au
+disque C qui contient tous les répertoires de configuration. C'est faux sur
+beaucoup d'aspects techniques que tu n'as pas encore besoin de connaître. Je
+veux juste que tu saches qu'il existe un répertoire racine depuis lequel tu peux
+te déplacer et lister ce qu'il s'y trouve.</p>
+<p>Si jamais tu dois faire des tests temporaires, je te renvoie au répertoire
+<strong>/tmp</strong> qui est, dans beaucoup de distributions Linux, remis à zéro à chaque
+démarrage. Il peut être configuré pour être remis à zéro tous les jours,
+semaines, mois...</p>
+<pre><code class="language-sh">$ cd /tmp
+$ touch je_vais_disparaitre
+$ ls
+je_vais_disparaitre
+$ reboot
+...
+$ cd /tmp
+$ ls
+</code></pre>
+<h1 id="cache-cache"><a class="header" href="#cache-cache">Cache-cache</a></h1>
+<p>Il y a une dernière chose dont je ne t'ai pas parlé. Les fichiers cachés.</p>
+<p>Je vais exprès de cacher certains informations pour te forcer à pratiquer.</p>
+<p>Exécute ces commandes depuis ton <strong>HOME</strong> :</p>
+<pre><code class="language-sh">$ mkdir Test
+$ cd Test
+$ touch .cache affiche
+$ ls
+???
+$
+</code></pre>
+<p>Où est le fichier <strong>.cache</strong> ? Il est <strong>caché</strong>. Les fichiers et répertoires
+dont le nom commencent par un point '.' ne sont pas affichés, car il s'agit en
+général de fichier de configuration personnelle pour tes programmes et c'est
+plus élégant de ne pas toujours les afficher.</p>
+<p>Si tu veux les afficher, exécute :</p>
+<pre><code class="language-sh">$ ls -a
+. .. .cache affiche
+</code></pre>
+<p>Mais que sont '.' et '..' ? Rappelle toi, le '.' représente le répertoire dans
+lequel tu te trouves et '..' représente le répertoire parent.</p>
+<p>Si tu veux afficher tout ce qui est caché sauf '.' et '..', exécute :</p>
+<pre><code class="language-sh">$ ls -A
+.cache affiche
+</code></pre>
+<p>Je te laisse maintenant exécuter cette dernière commande <strong>dans ton HOME</strong>. Tu
+verras que même ton explorateur graphique ne t'affiche pas tout par défaut (mais
+c'est configurable).</p>
+<p><img src="shell/./deplacements/thunar_hidden_files.png" alt="Fichiers cachés dans Thunar" title="Fichiers cachés dans Thunar" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rtfm--read-the-fucking-manual"><a class="header" href="#rtfm--read-the-fucking-manual">RTFM : Read The Fucking Manual</a></h1>
+<p>Pour en apprendre d'avantages quant aux commandes que tu ne maitrises pas, il
+faut que tu fasses confiance à ton meilleur ami : <del>Google</del> le manuel.</p>
+<p>Pour l'invoquer, utilise la commande <strong>man</strong>.</p>
+<pre><code class="language-sh">$ man ls
+</code></pre>
+<p>Le manuel s'affiche. Pour t'y déplacer, utilise les touches fléchées. Pour le
+quitter, appuie sur <strong>q</strong>.</p>
+<p>Chaque commande a son manuel, mais aussi certaines notions de Linux.</p>
+<p>Par exemple, si tu veux en apprendre plus sur ton système de fichier, exécute la
+commande</p>
+<pre><code class="language-sh">$ man hier
+</code></pre>
+<p>hier pour <em>hierarchy</em>.</p>
+<p>Et si tu veux apprendre à utiliser le manuel, alors consulte le manuel du
+manuel.</p>
+<pre><code class="language-sh">$ man man
+</code></pre>
+<p>Chose intéressante dedans, les sections.</p>
+<pre><code class="language-text">The table below shows the section numbers of the manual followed by the types of pages they contain.
+
+1   Executable programs or shell commands
+2   System calls (functions provided by the kernel)
+3   Library calls (functions within program libraries)
+4   Special files (usually found in /dev)
+5   File formats and conventions, e.g. /etc/passwd
+6   Games
+7   Miscellaneous (including macro packages and conventions), e.g. man(7), groff(7), man-pages(7)
+8   System administration commands (usually only for root)
+9   Kernel routines [Non standard]
+</code></pre>
+<p>Pour ta picine, les 3 premières sections seront à consulter.</p>
+<p>La 1ere contient celle des <strong>binaires</strong> (des programmes) que tu utilises depuis
+ton shell.</p>
+<p>La 2eme et la 3eme contiennet des fonctions que tu peux appeler quand tu fais
+du langage C. La 2eme est celle des fonctions que ton Kernel te propose, la 3eme
+sont les fonctions de la libc (bibliothèque C).</p>
+<p>Un exemple. Si tu veux afficher le manuel de la fonction C printf (tu ne sais
+peut-être pas encore ce que c'est, ce n'est pas grave), tu serais tenté
+d'exécuter.</p>
+<pre><code class="language-sh">$ man printf
+</code></pre>
+<p>Si tu le fais, tu verras en haut à gauche <strong>printf(1)</strong>, le '1' entre
+parenthèses signifie que tu es dans la <strong>1</strong>ère section du manuel. Ce que tu
+veux c'est la <strong>3</strong>ème, pour les appels de la bibliothèque C (library calls).</p>
+<p><img src="shell/./rtfm/printf_wrong.png" alt="mauvais printf" title="mauvais printf" /></p>
+<p>Il faut alors utiliser une de ces deux notations :</p>
+<pre><code class="language-sh">$ man 3 printf
+$ man printf.3
+</code></pre>
+<p><img src="shell/./rtfm/printf_good.png" alt="bon printf" title="bon printf" /></p>
+<p>A partir de maintenant, pour toutes les commandes que tu as vues et verras, je
+t'invite très fortement à lire le manuel à chaque fois.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lire-et-écrire-dans-des-fichiers"><a class="header" href="#lire-et-écrire-dans-des-fichiers">Lire et écrire dans des fichiers</a></h1>
+<p>Tu as vu comment créer des fichiers vides, mais tu n'as pas encore vu comment
+écrire dedans et les lire à la ligne de commande.</p>
+<h2 id="ecrire-dans-un-fichier"><a class="header" href="#ecrire-dans-un-fichier">Ecrire dans un fichier</a></h2>
+<p>Pour écrire dans un fichier, tu peux utiliser l'éditeur de texte <strong>nano</strong> qui se
+veut extrêmement simple d'utilisation et surtout s'exécute dans le terminal.</p>
+<p>Mettons que tu sois dans ton <strong>HOME</strong>, nous allons faire les tests d'écriture et
+lecture dans le répertoire Test.</p>
+<pre><code class="language-sh">$ mkdir Test
+$ cd Test
+</code></pre>
+<p>Tu peux appeler <strong>nano</strong> sans nom de fichier derrière, tu pourras donner un nom
+après.</p>
+<pre><code class="language-text">$ nano
+  GNU nano 8.1                                                   New Buffer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                           [ Welcome to nano.  For basic help, type Ctrl+G. ]
+^G Help          ^O Write Out     ^F Where Is      ^K Cut           ^T Execute       ^C Location      M-U Undo         M-A Set Mark
+^X Exit          ^R Read File     ^\ Replace       ^U Paste         ^J Justify       ^/ Go To Line    M-E Redo         M-6 Copy
+</code></pre>
+<p>Tu peux directement écrire ton texte et te déplacer dans le fichier avec les
+touches fléchées.</p>
+<p>Tu peux voir en bas des commandes notées avec un circonflexe '^'. C'est un alias
+pour la touche <strong>ctrl</strong>. Si tu veux sauvegarder ton fichier, appuie sur
+<strong>ctrl+o</strong> pour <em>Write Out</em>.</p>
+<p>Après cette combinaison, <strong>nano</strong> te demande le nom du fichier avec cette ligne
+affichée en bas à gauche :</p>
+<pre><code class="language-text">File Name to Write:
+</code></pre>
+<p>Donne un nom de fichier. Tu peux même mettre un chemin entier pour le
+sauvegarder ailleurs. Appelle ton fichier fichier_test.</p>
+<p>Si tu veux quitter <strong>nano</strong>, exécute <strong>ctrl+x</strong>. Si tu as modifié ton fichier
+entretemps, il te demandera si tu veux sauvegarder avant de quitter.</p>
+<p>De retour sur le shell, tu peux rouvrir ton fichier avec nano en lui donnant son
+nom en paramètre.</p>
+<pre><code class="language-sh">$ nano fichier_test
+</code></pre>
+<h2 id="lire-un-fichier"><a class="header" href="#lire-un-fichier">Lire un fichier</a></h2>
+<p>Pour lire un fichier, tu peux utiliser la redirection gauche '&lt;' en mettant le
+nom de ton fichier.</p>
+<pre><code class="language-sh">$ fichier_test
+# Contenu du fichier
+$
+</code></pre>
+<p>Tu peux aussi utiliser la commande <strong>cat</strong></p>
+<pre><code class="language-sh">$ cat fichier_test
+# Contenu du fichier
+$
+</code></pre>
+<p><strong>cat</strong> te sera très utile pour vérifier que tes fichiers respectent une partie
+de la norme. La norme en piscine est le style de code (la coding style) à suivre
+pour que tes fichiers soient considérés comme valides.</p>
+<p>Rouvre ton fichier avec nano et ajoute des espaces à la fin d'une ou plusieurs
+lignes de texte. Exécute maintenant</p>
+<pre><code class="language-sh">$ cat -e fichier_test
+# Contenu du fichier avec des '$' en fin de ligne
+$
+</code></pre>
+<p>Comme tu peux le voir, il y a des dollars en fin de ligne. Mais avant certains
+dollars, il y a tes espaces. Ce n'est pas bien ! Un fichier de code ne doit pas
+avoir d'espace qui donne ensuite sur une fin de ligne. Ce sont des caractères
+inutiles présents dans tes fichiers. Ca prend de la place pour rien et c'est
+moche, bouh !</p>
+<p>Rouvre ton fichier avec nano et supprime ces espaces en trop.</p>
+<pre><code class="language-sh">$ cat -e fichier_test
+Je suis un fichier$
+avec     $
+des $
+espaces              $
+en trop$
+BERK                           $
+$ # Bouh c'est moche
+$ nano fichier_test
+...
+</code></pre>
+<pre><code class="language-sh">$ cat -e fichier_test
+Je suis un fichier$
+avec$
+des$
+espaces$
+en trop$
+BERK$
+$ # Que c'est beau, je suis amoureux 
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="permissions"><a class="header" href="#permissions">Permissions</a></h1>
+<h2 id="comprendre-les-permissions"><a class="header" href="#comprendre-les-permissions">Comprendre les permissions</a></h2>
+<p>Tu te rappelles du <em>long listing format</em> de <strong>ls</strong> avec toutes ces informations
+imbitables ? C'est le moment de les biter.</p>
+<p>Reprenons dans répertoire Test vide.</p>
+<pre><code class="language-sh">$ touch fichier
+$ mkdir repertoire
+$ cp /bin/ls . # Si tu as une erreur, essaie avec /usr/bin/ls
+$ ls -l
+total 136
+-rw-r--r-- 1 gelules wheel      0 Jul 20 21:29 fichier
+-rwxr-xr-x 1 gelules wheel 129728 Jul 20 21:29 ls
+drwxr-xr-x 2 gelules wheel   4096 Jul 20 21:29 repertoire
+$
+</code></pre>
+<p>La commande <strong>cp</strong> copie le binaire /bin/ls dans '.', c'est à dire le répertoire
+où tu te trouves.</p>
+<p>Il est très probable que tu n'aies pas la même sortie. Déjà au niveau des dates
+et des heures, mais aussi sur la colonne avec "wheel". Ne t'inquiète pas, tout
+va bien.</p>
+<p>Décortiquons tout ça.</p>
+<p>La première colonne contient les informations sur le type de fichier et les
+permissions du fichier. Rappelle toi, '-' signifie que c'est un simple fichier,
+et 'd' signifie que c'est un répertoire (<strong>d</strong>irectory).</p>
+<p>Ensuite, le reste de la colonne, prenons le fichier <strong>ls</strong> :</p>
+<pre><code class="language-text">rwxr-xr-x
+</code></pre>
+<p>Il faut diviser ces 9 caractères en 3 groupes de 3 caractères.</p>
+<div class="table-wrapper"><table><thead><tr><th>User</th><th>Group</th><th>Other</th></tr></thead><tbody>
+<tr><td>rwx</td><td>r-x</td><td>r-x</td></tr>
+</tbody></table>
+</div>
+<p>Avant d'expliquer les lettres, je dois expliquer les colonnes du tableau.</p>
+<p><strong>User</strong> donne des informations sur l'utilisateur qui possède le fichier. Si on
+relit la sortie de <strong>ls -l</strong> plus haut, on peut voir que l'utilisateur qui
+possède le fichier est <strong>gelules</strong>.</p>
+<p><strong>Group</strong> donne des informations sur le groupe qui possède le fichier. Si on
+relit la sortie de <strong>ls -l</strong> plus haut, on peut voir que le groupe qui
+possède le fichier est <strong>wheel</strong>.</p>
+<p><strong>Other</strong> est le reste du monde qui n'est ni l'utilisateur gelules ni les
+utilisateurs dans le groupe wheel.</p>
+<p>Tu peux voir dans quel groupe tu es avec la commande <strong>group</strong>.</p>
+<pre><code class="language-sh">$ group
+</code></pre>
+<p>Revenons aux lettres.</p>
+<p><strong>r</strong> signifie <strong>r</strong>ead, pour lecture.</p>
+<p><strong>w</strong> signifie <strong>w</strong>rite, pour écriture.</p>
+<p><strong>x</strong> signifie e<strong>x</strong>ecute, pour exécution.</p>
+<p>L'utilisateur a le droit de lire, modifier et exécuter le binaire.</p>
+<p>Le groupe a le droit de lire et exécuter le binaire.</p>
+<p>Tous les autres ont le droit de lire et exécuter le binaire.</p>
+<h2 id="changer-les-permissions"><a class="header" href="#changer-les-permissions">Changer les permissions</a></h2>
+<p>Pour modifier les permissions, tu peux utiliser la commande <strong>chmod</strong>.</p>
+<p>Mais avant ça, il va falloir revoir un peu la base 2.</p>
+<div class="table-wrapper"><table><thead><tr><th>r</th><th>w</th><th>x</th></tr></thead><tbody>
+<tr><td>1</td><td>0</td><td>1</td></tr>
+</tbody></table>
+</div>
+<p>Tu peux voir ici, je demande à ce que les permissions du fichier donnent le
+droit de lecture et d'exécution et interdisent le droit de modification. La
+valeur de 101 en base 10 est... 5.</p>
+<p>Il faut faire 3 fois cette gymnastique pour avoir 3 chiffres. Le 1er sera le
+droit pour l'utilisateur, le 2eme les droits pour le groupe et le 3eme les
+droits pour les autres.</p>
+<p>Par exemple, je souhaite donner les permissions suivantes au fichier :
+l'utilisateur peut lire, modifier et exécuter le fichier, le groupe peut lire et
+modifier le fichier et les autres ne peuvent qu'exécuter le fichier.</p>
+<div class="table-wrapper"><table><thead><tr><th>r</th><th>w</th><th>x</th><th>r</th><th>w</th><th>x</th><th>r</th><th>w</th><th>x</th></tr></thead><tbody>
+<tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+</tbody></table>
+</div>
+<p>Il faut traduire par paquet de 3.</p>
+<p>On a donc :</p>
+<p>111 = 7</p>
+<p>110 = 6</p>
+<p>001 = 1</p>
+<p>Le droit à appliquer sera 761.</p>
+<pre><code class="language-sh">$ chmod 761 ls
+$ ls -l ls
+-rwxrw---x 1 gelules wheel 129728 Jul 20 21:29 ls
+$
+</code></pre>
+<p>Comme tu peux le voir, le fichier <strong>ls</strong> a vu ses permissions être modifiées.</p>
+<p>Sache qu'un répertoire a des droits d'exécution. Le droit d'exécution d'un
+répertoire permet de s'y <strong>cd</strong>.</p>
+<p>Faisons un autre exemple.</p>
+<pre><code class="language-sh">$ chmod 300 repertoire
+</code></pre>
+<p>Maintenant je n'ai que les droits de mofidication et d'exécution sur le
+répertoire <strong>repertoire</strong>.</p>
+<pre><code class="language-sh">$ nano repertoire/test
+...
+$ ls repertoire
+ls: cannot open directory 'repertoire': Permission denied
+$ cat repertoire/test
+...
+$
+</code></pre>
+<p>Tu ne peux pas afficher le contenu, mais tu peux quand même t'y déplacer et
+modifier son contenu.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tips-and-tricks"><a class="header" href="#tips-and-tricks">Tips and tricks</a></h1>
+<p>Tout au long des derniers chapitres, tu t'es écorché les doigts à taper des
+commandes et sûrement mal taper le nom d'une commande, ce qui t'a valu de
+recommencer.</p>
+<p>Qu'à cela ne tienne, tu vas découvrir ici quelques raccourcis claviers.</p>
+<h1 id="touches-fléchées"><a class="header" href="#touches-fléchées">Touches fléchées</a></h1>
+<p>Déjà, les touches fléchées te permettent de déplacer ton cursus à gauche et à
+droite si tu dois modifier ta commande avant de l'exécuter.</p>
+<p>Ensuite, les touches fléchées haut et bas te permettent de te déplacer dans ton
+historique de commandes et en rappeller plus rapidement qu'en réécrivant une
+commande.</p>
+<h1 id="autocomplétion"><a class="header" href="#autocomplétion">Autocomplétion</a></h1>
+<p>Ton shell est capable d'autocompléter tes commandes. Appuie sur sur la touche de
+tabulation pour lui demander d'autocompléter.</p>
+<pre><code class="language-sh">$ touch travail ventre ventricule
+$ ls t&lt;TAB&gt;
+</code></pre>
+<p>Tu verras que le fichier <strong>travail</strong> va s'autocompléter tout seul.</p>
+<pre><code class="language-sh">$ ls v&lt;TAB&gt;
+     ventr
+</code></pre>
+<p>Là il va faire face à un problème. Le shell ne peut pas deviner à ta place si tu
+veux ventre ou ventricule. En appuyant une deuxième fois sur TAB, il t'affichera
+quels fichiers correspondent.</p>
+<pre><code class="language-sh">$ ls v&lt;TAB&gt;&lt;TAB&gt;
+     ventre ventricule
+</code></pre>
+<p>A toi de régler l'ambiguïté en ajoute <strong>e</strong> ou <strong>i</strong>.</p>
+<h1 id="arrêt-dun-programme"><a class="header" href="#arrêt-dun-programme">Arrêt d'un programme</a></h1>
+<p>Si jamais tu as lancé un programme ou un script depuis ton terminal et que tu
+veux arrêter son exécution, exécute la combinaison de touches <strong>ctrl+c</strong> pour
+envoyer un signal d'arrêt et reprendre la main sur ton terminal.</p>
+<h1 id="recherche-arrière"><a class="header" href="#recherche-arrière">Recherche arrière</a></h1>
+<p>Avec <strong>ctrl+r</strong>, tu peux recherche une commande. Par exemple <strong>ctrl+r</strong> <em>cp -</em>
+te montrera la dernière commande qui contient <em>cp -r</em>, si tu rappuies sur
+<strong>ctrl+r</strong>, la commande précédent s'affichera, jusqu'à afficher la toute
+première commande dans ton historique qui contient <em>cp -r</em>.</p>
+<h1 id="déplacement-rapide-du-curseur"><a class="header" href="#déplacement-rapide-du-curseur">Déplacement rapide du curseur</a></h1>
+<p>Si tu utilises <strong>ctrl+fleche</strong> gauche ou droite, tu peux déplacer le curseur de
+mot en mot.</p>
+<p>Tu peux aussi faire <strong>alt+f</strong> pour <em>forward</em> (avant) et <strong>alt+b</strong> pour
+<em>backward</em> (arrière) pour faire pareil.</p>
+<p>Tu peux aussi faire la combinaison <strong>ctrl+a</strong> pour envoyer le cursus au tout
+début de la ligne, et <strong>ctrl+e</strong> pour l'envoyer à la fin de la ligne.</p>
+<h1 id="suppression-avant--après-le-curseur"><a class="header" href="#suppression-avant--après-le-curseur">Suppression avant / après le curseur</a></h1>
+<p>Si ton curseur est au milieu de la commande, et que tu veux supprimer tout ce
+qu'il y a à droite, tu peux faire la combinaison <strong>ctrl+k</strong>. Si tu veux
+supprimer tout ce qu'il y a à gauche, effectuer la combinaison <strong>ctrl+u</strong>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="editeurs-de-texte"><a class="header" href="#editeurs-de-texte">Editeurs de texte</a></h1>
+<p>Tu as utilisé nano pour modifier des fichiers. Maintenant je vais te <em>présenter</em>
+2 éditeurs qui te permettront de coder très efficacement.</p>
+<p>Il en existe d'autres tout aussi bien, mais je ne les maitrise pas, donc je
+préfère te laisser avec ce que je connais.</p>
+<p>Si tu en as marre de la console, et que tu veux éditer ton code dans un éditeur
+grapghique, tu trouveras ton bonheur dans la prochaine section, vscode.</p>
+<p>Si tu veux apprendre à modifier des fichiers toujours dans le terminal, vim sera
+ton fidèle allié.</p>
+<p>Aux utilisateurs d'Emacs : désolé ! Je ne connais pas bien votre éditeur et
+surtout je n'ai pas 6 doigts à chaque main pour ça. Mais je sais que votre
+éditeur est super cool.</p>
+<p>Aux utilisateurs de Neovim : Oui oui ton éditeur est super moderne. En attendant
+ça fait des années que je suis sur Vim et que je suis bien heureux avec, rien ne
+me donne envie pour le moment de changer.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vscode"><a class="header" href="#vscode">VSCode</a></h1>
+<p>Pour installer vscode, installer le paquet code</p>
+<pre><code class="language-sh">$ sudo apt install code # Ubuntu
+$ sudo pacman -S code # Arch et Manjaro
+$ sudo dnf install code # Fedora
+$ nix-env -i nixos.vscode # NixOS
+</code></pre>
+<p>Tu peux l'exécuter avec la commande <strong>code</strong>.</p>
+<p>La première fenêtre te demander de configurer le thème graphique.</p>
+<p>Ensuite quelles extensions tu veux. Je ne vais pas en conseiller.</p>
+<p>Maintenant sur la page d'accueil, tu peux ouvrir un fichier ou un répertoire qui
+contient des fichiers.</p>
+<p>Tu peux également appeler vscode avec des fichiers en paramètres.</p>
+<pre><code class="language-sh">code fichier_1 fichier_2
+</code></pre>
+<p>Il se peut qu'il te dise que les fichiers ne sont pas "trustés". C'est parce que
+tu n'as pas crée de projet vscode. Tu peux dire "Oui" sans problème.</p>
+<p>C'est tout ce que je vais présenter de vscode, je ne l'utilise pas plus que ça.
+Mais je voulais quand même ajouter un éditeur graphique si tu es vraiment
+allergique à la ligne de commande.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vim"><a class="header" href="#vim">Vim</a></h1>
+<p>Alors là trop facile, j'ai fais plusieurs vidéos pour apprendre à l'utiliser.</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/7kntHy8V7d0" title="Les bases de Vim (pour les nouveaux)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/CmGx8IrDdiw" title="Maîtriser Vim en 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p>Tu trouveras <a href="https://www.youtube.com/playlist?list=PLb5GOuL68SxEt5GQcA_3uuQIzG26n8l_i">la playlist complète ici</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="run-command"><a class="header" href="#run-command">Run Command</a></h1>
+<p>Tu ne le sais peut-être pas, ton shell est configuré par un fichier <strong>Run
+Command</strong>. C'est un fichier caché dans ton <strong>HOME</strong>.</p>
+<p>Si tu es sur bash, ton fichier de configuration est</p>
+<pre><code class="language-sh">$ ~/.bashrc
+</code></pre>
+<p>Si tu es sur zsh, ton fichier de configuration est</p>
+<pre><code class="language-sh">$ ~/.zshrc
+</code></pre>
+<p>Si tu es sur un autre shell... regarde le man de ton shell pour savoir où se
+trouve ton fichier de configuration.</p>
+<h2 id="mkcd"><a class="header" href="#mkcd">mkcd</a></h2>
+<p>On va agrémenter ton fichier de configuration avec une petite fonction bien
+sympathique que j'aime bien.</p>
+<p>Ouvre ton fichier de configuration et ajoute à la fin ces lignes :</p>
+<pre><code class="language-sh">mkcd ()
+{
+    [ ! -d "$1" ] &amp;&amp; mkdir -p $1
+    cd $1
+}
+</code></pre>
+<p>Pour mettre à jour la configuration du shell où tu te trouves, exécute</p>
+<pre><code class="language-sh">$ . ~/.zshrc
+</code></pre>
+<p>Accorde la commande avec ton fichier de configuration.</p>
+<p>La commande '.' exécute le fichier que tu donnes. Ton shell va donc exécuter son
+fichier de Run Command pour se mettre à jour.</p>
+<p>Tu peux aussi utiliser la commande <strong>source</strong>, c'est la même chose.</p>
+<p>Pour les prochains shells, tu n'auras pas à faire cette commande. Ca sera
+appliqué automatiquement.</p>
+<p>Mais que fais cette commande ?</p>
+<p>Décortiquons tout ça.</p>
+<pre><code class="language-sh">mkcd ()
+{
+
+}
+</code></pre>
+<p>Ca, c'est une <strong>fonction</strong> en shell. Une fonction c'est du code que tu pourras
+appeler depuis ton shell.</p>
+<pre><code class="language-sh">    [ ! -d "$1" ] &amp;&amp; mkdir -p $1
+</code></pre>
+<p>Cette ligne est compliquée à lire. Mais tu dois reconnaître la commande <strong>mkdir
+-p</strong>.</p>
+<pre><code class="language-sh">    [ ! -d "$1" ]
+</code></pre>
+<p>Ce morceau de code va vérifier si le <strong>1</strong>er argument n'existe pas comme
+répertoire.</p>
+<pre><code class="language-sh">    &amp;&amp; mkdir -p $1
+</code></pre>
+<p><strong>&amp;&amp;</strong> est une porte logique. Dans le contexte du shell, il s'agit de la porte
+<strong>AND</strong> et exécutera la partie à droite seulement si la partie de gauche renvoie
+Vrai.</p>
+<p>La partie de droite créee une arborescence de répertoires.</p>
+<pre><code class="language-sh">    cd $1
+</code></pre>
+<p>cd va te déplacer dans le répertoire envoyé en <strong>1</strong>er argument.</p>
+<p>La fonction mkcd va donc créer un répertoire ou même toute une arborescence de
+répertoire et t'y <strong>cd</strong> automatiquement.</p>
+<pre><code class="language-sh">$ pwd
+/home/gelules
+$ ls /tmp/tests
+ls: cannot access '/tmp/tests': No such file or directory
+$ mkcd /tmp/tests/pediluve/shell
+$ pwd
+/tmp/tests/pediluve/shell
+$
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="window-manager"><a class="header" href="#window-manager">Window Manager</a></h1>
+<p>Un Window Manager est l'environnement graphique de ta session. Selon ta
+distribution, tu vas probablement utiliser Gnome, Plasma, XFCE, etc..</p>
+<p>J'utilise Awesome comme window manager, la prochaine section te montrera comment
+je l'utilise.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="awesome"><a class="header" href="#awesome">Awesome</a></h1>
+<p>Hop là c'est facile, il y a une vidéo !</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/L0m97UcA16A" title="2.7 - Comment être AWESOME - Shell" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="programmation-shell"><a class="header" href="#programmation-shell">Programmation Shell</a></h1>
+<p>Tu y es ! Le début de ta grande aventure dans la programmation !</p>
+<p>Ne t'inquiète pas, je reste dans les prochains chapitres le plus clair et simple
+possible, avec des exemples pour appréhender simplement chaque notion.</p>
+<p>Tu verras pendant ta piscine et le reste de ton cursus que ce que je présente va
+beaucoup plus loin en terme de complexité, mais le but du Pédiluve reste de
+t'aider à appréhender une piscine, pas de devenir une brute en informatique.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="flux-systèmes"><a class="header" href="#flux-systèmes">Flux systèmes</a></h1>
+<h2 id="sortie-standard"><a class="header" href="#sortie-standard">Sortie standard</a></h2>
+<p>La sortie standard (ou <strong>stdout</strong>) est le flux de texte affiché sur ton terminal
+quand tout se passe bien.</p>
+<p>Par exemple, quand tu exécutes</p>
+<pre><code class="language-sh">$ ls -l fichier_existant # assure toi que le fichier existe
+</code></pre>
+<p>Tout ce qui est affiché passe par <strong>stdout</strong>.</p>
+<p>Tu peux rediriger le flux dans un fichier en utilisant un chevron.</p>
+<pre><code class="language-sh">$ ls -l &gt; fichier_stdout
+$ cat fichier_stdout
+</code></pre>
+<p>Comme tu peux le voir, <strong>ls -l</strong> n'a pas affiché de résultat, tout a été
+redirigé dans un fichier qui n'existait pas.</p>
+<p>Recommence l'opération.</p>
+<pre><code class="language-sh">$ ls -l &gt; fichier_stdout
+$ cat fichier_stdout
+</code></pre>
+<p>Le fichier n'a pas gardé l'information précédente. Il a été <em>tronqué</em>.</p>
+<p>Si tu veux garder le contenu du fichier à chaque redirection, tu peux utiliser
+la <strong>double redirection</strong>.</p>
+<pre><code class="language-sh">$ ls -l &gt;&gt; fichier_stdout
+$ cat fichier_stdout
+</code></pre>
+<p>Et là, le contenu déjà présent reste dans le fichier.</p>
+<p>Si tu veux rediriger stdout dans le <strong>vide</strong>, c'est à dire ne pas l'afficher et
+ne pas le rediriger dans un fichier, tu peux utiliser le fichier <strong>/dev/null</strong>
+comme fichier de redirection.</p>
+<pre><code class="language-sh">$ ls -l &gt; /dev/null
+</code></pre>
+<p>C'est un fichier spécial utilisé uniquement pour rediriger des flux dans le
+vide.</p>
+<h2 id="erreur-standard"><a class="header" href="#erreur-standard">Erreur standard</a></h2>
+<p>Le flux standard des erreurs (ou <strong>stderr</strong>) s'affiche aussi sur ton terminal
+mais en empruntant un autre flux. Il ne s'affiche qu'en cas d'erreur.</p>
+<p>Prenons la situtation suivante :</p>
+<pre><code class="language-sh">$ ls
+fichier_existant
+$ ls -l fichier_existant fichier_inexistant
+ls: cannot access 'fichier_inexistant': No such file or directory
+-rw-r--r-- 1 gelules wheel 0 Jul 20 21:29 fichier_existant
+$
+</code></pre>
+<p>La première ligne avec le message d'erreur emprunte le flux d'erreur, et la
+seconde emprunte stdout.</p>
+<p>Tu peux les séparer dans des fichiers différents ainsi :</p>
+<pre><code class="language-sh">$ ls -l fichier_existant fichier_inexistant &gt;stdout.txt 2&gt;stderr.txt
+$ cat stdout.txt stderr.txt
+...
+</code></pre>
+<p>Le <strong>2</strong> est le chiffre de référence pour <strong>stderr</strong>. <strong>stdout</strong> utilise <strong>1</strong>
+mais tu n'es pas obligé de l'écrire, sauf à une condition.</p>
+<p>Si tu veux rediriger <strong>stderr</strong> vers <strong>stdout</strong>, tu dois le faire de cette
+façon.</p>
+<pre><code class="language-sh">$ ls -l fichier_existant fichier_inexistant 1&gt;stdout.txt 2&gt;&amp;1
+</code></pre>
+<p>Le caractère <strong>esperluette</strong> '&amp;' indique au shell que <strong>1</strong> n'est pas un nom de
+fichier mais le flux numéro 1.</p>
+<p>Le premier <strong>1</strong> devant <strong>stdout.txt</strong> n'est pas obligatoire, mais je voulais te
+montrer que tu peux l'écrire quand même.</p>
+<h2 id="pipe"><a class="header" href="#pipe">Pipe</a></h2>
+<p>Les pipes servent à rediriger le <strong>stdout</strong> d'un programme dans le <strong>stdin</strong>
+d'un autre programme.</p>
+<p><strong>stdin</strong> est <strong>l'entrée standard</strong>. C'est un flux où tu fais en temps normal de
+l'entrée clavier. Ce que fais ton shell à chaque fois que tu appuies sur Entrée,
+il lit son entrée standard pour recevoir ta commande.</p>
+<p>Faisons quelques exemples plus parlant :</p>
+<pre><code class="language-sh">$ ls
+$ ls -l / &gt; racine.txt
+$ wc -l racine.txt
+</code></pre>
+<p><strong>wc -l</strong> te permet de compter le nombre de lignes dans un fichier. Mais tu
+aurais pu faire ça en une seule commande grâce au <strong>pipe</strong> (tuyau).</p>
+<pre><code class="language-sh">$ ls -l / | wc -l
+</code></pre>
+<p>Le pipe '|' te permet de passer la sortie de <strong>ls</strong> dans l'entrée de <strong>wc</strong>.</p>
+<p>Beaucoup d'outils sur Linux fonctionne ainsi.</p>
+<p>Prenons un enchaînement de commandes plus drôle :```sh
+$ ls -l / | cut -d ' ' -f 1 | tee permissions | wc -l</p>
+<pre><code>
+Voici deux nouvelles commandes.
+
+**cut** va couper des colonnes selon un délimiteur.
+
+Prenons la sortie de **ls -l /**.
+```sh
+$ ls -l /
+total 56
+lrwxrwxrwx   1 root root       7 Apr  7 20:02 bin -&gt; usr/bin
+drwxr-xr-x   4 root root    4096 Jul 19 01:59 boot
+drwxr-xr-x  19 root root    3880 Jul 20 16:52 dev
+drwxr-xr-x  95 root root    4096 Jul 20 22:14 etc
+drwxr-xr-x   3 root root    4096 Sep 13  2022 home
+lrwxrwxrwx   1 root root       7 Apr  7 20:02 lib -&gt; usr/lib
+lrwxrwxrwx   1 root root       7 Apr  7 20:02 lib64 -&gt; usr/lib
+drwx------   2 root root   16384 Sep 13  2022 lost+found
+drwxrwx---   1 root vboxsf  4096 Jul  1 02:05 media
+drwxr-xr-x   2 root root    4096 Dec  7  2021 mnt
+drwxr-xr-x   2 root root    4096 Dec  7  2021 opt
+dr-xr-xr-x 227 root root       0 Jul 20 16:52 proc
+drwxr-x---  14 root root    4096 Sep 23  2023 root
+drwxr-xr-x  29 root root     680 Jul 20 16:55 run
+lrwxrwxrwx   1 root root       7 Apr  7 20:02 sbin -&gt; usr/bin
+drwxr-xr-x   4 root root    4096 Sep 13  2022 srv
+dr-xr-xr-x  13 root root       0 Jul 20 21:28 sys
+drwxrwxrwt  15 root root     360 Jul 21 00:00 tmp
+drwxr-xr-x  10 root root    4096 Jul 20 22:14 usr
+drwxr-xr-x  12 root root    4096 Jul 20 16:52 var
+</code></pre>
+<p>La commande <strong>cut</strong> que j'utilise délimite chaque <strong>field</strong> (champ) en utilisant
+le délimiteur ESPACE ' '.</p>
+<p>On n'aura donc que la première colonne avec <strong>cut</strong>.
+On n'aura donc que la première colonne avec <strong>cut -d ' ' -f 1</strong></p>
+<pre><code class="language-sh">$ ls -l / | cut -d ' ' -f1
+total
+lrwxrwxrwx
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+lrwxrwxrwx
+lrwxrwxrwx
+drwx------
+drwxrwx---
+drwxr-xr-x
+drwxr-xr-x
+dr-xr-xr-x
+drwxr-x---
+drwxr-xr-x
+lrwxrwxrwx
+drwxr-xr-x
+dr-xr-xr-x
+drwxrwxrwt
+drwxr-xr-x
+drwxr-xr-x
+</code></pre>
+<p>Ensuite la commande <strong>tee</strong> va rediriger sa sortie dans deux flux, un fichier et
+<strong>stdout</strong>.
+Imagine la lettre 'T' (tee en pronociation Anglaise), la barre de gauche est son
+entrée standard, la barre qui descend est le fichier, la barre de droite est
+<strong>stdout</strong>.</p>
+<pre><code class="language-sh">$ ls -l / | cut -d ' ' -f1 | tee permissions
+total
+lrwxrwxrwx
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+lrwxrwxrwx
+lrwxrwxrwx
+drwx------
+drwxrwx---
+drwxr-xr-x
+drwxr-xr-x
+dr-xr-xr-x
+drwxr-x---
+drwxr-xr-x
+lrwxrwxrwx
+drwxr-xr-x
+dr-xr-xr-x
+drwxrwxrwt
+drwxr-xr-x
+drwxr-xr-x
+$ cat permissions
+...
+</code></pre>
+<p>tee a bel et bien redirigé ce que tu vois sur <strong>stdout</strong> dans un fichier nommé
+<strong>permissions</strong>.</p>
+<p>Et enfin, <strong>wc -l</strong> affiche le nombre de ligne reçu depuis <strong>stdout</strong>.</p>
+<p>Voilà la puissance de Linux. Utiliser la sortie d'un programme comme donnée pour
+l'entrée d'un autre programme.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="job-control"><a class="header" href="#job-control">Job control</a></h1>
+<p>Le job control te permet de mettre en pause et remettre en route les programmes
+que tu lances depuis ton shell.</p>
+<p>Dans cet exemple, il faut que je seul programme lancé soit ton shell, rien
+d'autre.</p>
+<pre><code class="language-sh">firefox
+...
+</code></pre>
+<p>Maintenant que firefox est lancé, tu n'as plus la main sur ton shell. Firefox
+l'utilise pour afficher son stdout et stderr.</p>
+<p>Exécute la combinaison <strong>ctrl+z</strong> pour mettre Firefox en pause et regagner la
+main sur ton shell.</p>
+<pre><code class="language-sh">...
+ctrl+z
+zsh: suspended  firefox
+$
+</code></pre>
+<p>Selon le shell que tu utilises, tu peux avoir un message sensiblement différent.</p>
+<p>Tu vas maintenant démarrer vlc  et gimp et pareil, exécuter <strong>ctrl+z</strong> pour
+reprendre la main à chaque fois.</p>
+<pre><code class="language-sh">$ vlc
+...
+ctrl+z
+zsh: suspended  vlc
+$ gimp
+...
+ctrl+z
+zsh: suspended gimp
+$
+</code></pre>
+<p>Exécute la commande <strong>jobs</strong> pour voir l'état des jobs (processus) démarrés par
+ton shell.</p>
+<pre><code class="language-sh">$ jobs
+[1]    suspended  firefox
+[2]  - suspended  vlc
+[3]  + suspended  gimp
+$
+</code></pre>
+<p>Tu as ta liste de jobs avec des identifiants. Le signe '-' est l'avant-dernier
+jobs que tu as suspendu, et le signe '+' et le dernier jobs que tu as suspendu.</p>
+<p>Si tu veux remettre un job en <strong>foreground</strong>, c'est à dire que tu relances son
+exécution en lui laisant la main sur ton shell, utilise <strong>fg %IDENTIFIANT</strong> en
+remplaçant <strong>IDENTIFIANT</strong> par le numéro du job.</p>
+<pre><code class="language-sh">$ fg %1 # firefox est réexécuté et on perd la main sur le shell
+...
+ctrl+z
+</code></pre>
+<p>Si tu veux mettre un job en <strong>background</strong>, c'est à dire que tu relances son
+exécution tout en gardant la main sur ton shell, utilise <strong>bg %IDENTIFIANT</strong> en
+remplaçant <strong>IDENTIFIANT</strong> par le numéro du job.</p>
+<pre><code class="language-sh">$ fg %1
+$ # firefox reprend son exécution et on garde la main sur le shell
+</code></pre>
+<p>Pour arrêter un job, utilise la commande <strong>kill %IDENTIFIANT</strong> en remplaçant
+<strong>IDENTIFIANT</strong> par le numéro du job.</p>
+<pre><code class="language-sh">kill %1
+[1]  + terminated  firefox
+$
+</code></pre>
+<p>Enfin, si tu veux lancer un processus en arrière-plan directement depuis ton
+shell, ajoute le caractère <strong>esperluette</strong> '&amp;' à la fin de ta commande.</p>
+<pre><code class="language-sh">$ vlc  &amp;
+[1] 22258
+$
+</code></pre>
+<p>Le nombre affiché est le numéro du processus dans le système, il est plus que
+probable que tu n'aies pas le même. Tu peux retrouver le nom d'un processus avec
+son identidiant et la commande <strong>ps</strong>.</p>
+<pre><code class="language-sh">$ ps -p 22258
+    PID TTY          TIME CMD
+  22258 pts/0    00:00:00 vlc
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="scripts"><a class="header" href="#scripts">Scripts</a></h1>
+<p>Voici un gros chapitre, l'introduction aux scripts shell !</p>
+<p>On va voir ici comment créer un fichier script, comment l'exécuter et afficher
+les paramètres qu'on lui donne. Les prochaines chapitres étofferont petit à
+petit ce que tu peux faire par le script.</p>
+<p>En définition, un script shell, c'est juste un fichier avec des commandes
+shells. En exécutant le fichier, tu exécuteras les commandes dedans.</p>
+<p>En réalité, quand tu exécutes ton shell au clavier, il ne fait pas de différence
+avec un fichier script. Il est juste en attente de la prochaine ligne à lire et
+attend la fin de fichier (que tu peux envoyer avec la combinaison <strong>ctrl+d</strong>, ce
+qui fermera ton shell).</p>
+<p>Ce qui fait que tout ce que tu vas voir à partir d'ici est possible à exécuter
+dans ton terminal.</p>
+<p>Voici le minimum d'un script shell :</p>
+<pre><code>#!/bin/sh
+</code></pre>
+<p>C'est un commentaire particulier qui indique quel interpréteur utiliser. Par
+habtiude on utilise <strong>/bin/sh</strong> car c'est un interpréteur présent sur tous les
+systèmes Linux. Plus rarement tu verras <strong>/bin/bash</strong> car ce dernier a des
+extensions que n'a pas <strong>sh</strong>. Evite de mettre <strong>zsh</strong> à moins de réellement
+utiliser une fonctionnalité qui n'est pas présente sur <strong>sh</strong>, car tous les
+systèmes n'ont pas <strong>zsh</strong> installés.</p>
+<p>Pour rendre exécutable ton script, tu peux calculer les valeurs qui vont bien
+avec <strong>chmod</strong>, ou aller plus vite en exécutant cette commande :</p>
+<pre><code class="language-sh">$ chmod +x script.sh
+</code></pre>
+<p>Et maintenant pour l'exécuter :</p>
+<pre><code class="language-sh">$ ./script.sh
+</code></pre>
+<p>Voilà. Ton script ne fait pas encore grand chose.</p>
+<p>Pour information, je vais écrire un énorme script, mais ne t'inquiète pas, il
+est <strong>commenté</strong> pour que tu comprennes ce que fait le script. Je donnerai
+ensuite des exemples d'exécution pour que tu voies les différences.</p>
+<p>Avant de montrer le script, je dois te présenter une nouvelle commande :
+<strong>echo</strong>. Elle affiche ce que tu lui donnes en paramètre sur <strong>stdout</strong>.</p>
+<pre><code class="language-sh">$ echo Coucou les amis !
+Coucou les amis !
+$
+</code></pre>
+<p>Ce ne te semble pas utile pour le moment, mais ça va vite changer.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+# Afficher la façon dont on exécute le script
+echo $0
+
+# Afficher le nombre d'argument
+echo $#
+
+# Afficher le 1er argument
+echo $1
+
+# Afficher le 2eme argument
+echo $2
+
+# Afficher le 9eme argument
+echo $9
+
+# Afficher le 10ème argument
+echo ${10}
+
+# Afficher la liste des arguments avec *
+echo $*
+
+# Afficher la liste des arguments avec @
+echo $@
+</code></pre>
+<p>Ce que tu vois ici sont des variables spéciales. Elles sont en lien avec le
+script et auront des valeurs différentes selon comment tu exécutes le script.</p>
+<p>Exécute le script avec ces paramètres et regarde ce qu'il se passe.</p>
+<pre><code class="language-sh">$ ./script.sh
+...
+$ ./script.sh toto
+...
+$ ./script.sh toto tata titi tutu
+...
+$ ./script.sh toto 'tata titi' tutu
+...
+$ ./script.sh toto "tata titi" tutu
+...
+$ ./script.sh je vais toucher le 10eme argument juste pour voir qu il s affiche bien
+...
+$
+</code></pre>
+<p>Tu comprendras la différence entre les deux dernières variables plus tard.</p>
+<h2 id="exit-status"><a class="header" href="#exit-status">Exit status</a></h2>
+<p>Tu peux appeler n'importe quel programme dans ton script, comme dans ton
+terminal.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+ls $1
+mkdir ventre
+touch ventre/gateau
+ls -l ventre
+</code></pre>
+<p>Tu te rappelles des flux standards de sortie et d'erreur ? En plus de ça, il y a
+un autre moyen de voir si un script s'est bien exécuté ou non. En utilisant la
+variable <strong>exit status</strong>. C'est une variable spéciale qui recevra le code de
+sortie d'un programme.</p>
+<p>Habituellement, on dit en informatique que 0 est Faux et que 1 est Vrai. En
+shell c'est l'inverse. 0 est Vrai et ce qui n'est pas 0 est Faux. Un programme
+peut renvoyer 256 codes d'erreurs différents, allant de 0 à 255.</p>
+<p>Donc, on peut dire que Vrai est compris dans l'intervalle [0] et que Faux est
+compris dans l'intervalle [1;255].</p>
+<p>Pour voir le code de retour d'un programme, utilise la variable <strong>$?</strong>. Elle
+aussi le code de retour de la dernière commande exécutée.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+touch fichier_existant
+ls fichier_existant
+echo exit_status: $?
+
+ls fichier_nonexistant
+echo exit_status: $?
+</code></pre>
+<pre><code class="language-text">$ ./script.sh
+fichier_existant
+exit_status: 0
+ls: cannot access 'fichier_nonexistant': No such file or directory
+exit_status: 2
+</code></pre>
+<p>Tu peux voir que <strong>ls</strong> retourne <strong>2</strong> quand il ne trouve pas un fichier.</p>
+<p>Je t'invite à lire le <strong>man 1 ls</strong> dans la section <strong>Exit status</strong>, tout est
+documenté dedans.</p>
+<p>Je t'invite à faire ça pour chaque programme que tu connais.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="variables"><a class="header" href="#variables">Variables</a></h1>
+<p>Les variables sont des <em>mots</em> qui vont avoir une <em>valeur</em>.</p>
+<p>Tu peux définir une variable ainsi :</p>
+<pre><code class="language-sh">#!/bin/sh
+
+variable=valeur
+</code></pre>
+<p>Attention, il faut <strong>absolument</strong> que le signe égal '=' n'ait pas d'espace
+autour de lui. Tout doit être collé.</p>
+<p>Pour utiliser sa valeur, tu vas coller le signe dollar '$' devant le nom de
+cette variable.</p>
+<p>Pour afficher une variable, tu peux utiliser <strong>echo</strong>.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+variable=valeur
+nombre=42
+echo Ma variable variable a comme valeur $variable
+echo Mon nombre est $nombre
+</code></pre>
+<p>Si tu veux concaténer deux variables ensembles, tu peux utiliser les accolades
+pour bien les séparer. Tu peux même en construire de nouvelles comme ça.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+prenom=gel
+nom_famille=ules
+login=${prenom}${nom_famille}
+domain=pediluve.info
+mail=${login}@${domain}
+
+echo Mon mail est $mail # L'adresse n'existe pas, pas la peine d'essayer
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mathématiques"><a class="header" href="#mathématiques">Mathématiques</a></h1>
+<p>C'est parti pour faire un peu de mathématique.</p>
+<p>Maintenant que tu sais utiliser des variables, tu vas pouvoir effectuer des
+opérations mathématiques avec.</p>
+<p>Tu peux faire toute opération mathématique dans des doubles parenthèses
+précédées d'un signe dollar '$'.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+echo $((11 + 21))
+
+a=42
+b=666
+
+echo $((a * b))
+
+c=$((a + b * 11))
+echo $c
+</code></pre>
+<p>Si tu mets une variale qui n'est pas un nombre, elle sera remplacée par 0.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="variables-denvironnement"><a class="header" href="#variables-denvironnement">Variables d'environnement</a></h1>
+<p>Les variables d'environnement sont des variables initialisées au lancement de
+ton shell.</p>
+<p>Tu peux les avoir avec cette commande :</p>
+<pre><code class="language-sh">$ env
+</code></pre>
+<p>Voici les variables que tu utiliseras le plus :</p>
+<p>Tu peux connaitre le shell exécuté avec la variable <strong>$SHELL</strong></p>
+<pre><code class="language-sh">$ echo $SHELL
+</code></pre>
+<p>Tu peux connaitre le nom d'utilisateur avec la variable $USER</p>
+<pre><code class="language-sh">$ echo $USER
+</code></pre>
+<p>Tu peux connaitre le chemin vers le <strong>HOME</strong> de l'utilisateur avec la variable
+<strong>HOME</strong></p>
+<pre><code class="language-sh">$ echo $HOME
+</code></pre>
+<p>Tu peux connaitre le répertoire courant avec la variable <strong>$PWD</strong> et le
+répertoire courant précédent avec la variable <strong>$OLDPWD</strong></p>
+<pre><code class="language-sh">echo $PWD
+...
+echo $OLDPWD
+...
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="path"><a class="header" href="#path">PATH</a></h1>
+<p>La variable d'environnement <strong>PATH</strong> est une variable particulière. C'est la
+variable qui permet à ton shell de trouver les programmes à exécuter.</p>
+<p>Si je prends en exemple mon <strong>PATH</strong></p>
+<pre><code class="language-sh">$ echo $PATH
+/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/home/gelules/.local/bin/:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/gelules/.local/bin
+</code></pre>
+<p>Je peux voir que le 1er répertoire vérifié est <strong>/usr/local/bin</strong>, puis
+<strong>/usr/bin</strong>, et ainsi de suite.</p>
+<p>On va faire un petit jeu.</p>
+<p>Crée le répertoire <strong>/tmp/test/</strong> et <strong>cd</strong> dedans.</p>
+<pre><code class="language-sh">$ mkdir /tmp/test
+$ cd /tmp/test
+</code></pre>
+<p>Crée le fichier avec ton éditeur et ajoute la ligne suivante dedans :</p>
+<pre><code class="language-sh">$ vim firefox
+#!/bin/sh
+
+echo Et non, je ne suis pas Firefox
+</code></pre>
+<p>Rends le exécutable.</p>
+<pre><code class="language-sh">$ chmod +x firefox
+</code></pre>
+<p>On va mettre la variable d'environnement PATH à jour. Elle ne le sera que pour
+ton shell actuel, les futurs shells ne seront pas impactés.</p>
+<pre><code class="language-sh">$ PATH=/tmp/test:$PATH
+$ firefox
+Et non, je ne suis pas Firefox
+$
+</code></pre>
+<p>Tu peux voir que ton shell trouve d'abord le fichier <strong>firefox</strong> que tu viens de
+créer.</p>
+<p>Tu peux voir quel programme ton shell trouvera avec la commande <strong>which</strong>.</p>
+<pre><code class="language-sh">$ which firefox
+/tmp/test/firefox
+$
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="quotting"><a class="header" href="#quotting">Quotting</a></h1>
+<p>Le quotting est la façon de formater du texte. Tu te rappelles de la commande
+<strong>echo</strong> qui affiche du texte sur <strong>stdout</strong> mais qui peut aussi afficher des
+variables.</p>
+<h2 id="simple-quote"><a class="header" href="#simple-quote">Simple quote</a></h2>
+<p>La simple quote te permet d'afficher du texte sans qu'il ne soit évalué. Ca
+veut dire que tu peux afficher le nom d'une variable sans qu'elle soit remplacée
+par sa valeur.</p>
+<pre><code class="language-sh">$ cat script.sh
+#!/bin/sh
+
+nom=gelules
+echo 'Mon nom est $nom'
+$ ./script.sh
+Mon nom est $nom
+$
+</code></pre>
+<p>Comme tu peux le voir, mettre du texte entre simple quote affiche le texte tel
+qu'écrit dans le script, sans être évalué par le shell.</p>
+<h2 id="double-quote"><a class="header" href="#double-quote">Double quote</a></h2>
+<p>Le double quote te permet de visuellement savoir où commence et où termine ton
+texte, le shell qui sera dedans sera évalué. Avec <strong>echo</strong>, c'est comme ne pas
+mettre de quotes, mais tu te repères plus facilement à la lecture de ton script.</p>
+<pre><code class="language-sh">$ cat script.sh
+#!/bin/sh
+
+nom=gelules
+echo "Mon nom est $nom"
+$ ./script.sh
+Mon nom est gelules
+$
+</code></pre>
+<h2 id="escape"><a class="header" href="#escape">Escape</a></h2>
+<p>Une question t'a peut-être traversé l'esprit : Comment afficher une simple quote
+ou une double quote sans qu'elle ne soit comprise comme un début ou fin de texte
+? Ou même afficher le signe dollar '$' sans utiliser de simple quote ?</p>
+<p>Tu peux <strong>échapper</strong> un caractère spécial avec l'antislash.</p>
+<pre><code class="language-sh">$ cat script.sh
+#!/bin/sh
+
+echo Voici un dollar : \$
+echo Voici un simple quote : \'
+echo Voici un double quote : \"
+echo Voici un antislash: \\
+$ ./script.sh
+Voici un dollar : $
+Voici un simple quote : '
+Voici un double quote : "
+Voici un antislash: \
+$
+</code></pre>
+<p>Entre simple quote, tu peux afficher sans problème un double quote. Pareil
+inversement, tu peux entre double quote afficher un simple quote.</p>
+<pre><code class="language-sh">$ cat script.sh
+#!/bin/sh
+
+echo "Voici un double quote entre double quote =&gt; \" &lt;= pas mal hein ?"
+echo 'Voici un double quote entre simple quote =&gt; " &lt;= pas mal hein ?'
+echo "Voici un simple quote entre double quote =&gt; ' &lt;= pas mal hein ?"
+</code></pre>
+<pre><code class="language-text">$ ./script.sh
+Voici un double quote entre double quote =&gt; " &lt;= pas mal hein ?
+Voici un double quote entre simple quote =&gt; " &lt;= pas mal hein ?
+Voici un simple quote entre double quote =&gt; ' &lt;= pas mal hein ?
+$
+</code></pre>
+<p>Tu ne peux en revanche rien échapper entre simple quote. Donc pas de simple
+quote entre simple quote. Mais tu peux arrêter ton simple quote en plein milieu
+de ton appel à <strong>echo</strong>, échapper la simple quote et reprendre en simple quote
+juste après.</p>
+<pre><code class="language-sh">$ cat script.sh
+#!/bin/sh
+
+echo 'Je fais presque tout en simple quote, en voici une =&gt;' \' '&lt;= pas mal hein ?'
+</code></pre>
+<pre><code class="language-text">$ ./script.sh
+Je fais presque tout en simple quote, en voici une =&gt; ' &lt;= pas mal hein ?
+$
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tests-et-conditions"><a class="header" href="#tests-et-conditions">Tests et conditions</a></h1>
+<p>Tu sais récupérer les variables envoyées en paramètres à ton script, tu sais en
+créer, tu sais faire un peu de maths et afficher toutes ces variables. C'est
+bien. Mais que dirais-tu de rendre tes scripts un peu plus vivants ? D'avoir des
+exécutions différentes selon ce que tu envoies en paramètres ? C'est déjà plus
+intéressant.</p>
+<h2 id="conditions"><a class="header" href="#conditions">Conditions</a></h2>
+<p>Une condition en shell est un test qui va renvoyer Vrai ou Faux. Si c'est Vrai,
+alors le script va emprunter un chemin d'exécution, si c'est Faux, alors le
+script va emprunter un autre chemin d'exécution.</p>
+<h1 id="test"><a class="header" href="#test">Test</a></h1>
+<p>Tu peux tester plusieurs choses en shell : les nombres, les chaînes de
+caractères, l'existence de fichier, les exécutions d'autres programmes.</p>
+<p>Je t'invite à lire le <strong>man 1 test</strong> qui liste tous les tests possibles.</p>
+<p>Comme tu peux le vois, on peut combiner les tests avec les portes logiques
+<strong>AND</strong> et <strong>OR</strong>.</p>
+<p>Par exemple pour tester une chaîne de caractères, tu utilises le test</p>
+<pre><code class="language-sh">[ chaine1 = chaine2 ]
+</code></pre>
+<p>Ce test renverra Faux.</p>
+<p>Attention à bien laisser des ESPACES ' ' entre le signe '$' et à côté des
+crochets '[' et ']'. Si tu ne laisses pas d'espaces, le shell ne comprendra pas
+que c'est un test et boguera.</p>
+<h3 id="protection"><a class="header" href="#protection">Protection</a></h3>
+<p>Avant de montrer des exemples, je dois te montrer une technique de protection
+des scripts pour éviter des crashs embêtants.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+mot_de_passe=$1
+
+if [ $mot_de_passe = "pediluve" ]
+then
+    echo "Ouverture de la porte secrète"
+else
+    echo "Mauvais mot de passe"
+fi
+</code></pre>
+<p>Exécute ce script sans lui envoyer de paramètre.</p>
+<pre><code class="language-text">$ ./script.sh
+./script.sh: line 5: [: =: unary operator expected
+Mauvais mot de passe
+$
+</code></pre>
+<p>Que s'est-il passé ?</p>
+<p>La variable n'a pas de valeur, le shell a donc lu la ligne avec le test
+littéralement de cette manière :</p>
+<pre><code class="language-sh">if [ = "pediluve" ]
+</code></pre>
+<p>Ceci n'est pas du shell valide. Il faut une valeur avant le signe '='.</p>
+<p>Tu peux protéger ta variable en lui mettant des double quotes.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+mot_de_passe=$1
+
+if [ "$mot_de_passe" = "pediluve" ]
+then
+    echo "Ouverture de la porte secrète"
+else
+    echo "Mauvais mot de passe"
+fi
+</code></pre>
+<p>Si tu exécutes le script sans paramètre, voici ce que le shell lit.</p>
+<pre><code class="language-sh">if [ "" = "pediluve" ]
+</code></pre>
+<p>Le shell comprend alors qu'il teste une chaîne de caractères vide avec
+"pediluve".</p>
+<h2 id="exemples"><a class="header" href="#exemples">Exemples</a></h2>
+<h3 id="if-elif-else"><a class="header" href="#if-elif-else">if elif else</a></h3>
+<p>Avant de te montrer de réels exemples, tu vas apprendre à enchainer les tests.</p>
+<p><strong>if</strong> sert à tester une ou plusieurs conditions. Si tout est <strong>Vrai</strong>, alors le
+code qui suit sera exécuté.</p>
+<p><strong>elif</strong> est la concaténation de <strong>else if</strong>. Il faut aussi mettre une
+condition, et si la condition est <strong>Vraie</strong>, alors le code qui suit sera
+exécuté. Tu peux enchainer autant de <strong>elif</strong> que tu veux. Tu n'es pas obligé
+d'utiliser <strong>elif</strong> quand tu fais des tests.</p>
+<p><strong>else</strong> contient du code qui sera exécuté si tous les tests précédents étaient
+<strong>Faux</strong>. Il ne faut pas lui mettre de test.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+# Si le code secret n'est pas bon
+# on écrit sur stderr que le code est faux
+# et on quitte le script avec l'exit status 1
+if [ "$1" != "super_mot_de_passe" ]
+then
+    echo "Mauvais mot de passe" &gt;&amp;2
+    exit 1
+fi
+
+if [ "$2" = "gelules" ]
+then
+    echo "Bonjour maitre"
+elif [ "$2" = "pediluvien" ]
+then
+    echo "Bonjour jeune apprenti"
+elif [ "$2" = "piscinien" ]
+then
+    echo "Bonjour, tu viens te rafraichir la mémoire ?"
+else
+    echo "Tu m'es inconnu"
+fi
+</code></pre>
+<h3 id="petit-jeu-vidéo"><a class="header" href="#petit-jeu-vidéo">Petit jeu vidéo</a></h3>
+<p>Pour apprendre à faire des tests, au lieu de t'énumérer tous les tests
+possibles, je préfère te montrer plein d'exemples différents. A toi ensuite de
+lire le <strong>man 1 test</strong> pour compléter tes connaissances.</p>
+<p>Imaginons que tu codes un petit jeu vidéo en shell.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+# Si le nombre d'arguments n'est pas 2
+if [ $# -ne 2 ]
+then
+    echo "Usage: $0 LOGIN SALLE_DE_TP" &gt;&amp;2
+    exit 1
+fi
+
+login=$1
+tp=$2
+save_file=sauvegarde.txt
+
+# Si le fichier de sauvegarde n'existe pas et que c'est bien un pédiluvien qui
+# joue au jeu, on crée le fichier de sauvegarde
+if [ ! -f "$save_file" ] -a [ "$login" != "gelules" ]
+then
+    touch "$save_file"
+fi
+
+# Exception pour le maitre de jeu
+if [ "$login" = "gelules" ]
+then
+    echo "TP gelules dans 'salle secrète'" &gt;&gt; "gelules_sauvegarde.txt"
+    exit
+fi
+
+if [ "$tp" = "donjon" ]
+then
+    echo "TP $login dans 'donjon'" &gt;&gt; "$save_file"
+    exit
+elif [ "$tp" = "tour" ]
+then
+    echo "TP $login dans 'tour'" &gt;&gt; "$save_file"
+    exit
+elif [ "$tp" = "chambre" ]
+then
+    echo "TP $login dans 'chambre'" &gt;&gt; "$save_file"
+    exit
+else
+    echo "Mauvaise TP" &gt;&amp;2
+    exit 1
+fi
+</code></pre>
+<p>Je te laisse essayer le script.</p>
+<p>Il n'est pas optimisé du tout. Comme tu peux le voir, il y a du code qui se
+répète. On retrouve beaucoup de fois</p>
+<pre><code class="language-sh">    echo "TP $login dans 'LIEU'" &gt;&gt; "$save_file"
+</code></pre>
+<p>mais c'est un problème pour plus tard. Pour l'instant il faut que tu apprennes à
+jouer avec les tests.</p>
+<p>Je t'invite à regarder plus en détail comment tester les nombres. Dans mon
+exemple je teste si le nombre d'argument est <strong>N</strong>ot <strong>E</strong>qual à 2. Mais tu peux
+tester une égalité, si le nombre est strictement inférieur ou inférieur ou égal,
+et pareil avec la supériorité.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="boucles"><a class="header" href="#boucles">Boucles</a></h1>
+<p>Les boucles sont un moyen de répéter une séquence de code autant de fois que
+nécessaire.</p>
+<p>Imagine que tu veuilles créer les fichiers day_0.txt day_1.txt day_2.txt etc.
+jusqu'à day_10.txt. Tu ne vas quand même pas écrire les noms de ces 11 fichiers
+dans ton script ?</p>
+<h2 id="while"><a class="header" href="#while">while</a></h2>
+<p><strong>while</strong> a une iou plusieurs conditions, et le code de la condition sera
+répété tant que la condition est <strong>Vraie</strong>.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+i=0
+while [ i -le 10 ]
+do
+    touch day_${i}.txt
+    i=$((i + 1))
+done
+</code></pre>
+<p>Ce code va créer la liste des fichiers day_0.txt jusqu'à day_10.txt.</p>
+<p>Essaie maintenant de modifier le script pour le rendre plus modulable. Tu dois
+utiliser des arguments pour :</p>
+<ul>
+<li>Avoir un nom de fichier différent que day</li>
+<li>Partir d'un nombre de départ différent que 0</li>
+<li>Finir à un nombre différent que 10. Attention, le nombre de fin doit être
+strictement supérieur que le nombre de départ</li>
+<li>Avoir une extension différent que txt</li>
+</ul>
+<p>Voici un exemple de corrigé :</p>
+<pre><code class="language-sh">#!/bin/sh
+
+if [ $# -ne 4 ]
+then
+    echo "Usage: $0 FILENAME START STOP EXTENSION" &gt;&amp;2
+    exit 1
+fi
+
+if [ "$3" -le "$2" ]
+then
+    echo "Le nombre de départ doit être strictement supérieur que le nombre de fin" &gt;&amp;2
+    exit 1
+fi
+
+filename=$1
+start=$2
+stop=$3
+extension=$4
+
+while [ "$start" -le "$stop" ]
+do
+    touch "${filename}_${start}.${extension}"
+    start=$((start + 1))
+done
+</code></pre>
+<p>On peut tester l'environnement du système. Par exemple, tant qu'un répertoire
+n'existe pas, on boucle sur un message d'erreur.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+while [ ! -d ventre ]
+do
+    echo "Le répertoire 'ventre' n'existe pas"
+done
+
+touch ventre/gateau_chocolat
+touch ventre/gateau_caramel
+touch ventre/gateau_vanille
+touch ventre/gateau_pistache
+
+echo "Burp"
+</code></pre>
+<p>Il faut utiliser un deuxième shell pour créer le répertoire.</p>
+<h3 id="lire-un-fichier-ligne-par-ligne"><a class="header" href="#lire-un-fichier-ligne-par-ligne">Lire un fichier ligne par ligne</a></h3>
+<p>Il est possible de lire un fichier ligne par ligne avec une boucle while.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+if [ ! -f input_file ]
+then
+    echo "input_file n'existe pas" &gt;&amp;2
+    exit 1
+fi
+
+while read line
+do
+    echo "La ligne est: $line"
+done &lt; input_file
+</code></pre>
+<p>Evidemment, tu peux remplacer <strong>input_file</strong> par un paramètre.</p>
+<h2 id="until"><a class="header" href="#until">until</a></h2>
+<p><strong>until</strong> est exactement la même chose que <strong>while</strong>, à la différence que le
+code exécuté est répété tant que la condition est <strong>Fausse</strong>. Plus exactement,
+<strong>jusqu'à</strong> ce qu'elle soit <strong>Vraie</strong>.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+i=0
+
+# Tant que i n'égale pas 10, on exécute le code de la boucle
+until [ $i -eq 10 ]
+do
+    echo $i
+    i=$((i + 1))
+done
+</code></pre>
+<h2 id="for"><a class="header" href="#for">for</a></h2>
+<p><strong>for</strong> sert à boucler sur une séquence. Avec un point de départ, un point de
+fin.</p>
+<p>Tu peux boucler sur un ensemble d'éléments, ou une séquence de nombres.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+for element in je suis un sequence
+do
+    echo $element
+done
+</code></pre>
+<p>Tu peux boucler sur des séquences générées en pure shell.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+for element in {a..z}
+do
+    echo $element
+done
+</code></pre>
+<p>Pour les nombres il y a une différence. Je te laisse tester toutes ces
+différences :</p>
+<pre><code class="language-sh">#!/bin/sh
+
+# De 1 à 20 par pas de 1
+for nombre in {1..20}
+do
+    echo $nombre
+done
+
+# De 1 à 20 par pas de 4
+for nombre in {1..20..4}
+do
+    echo $nombre
+done
+
+# De 20 à 1 par pas de 1
+for nombre in {20..1}
+do
+    echo $nombre
+done
+
+# De 20 à 1 par pas de 6
+for nombre in {20..1..6}
+do
+    echo $nombre
+done
+</code></pre>
+<p>Tu peux aussi boucler sur les paramètres. Tu vas ici comprendre la différence
+entre <strong>$@</strong> et <strong>$</strong>*</p>
+<p>Teste les scripts avec au moins deux paramètres.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+for arg in $@
+do
+    echo $arg
+done
+</code></pre>
+<pre><code class="language-sh">#!/bin/sh
+
+for arg in $*
+do
+    echo $arg
+done
+</code></pre>
+<p>Jusqu'ici, aucune différence. Ajoute maintenant les variables entre double
+quotes.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+for arg in "$@"
+do
+    echo $arg
+done
+</code></pre>
+<pre><code class="language-sh">#!/bin/sh
+
+for arg in "$*"
+do
+    echo $arg
+done
+</code></pre>
+<p>Tu peux maintenant voir la différence. <strong>$@</strong> reste une liste alors que <strong>$*</strong>
+devient un seul argument.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="git"><a class="header" href="#git">Git</a></h1>
+<p>Git est un outil de versionnage. Il te permet de sauvegarder un état d'un projet
+à n'importe quel moment, et de revenir à cet état quand tu le souhaites.</p>
+<p>Voici un petit glossaire au vocabulaire de git.</p>
+<ul>
+<li>repository (repo) : un dépôt local de travail dirigé par git</li>
+<li>remote : un dépôt distant de travail dirigé par git</li>
+<li>commit : acte de sauvegarder l'état du projet</li>
+<li>revision : un point de sauvegarde (qui a été commit)</li>
+<li>push : pousser le projet du repo local à la remote</li>
+<li>pull : tirer le projet de la remote au repo local</li>
+<li>HEAD : nom donné à la dernière révision du projet</li>
+<li>changeset (ou SHA-1) : idenfiant unique d'une révision</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="commandes-de-bases"><a class="header" href="#commandes-de-bases">Commandes de bases</a></h1>
+<p>Tu vas effectuer quelques commandes de bases pour mieux appréhender Git. Rien de
+spectaculaire mais tu sauras faire le minimum.</p>
+<h2 id="init"><a class="header" href="#init">init</a></h2>
+<p>Avant de jouer avec git, il faut initier le dépôt local.</p>
+<h3 id="gitconfig"><a class="header" href="#gitconfig">gitconfig</a></h3>
+<p>Avant d'initier un dépôt local, il faut configurer git avec au moins deux
+informations : ton nom et ton mail.</p>
+<p>Pour ça, tu vas créer un fichier <strong>.gitconfig</strong> dans ton <strong>HOME</strong> et le remplir
+ainsi :</p>
+<pre><code class="language-text">$ cat ~/.gitconfig
+[user]
+    name = Gélules
+    email = gelules@gelules.gelules
+$
+</code></pre>
+<p>Evidemment, change les informations avec les tiennes.</p>
+<p>Ces informations seront utiles pour savoir qui a créé quel commit.</p>
+<pre><code class="language-sh">$ mkdir projet
+$ cd projet
+$ git init
+</code></pre>
+<p>Voilà, le répertoire <strong>projet</strong> est prêt à utiliser git.</p>
+<p>Comment ça fonctionne ? Git crée en secret un répertoire caché qu'il utilise
+pour suivre l'état du projet.</p>
+<pre><code class="language-sh">$ ls -l .git
+...
+$
+</code></pre>
+<h2 id="status"><a class="header" href="#status">status</a></h2>
+<p><strong>git status</strong> est une commande fondamentale. Elle te permet de savoir où tu en
+es dans ton travail.</p>
+<p>Si tu le fais dans un répertoire vide, la commande te répondera qu'il n'y a rien
+à commit, et qu'il faut utiliser <strong>git add</strong> pour commencer à suivre les
+fichiers.</p>
+<h2 id="add"><a class="header" href="#add">add</a></h2>
+<p>Tu vas créer deux fichiers, <strong>README</strong> et <strong>file_creator.sh</strong>. Pour l'instant
+ils seront vides.</p>
+<pre><code class="language-sh">$ touch README file_creator.sh
+$ git status
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+	README
+	file_creator.sh
+$ git add README file_creator.sh
+$ git status
+Changes to be committed:
+  (use "git rm --cached &lt;file&gt;..." to unstage)
+	new file:   README
+	new file:   file_creator.sh
+$
+</code></pre>
+<p>Tes fichiers sont prêts à être commités.</p>
+<h2 id="commit"><a class="header" href="#commit">commit</a></h2>
+<p>Pour créer un commit, il faut penser d'abord réfléchir à un message de commit
+<strong>intelligent</strong>. Le tout premier est en <em>général</em> un simple <strong>initial commit</strong>.
+Les prochains seront plus réfléchis selon le projet que tu effectues.</p>
+<pre><code class="language-sh">$ git commit -m "initial commit"
+[master (root-commit) 8a87f72] initial commit
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README
+ create mode 100644 file_creator.sh
+$
+</code></pre>
+<p>Tu as crées ton premier commit. Bravo !</p>
+<p>Tu peux lire ici que c'est le <em>root-commit</em>, le tout premier du projet, et que
+son changeset est <em>8a87f72</em>, et que 2 fichiers ont été créés avec les
+permissions <em>644</em>.</p>
+<p>Il est plus que probable que tu n'aies pas le même SHA-1. C'est normal.</p>
+<p>A savoir : Git ne traque que la permission d'exécution. Si un fichier est
+exécutable en local, il le sera aussi sur la remote.</p>
+<h2 id="log"><a class="header" href="#log">log</a></h2>
+<p>Maintenant que tu as crée ton premier commit, tu peux voir les logs du projet
+évoluer avec la commande <strong>git log</strong>.</p>
+<pre><code class="language-sh">$ git log
+commit 8a87f728e30904f1cd837fd3ca2d4f17d11c0e58 (HEAD -&gt; master)
+Author: Gélules &lt;gelules@gelules.gelules&gt;
+Date:   Sun Jul 21 22:15:07 2024 +0200
+
+    initial commit
+$
+</code></pre>
+<h2 id="on-continue-le-projet-sur-github"><a class="header" href="#on-continue-le-projet-sur-github">On continue le projet sur Github</a></h2>
+<p>Dans la prochaine section, tu vas apprendre à créer un dépôt sur Github, à créer
+des clés SSH pour garantir la sécurité de push et pull entre ton dépôt local et
+la remote de GitHub et tu vas travailler ton projet que tu <strong>pusheras</strong> sur
+GitHub pour voir l'évolution.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cas-pratique-avec-github"><a class="header" href="#cas-pratique-avec-github">Cas pratique avec GitHub</a></h1>
+<p>Le but de git, c'est de sauvegarder chaque nouvelle fonctionnalité de ton projet
+dans un commit. Des que tu ajoutes quelque chose, que tu l'as testé et qu'il
+fonctionne, alors tu fais un commit.</p>
+<p>Et si tu utilises une remote, alors tu veux en plus <strong>pousser</strong> tes sauvegardes
+dessus.</p>
+<p>Tu vas ici apprendre à utiliser git avec GitHub.</p>
+<h2 id="création-du-compte"><a class="header" href="#création-du-compte">Création du compte</a></h2>
+<p>Tout d'abord, crée un compte sur <a href="https://github.com">GitHub</a></p>
+<h2 id="clés-ssh"><a class="header" href="#clés-ssh">Clés SSH</a></h2>
+<p>Pour que tu puisses utiliser ton dépôt, tu dois créer des clés SSH. Tu vas créer
+deux clés, une clé privée, qui comme son nom l'indique doit rester privée, et
+une clé publique, que tu peux montrer à tout le monde.</p>
+<p>Quand tu installeras ta clé publique sur GitHub, il y aura une opération
+cryptographique entre ta clé privée et la clé publique pour assurer que tu as
+les droits de pousser ton travail sur GitHub.</p>
+<p>Ca semble compliqué dit comme ça, ne t'inquiète pas, tout est transparant pour
+toi, tu n'auras rien à faire une fois que tout est installé.</p>
+<p>Va dans ton <strong>HOME</strong> et crée le répertoire <strong>.ssh</strong>. Dedans, crée les clés SSH.</p>
+<pre><code class="language-sh">$ cd
+$ mkdir .ssh
+$ cd .ssh
+$ ssh-keygen -t ed25519
+</code></pre>
+<p>Là, un prompt te demande comment tu veux appeler ta clé. Appelle la <strong>github</strong>.</p>
+<p>Ensuite, un prompt te demande si tu veux mettre un mot de passe à ta clé. C'est
+une sécurité en plus. A chaque fois que tu feras appel à cette clé pour faire
+une connexion avec la remote de GitHub, tu devras rentrer ce mot de passe.</p>
+<p>Met un mot de passe si tu veux.</p>
+<p><strong>ATTENTION</strong>, si tu veux absolument mettre un mot de passe, alors je te
+conseille de changer la génération de tes clés avec cette commande</p>
+<pre><code class="language-sh">$ ssh-keygen -t ed25519 -a 100
+</code></pre>
+<p>La différence est qu'il y aura une centaine de passages sur ta clé avec un
+chiffrement particulier. Par défaut la valeur est 16. 100 est une assez bonne
+valeur pour augmenter la robustesse de la clé si quelqu'un te la vole et tente
+de casser le mot de passe avec une attaque bruteforce sans que ça ralentisse
+trop les vérifications de mot de passe à chaque utilisation de la clé.</p>
+<p>Maintenant que tu as crées les clés, tu vas créer dans le répertoire ~/.ssh/ le
+fichier config que tu vas configurer pour la connexion à GitHub.</p>
+<pre><code class="language-text">$ cat ~/.ssh/config
+Host github.com
+    Hostname github.com
+    User git
+    IdentityFile ~/.ssh/github
+$
+</code></pre>
+<p>Laisse <strong>git</strong> dans la partie <strong>User</strong>.</p>
+<p>Tu as deux clés. <strong>github</strong> et <strong>github.pub</strong>. La première est la clé privée, la
+seconde la clé publique.</p>
+<p>Dans GitHub, dirige toi dans <a href="https://github.com/settings/keys">Settings &gt; Access &gt; SSH and GPG keys</a></p>
+<p>Clique sur <strong>New SSH key</strong>. Donne lui un nom, le nom de ton PC par exemple, et
+colle la clé publique dans le champ prévu à cet effet. Sauvegarde en cliquant
+sur <strong>Add SSH key</strong>.</p>
+<p>Tu vas maintenant tester la connexion.</p>
+<pre><code class="language-text">ssh -T git@github.com
+The authenticity of host 'github.com (IP ADDRESS)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+Are you sure you want to continue connecting (yes/no)?
+</code></pre>
+<p>Ecris <strong>yes</strong> et appuie sur Entrée.</p>
+<pre><code class="language-text">Hi Gelules! You've successfully authenticated, but GitHub does not provide shell access.
+</code></pre>
+<p>Evidemment tu devrais voir ton login à la place du mien.</p>
+<h2 id="création-du-projet"><a class="header" href="#création-du-projet">Création du projet</a></h2>
+<p>Retourne sur l'accueil de <a href="https://github.com">GitHub</a>.</p>
+<p>En haut à gauche, il y a un bouton vert <strong>New</strong>. Clique dessus pour créer un
+nouveau distant. Appelle le <strong>file_creator</strong>. Tu peux le rendre publique ou
+privée au choix.</p>
+<p><img src="git/./github/create_project.png" alt="Création du projet sur GitHub" title="Création du projet sur GitHub" /></p>
+<p>Crée le projet.</p>
+<h2 id="clone-du-projet"><a class="header" href="#clone-du-projet">Clone du projet</a></h2>
+<p>Te voilà maintenant sur le projet, vide.</p>
+<p>Tu as au milieu une partie <em>Quick setup</em> avec deux boutons, HTTPS et SSH. Clique
+sur <strong>SSH</strong>. Copie le lien qui est inscrit. Le mien ressemble à ceci :
+git@github.com:Gelules/file_creator.git</p>
+<p>Retourne dans ton <strong>HOME</strong> et exécute la commande suivante :</p>
+<pre><code class="language-sh">$ git clone git@github.com:Gelules/file_creator.git
+...
+$ cd file_creator
+</code></pre>
+<p>Remplace le lien par le tien, évidemment.</p>
+<h2 id="retour-au-projet"><a class="header" href="#retour-au-projet">Retour au projet</a></h2>
+<p>Le projet, créer un générateur de fichiers. Le même que tu as fait dans les
+chapitres de shell, mais on va ici le construire petit à petit et faire un
+commit à chaque nouvelle fonctionnalité.</p>
+<p>Tu vas recréer le fichier <strong>file_creator.sh</strong> et <strong>README</strong>, vides. Les ajouter
+et les commit avec le message <strong>initial commit</strong>.</p>
+<h2 id="push"><a class="header" href="#push">push</a></h2>
+<p>Maintenant que tu es retourné à l'état du chapitre précédent, tu vas pousser tes
+fichiers vides.</p>
+<pre><code class="language-sh">$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 233 bytes | 233.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:Gelules/file_creator.git
+ * [new branch]      main -&gt; main
+$
+</code></pre>
+<p>Retourne sur GitHub, et rafraichis la page. Surprise ! Tes fichiers y sont.
+Toujours vides.</p>
+<h2 id="avancement"><a class="header" href="#avancement">Avancement</a></h2>
+<p>Comme je te l'avais dit, git suit ce qu'on appelle le <em>execution bit</em>, le bit
+qui indique qu'un fichier est exécutable ou non.</p>
+<p>Pour le voir par l'exemple, tu vas rendre <strong>file_creator.sh</strong> exécutable,
+exécuter <strong>git status</strong>, tu verras qu'il t'indique d'ajouter le fichier.</p>
+<p>Rends le exécutable, ajoute le, crée un commit pour indiquer que le fichier doit
+être exécutable et pousse ton travail.</p>
+<pre><code class="language-sh">$ chmod +x file_creator.sh
+$ git status
+$ git add file_creator.sh
+$ git commit -m "file_creator must be executable"
+$ git push
+$ git log
+</code></pre>
+<p>Dans les logs, tu peux voir que les commits montent à chaque nouvelle
+sauvegarde.</p>
+<p>Tu peux voir à la fin du premier commit que la <strong>HEAD</strong> est sur la branche
+<strong>main</strong>, qui est la branche par défaut sur git, et que la branche <strong>main</strong> de
+la remote <strong>origin</strong> est aussi sur le dernier commit : tu es à jour sur ton
+dépôt local et sur la remote.</p>
+<p>Voilà, tu as ici l'utilisation moyenne de git. Tu modifies, tu vérifies que tout
+aille bien</p>
+<p>Tu vas commencer par un script qui genère des fichiers qui suivent ce pattern :
+test_NUMERO.txt allant de 0 à 10.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+i=0
+while [ $i -le 10 ]
+do
+    touch test_${i}.txt
+done
+</code></pre>
+<p>En temps normal, tu dois tester ta nouvelle fonctionnalité.
+Quand tous tes tests sont bons, alors tu peux commit ton travail.</p>
+<p>Que manque t-il ici ? L'incrémentation de <strong>i</strong> à chaque création de fichier. Je
+te laisse faire le changement nécessaire.</p>
+<p>Ajoute dans le README un message pour indiquer comment utiliser ton projet.</p>
+<pre><code class="language-text">$ cat README
+file_generator is a super project to generate a lot of files with different
+extensions. For now it's only able to generate 10 test files.
+$ git add file_generator.sh README
+$ git commit -m "generate 10 tests file"
+$ git log
+</code></pre>
+<p>Tu peux le voir, ta remote est maintenant en retard d'un commit. Pousse ton
+travail pour que tout soit à jour.</p>
+<pre><code class="language-text">$ git push
+</code></pre>
+<h3 id="nom-de-fichiers"><a class="header" href="#nom-de-fichiers">Nom de fichiers</a></h3>
+<p>Tu vas maintenant modifier le script pour qu'il gère un nom de fichier différent
+selon le paramètre que tu envoies.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+if [ $# -ne 1 ]
+then
+    echo "Usage: $0 FILENAME" &gt;&amp;2
+    exit 1
+fi
+
+filename=$1
+
+i=0
+while [ $i -le 10 ]
+do
+    touch ${filename}_${i}.txt
+    $i=$((i + 1))
+done
+</code></pre>
+<p>Modifie le README en conséquence.</p>
+<p>Ajoute tes modifications à git, commit et pousse.</p>
+<p>N'oublie pas d'utiliser <strong>git status</strong> et <strong>git log</strong> pour voir l'évolution.</p>
+<h3 id="nombre-de-fichiers"><a class="header" href="#nombre-de-fichiers">Nombre de fichiers</a></h3>
+<p>Nouvelle évolution : Tu vas maintenant avoir un script qui peut générer un
+nombre de fichiers différents, qui part d'un nombre donné en paramètre et qui
+termine sur un autre nombre donné en paramètre.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+if [ $# -ne 3 ]
+then
+    echo "Usage: $0 FILENAME START STOP" &gt;&amp;2
+    exit 1
+fi
+
+if [ "$stop" -le "$start" ]
+then
+    echo "START number must be greater than STOP number" 2&gt;
+    exit 1
+fi
+
+filename=$1
+start=$2
+stop=$3
+
+while [ "$start" -le "$stop" ]
+do
+    touch ${filename}_${start}.txt
+    start=$((start + 1))
+done
+</code></pre>
+<p>Modifie le README en conséquence.</p>
+<p>Ajoute tes modifications à git, commit et pousse.</p>
+<p>N'oublie pas d'utiliser <strong>git status</strong> et <strong>git log</strong> pour voir l'évolution.</p>
+<h3 id="reclone"><a class="header" href="#reclone">reclone</a></h3>
+<p>J'ai besoin que tu connaisses la commande <strong>git pull</strong>. Pour ça tu vas cloner
+une deuxième fois ton dépôt ailleurs. Dans le répertoire <strong>/tmp</strong> par exemple.</p>
+<p>Ouvre un deuxième terminal et effectue ces commandes.</p>
+<pre><code class="language-sh">$ cd /tmp
+$ git clone git@github.com:Gelules/file_creator.git
+...
+$ cd file_creator
+</code></pre>
+<p>Tu viens de cloner ton dépôt dans le dernier état auquel tu avais poussé ton
+travail.</p>
+<p>Garde ce terminal de côté et retourne sur le premier.</p>
+<h3 id="extension"><a class="header" href="#extension">Extension</a></h3>
+<p>Tu vas ajouter la dernière modification. Tu vas demander à l'utilisateur de
+donner une extension aux fichiers générés.</p>
+<pre><code class="language-sh">#!/bin/sh
+
+if [ $# -ne 4 ]
+then
+    echo "Usage: $0 FILENAME START STOP EXTENSION" &gt;&amp;2
+    exit 1
+fi
+
+if [ "$stop" -le "$start" ]
+then
+    echo "START number must be greater than STOP number" 2&gt;
+    exit 1
+fi
+
+filename=$1
+start=$2
+stop=$3
+extension=$4
+
+while [ "$start" -le "$stop" ]
+do
+    touch ${filename}_${start}.${extension}
+    start=$((start + 1))
+done
+</code></pre>
+<p>Modifie le README en conséquence.</p>
+<p>Ajoute tes modifications à git, commit et pousse.</p>
+<p>N'oublie pas d'utiliser <strong>git status</strong> et <strong>git log</strong> pour voir l'évolution.</p>
+<h3 id="pull"><a class="header" href="#pull">pull</a></h3>
+<p>Tu te souviens du deuxième terminal qui avait clone la remote ?</p>
+<p>Ce répertoire n'est plus à jour avec la nouvelle modification ! Tu vas y
+remédier.</p>
+<p>Sur ton deuxième terminal :</p>
+<pre><code class="language-sh">$ git pull
+...
+$
+</code></pre>
+<p>Et voilà, tu as <strong>pull</strong> ta mise à jour.</p>
+<p>Evidemment sur le même ordinateur ce n'est pas utile.</p>
+<p>Mais si tu travailles sur plusieurs machines ou que tu es un groupe à plusieurs
+personnes sur un projet, alors chacun pourra mettre à jour le projet ainsi.</p>
+<p>Evidemment il peut y avoir des conflits si tout le monde touche au même fichier
+en même temps, mais c'est un problème que tu apprendras à résoudre pendant tes
+études.</p>
+<p>Bravo ! Tu as terminé ton pédiluve sur git !</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="langage-c"><a class="header" href="#langage-c">Langage C</a></h1>
+<p>Le langage C n'est pas le langage de programmation le plus simple à apprendre.
+Si on veut le maitriser, il faut aller en profondeur dans les entrailles du
+système, ce qui n'est pas évident au début.</p>
+<p>La bonne nouvelle, c'est qu'on peut s'en servir pour de simples applications
+sans trop s'inquiéter de ces fameuses entrailles. C'est ce que tu vas voir ici.</p>
+<p>Tu vas apprendre à faire un peu de C. Assez pour comprendre à utiliser le
+langage et ne pas être perdu au début de ta piscine.</p>
+<p>Je donne quand même quelques petites astuces qui ne sont pas souvent données
+dans les cours en ligne pour garder de bons réflexes et être sûr de ne pas faire
+n'importe quoi.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="abécédaire"><a class="header" href="#abécédaire">Abécédaire</a></h1>
+<p>Les chapitres de l'abécédaire vont te permettre de souffler après autant de
+Shell. Ils sont écrits en sorte à ce que tu puisses t'amuser à faire des petits
+programmes sans comprendre les magouilles techniques qui se cachent pendant
+l'exécution de ton programme.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="compilation-de-test"><a class="header" href="#compilation-de-test">Compilation de test</a></h1>
+<p>Le langage C est un langage <strong>compilé</strong>. A l'inverse du shell, tu ne vas pas
+exécuter du C comme tu l'écris. Tu vas utiliser un <strong>compilateur</strong> pour
+transformer ton code course en <strong>langage machine</strong>.</p>
+<p>Tu vas pour ce cours faire tes codes de test dans un seul et unique fichier que
+tu vas appeler <strong>test.c</strong>. Ton compilateur est <strong>gcc</strong>. Installe le si tu ne
+l'as pas.</p>
+<pre><code class="language-sh">$ which gcc
+/usr/bin/gcc
+$
+</code></pre>
+<p>Voici le fichier le plus petit que tu peux utiliser pour faire du C.</p>
+<pre><code class="language-c">int main(void)
+{
+    return 0;
+}
+</code></pre>
+<p>Tu peux écrire ton code entre les accolades pour commencer.</p>
+<p>Pour compiler et essayer ton programme, voici la commande à utiliser :</p>
+<pre><code class="language-sh">$ gcc test.c -o mon_super_programme
+$ ./mon_super_programme
+$
+</code></pre>
+<p>Voilà, tu es prêt pour la suite.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="la-fonction-main-et-lenvironnement-de-développement"><a class="header" href="#la-fonction-main-et-lenvironnement-de-développement">La fonction main et l'environnement de développement</a></h1>
+<p>La fonction main est le point d'entrée des programmes en C.</p>
+<p>Une fonction est une zone qui contient du code.</p>
+<p>Tu pourras créer tes propres fonctions plus tard, que tu pourras appeler depuis
+la fonction main.</p>
+<p>Pour l'instant, voici ce que tu as :</p>
+<pre><code class="language-c">int main(void)
+{
+    return 0;
+}
+</code></pre>
+<p>Décortiquons tout ça.</p>
+<p><strong>int</strong> signifie que la fonction retourne un <strong>int</strong>eger, c'est à dire un
+entier. C'est effectivement le cas avec le <strong>return 0</strong> dans le code. Tu
+retournes la valeur 0 dans le shell comme <strong>exit status</strong>.</p>
+<p><strong>void</strong> veut dire que la fonction ne prend pas de paramètres. Donc tu ne peux
+pas envoyer de paramètre à l'exécution de ton programme, à l'inverse de
+programmes que tu as déjà utilisés comme <strong>ls</strong>, <strong>echo</strong>, <strong>mkdir</strong>, etc. Tu
+verras juste après comment faire.</p>
+<p>Change le 0 par un 42, compile ton programme, et exécute le. Tu verras que tu
+auras un <strong>exit status</strong> à 42.</p>
+<pre><code class="language-c">int main(void)
+{
+    return 42;
+}
+</code></pre>
+<pre><code class="language-sh">$ gcc test.c -o mon_super_programme
+$ ./mon_super_programme
+$ echo $?
+42
+$
+</code></pre>
+<p>Tu comprends mieux maintenant comment les programmes que tu sais utiliser te
+renvoient des <strong>exit status</strong> maintenant.</p>
+<h2 id="argument"><a class="header" href="#argument">Argument</a></h2>
+<p>La fonction <strong>main</strong> peut prendre des arguments. Voici comment :</p>
+<pre><code class="language-c">int main(int argc, char *argv[])
+{
+    return 0;
+}
+</code></pre>
+<p>Oh là là, en voilà une nouvelle écriture compliquée.</p>
+<p>Décortiquons tout ça.</p>
+<p><strong>int argc</strong> signifie que <strong>argc</strong> est de type <strong>int</strong>, c'est un entier. Il
+s'agit ici du nombre d'arguments (<em>arguments counter</em>) que ton programme reçoit à son exécution. En
+shell, c'est l'équivalent de la variable <strong>$#</strong>.</p>
+<p>char *argv[] ; celui là est un peu plus difficile. <strong>char</strong> signifie caractère.
+Donc il y a des caractères en jeu ici, du texte.</p>
+<p>L'étoile * signifie pointeur, tu sauras ce que c'est plus tard.o</p>
+<p>[] signifie <strong>tableau</strong> (array).</p>
+<p>argv est un tableau de chaines de caractères. Il contient autant de chaines de
+caractères que la valeur de <strong>argc</strong>.</p>
+<p>Son nom signifie <em>arguments values</em></p>
+<p>Voici un bout de code pour voir les paramètres que tu envoies en entrée à ton
+programme.</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main(int argc, char *argv[])
+{
+    for (int i = 0; i &lt; argc; i = i + 1)
+    {
+        printf("argv[%d] = %s\n", i, argv[i]);
+    }
+
+    return 0;
+}
+</code></pre>
+<p>Que de nouvelles complications !</p>
+<p>Décortiquons tout ça.</p>
+<p>#include &lt;stdio.h&gt; veut dire qu'on va inclure stdio.h. C'est un fichier quelque
+part dans les répertoires systèmes. C'est ce qu'on appelle une bibliothèque (et
+pas une librairie, une libraire c'est un endroit avec des livres. En revanche la
+traduction de bibliothèque en Anglais et library, d'où cet abus de langage).
+Cette bibliothèque contient du code pour indiquer à gcc qu'il existe quelque
+part une fonctione appelée <strong>printf</strong>.</p>
+<p>Ensuite il y a une boucle for. La boucle for initialise une variable <strong>i</strong> à 0.
+Elle va continuer son exécution tant que <strong>i est plus petit que argc</strong>, et à
+chaque itération, <strong>i s'incrémente de 1</strong>. Tu peux voir que toutes les étapes de
+la boucle sont séparées par des point-virgules ';'.</p>
+<p>Ensuite, entre les accolades de la boucle, il y a un appel à la fonction
+<strong>printf</strong>. Le nom de la fonction signifie <strong>print format</strong>. Tu vas formater tu
+texte avec des arguments.</p>
+<p>Dans argv[%d], %d attend un entier. <strong>i</strong> qui est envoyé en paramètre juste
+après sera remplacé et aura sa valeur affichée entre les crochets.</p>
+<p>%s est un code qui attend une chaine de caractères. <strong>argv</strong> est le tableau qui
+contient ces chaines de caractères.</p>
+<p>Enfin, \n signifie <strong>saut à la ligne</strong>. Plus exactement <em>linefeed</em>.</p>
+<p>Compile et exécute ton programme ainsi :</p>
+<pre><code class="language-sh">$ gcc test.c -o mon_super_programme
+$ ./mon_super_programme coucou les loulous 0 1 10
+argv[0] = ./mon_super_programme
+argv[1] = coucou
+argv[2] = les
+argv[3] = loulous
+argv[4] = 0
+argv[5] = 1
+argv[6] = 10
+$
+</code></pre>
+<p>Voilà à quoi ressemble <strong>argv</strong> au moment de l'exécution
+argv =
+[
+./mon_super_programme
+coucou
+les
+loulous
+0
+1
+10
+]</p>
+<p>Tu peux voir que <strong>i</strong> va aller de ligne en ligne pour afficher chaque valeur.</p>
+<p>Tu te poses peut-être la question de pourquoi i commence à 0 et pas 1 ? C'est
+comme ça que beaucoup de langages de programmation gèrent les accès mémoires, en
+commençant par 0.</p>
+<p>Attention, en shell tu aurais pu utiliser les valeurs 0, 1 et 10 comme entiers.
+Ce n'est pas le cas ici, les valeurs sont des caractères, tu ne peux pas les
+utiliser pour faire des maths comme tu as l'habitude de faire en shell.</p>
+<p>Pour transformer une chaine de caractères en entier, tu peux utiliser la
+fonction <strong>atoi</strong> qui signifie <em>ascii to integer</em>.</p>
+<p>ASCII est un standard pour représenter des caractères.</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(int argc, char *argv[])
+{
+    int age = 0;
+
+    if (argc != 2)
+        return 1;
+
+    age = atoi(argv[1]);
+
+    printf("J'ai %d ans\n", age);
+
+    return 0;
+}
+</code></pre>
+<p>Tout d'abord, la bibliothèque stdlib.h est inclue. Je te montrerai juste après
+comment savoir quelle bibliothèque inclure selon ce que tu veux utiliser.</p>
+<p>Je crée la variable age à 0 en tant qu'entier. C'est une bonne pratique,
+toujours créer ses variables au tout début, avec des valeurs définies à 0, sauf
+si tu as absolument besoin d'une autre valeur d'initialisation.</p>
+<p>Ici, je teste si argc est différent de 2. Si c'est le cas, je quitte le
+programme avec un exit status à 1. Tu peux voir que ce n'est pas comme en shell.
+Je teste les valeurs avec des signes d'égalités, pas avec <strong>-ne</strong> comme tu as pu
+le voir en shell.</p>
+<p>Ensuite je dis que age est égal à l'appel de <strong>atoi</strong> sur le 1er argument. Puis
+je l'affiche.</p>
+<p>Je t'invite à compiler ton programme et le tester ainsi :</p>
+<pre><code class="language-sh">$ gcc test.c -o mon_super_programme
+$ ./mon_super_programme
+$ echo $?
+1
+$ ./mon_super_programme 42
+J'ai 42 ans
+$ echo $?
+0
+$./mon_super_programme coucou
+J'ai 0 ans
+$ ./mon_super_programme 42coucou
+J'ai 42 ans
+$ ./mon_super_programme coucou42
+J'ai 0 ans
+$
+</code></pre>
+<p><strong>atoi</strong> transforme ton paramètre en nombre seulement s'il trouve au début un
+nombre, sinon il renvoie 0.</p>
+<h3 id="man-et-bibliothèque"><a class="header" href="#man-et-bibliothèque">man et bibliothèque</a></h3>
+<p>Pour savoir quel bibliothèque utiliser, tu vas utiliser ton meilleur ami, le
+man.</p>
+<pre><code class="language-sh">$ man atoi
+...
+</code></pre>
+<p>Tu peux le voir dans le man de atoi, on te demande d'inclure stdlib.h</p>
+<pre><code class="language-sh">$ man 3 printf
+...
+</code></pre>
+<p>Attention à bien mettre 3 pour bien dire que c'est le printd du langage C que tu
+veux utiliser, pas le binaire installé sur le système.</p>
+<p>Parfois tu utilises des <em>syscalls</em>, des appels systèmes. Ce sont des fonctions
+fournies par le kernel Linux. La différence est qu'il faut demander la 2eme
+section du manuel.</p>
+<pre><code class="language-sh">$ man 2 write
+</code></pre>
+<p>Tu sauras avec le temps si tu cherches un syscall ou une fonction.</p>
+<h4 id="recherche-dans-le-man"><a class="header" href="#recherche-dans-le-man">Recherche dans le man</a></h4>
+<p>Si tu veux lister les sections pour un mot en particulier dans le man, tu peux
+utiliser la commande suivante :</p>
+<pre><code class="language-sh">$ man -k printf
+...
+</code></pre>
+<p>Tu verras que ça va générer <strong>BEAUCOUP</strong> de lignes. Tu peux filter en rajoutant
+un circonflexe '^' au début du mot et un dollar '$' à a fin, le tout entre
+simple quote.</p>
+<pre><code class="language-sh">$ man -k '^printf$'
+...
+</code></pre>
+<p>Ce sont des caractères spéciaux. ^ signifie début de ligne et $ signifie fin de
+ligne.</p>
+<pre><code class="language-sh">$ man -k '^read$'
+...
+</code></pre>
+<p>Tu peux voir que <em>read</em> existe dans la section 1p, 2 et 3p. Si tu n'avais pas
+limité la recherche avec ^ et $, tu aurais eu énormément de résultats pas très
+intéressants.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="types-prédéfinis"><a class="header" href="#types-prédéfinis">Types prédéfinis</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="fonctions"><a class="header" href="#fonctions">Fonctions</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mathématiques-1"><a class="header" href="#mathématiques-1">Mathématiques</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="structures-de-contrôles"><a class="header" href="#structures-de-contrôles">Structures de contrôles</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tableaux"><a class="header" href="#tableaux">Tableaux</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chaîne-de-caractères"><a class="header" href="#chaîne-de-caractères">Chaîne de caractères</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="pointeurs"><a class="header" href="#pointeurs">Pointeurs</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="boucles-1"><a class="header" href="#boucles-1">Boucles</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="structures-de-données"><a class="header" href="#structures-de-données">Structures de données</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="avancé"><a class="header" href="#avancé">Avancé</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="flags-de-compilation"><a class="header" href="#flags-de-compilation">Flags de compilation</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="plusieurs-fichiers"><a class="header" href="#plusieurs-fichiers">Plusieurs fichiers</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="makefile"><a class="header" href="#makefile">Makefile</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="récursivité"><a class="header" href="#récursivité">Récursivité</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="pointeurs-avancés"><a class="header" href="#pointeurs-avancés">Pointeurs avancés</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mémoire"><a class="header" href="#mémoire">Mémoire</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="listes-chainées"><a class="header" href="#listes-chainées">Listes chainées</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="débug"><a class="header" href="#débug">Débug</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="assembleur"><a class="header" href="#assembleur">Assembleur</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="auteurs"><a class="header" href="#auteurs">Auteurs</a></h1>
+<p>Gélules</p>
+<ul>
+<li><a href="https://www.youtube.com/@gelules">Youtube</a></li>
+<li><a href="https://www.twitch.tv/gelules">Twitch</a></li>
+<li><a href="https://discord.gg/kingdown">Discord (Association Kingdown)</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
