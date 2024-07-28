@@ -308,10 +308,9 @@ int main(void)
 }
 </code></pre>
 <h2 id="chaînes-de-caractères"><a class="header" href="#chaînes-de-caractères">Chaînes de caractères</a></h2>
-<p>Tu vas recoder plusieurs fonctions présentes dans <strong>string.h</strong>.</p>
 <p>Ecris le code de la fonction <strong>strlen</strong> qui renvoie le nombre de caractères dans
 une chaîne de caractères</p>
-<pre><code class="language-c">int strlen(char *s);
+<pre><code class="language-c">unsigned int strlen(char *s);
 </code></pre>
 <p>Ecris le code de la fonction <strong>upper</strong> qui prend un tableau de caractères en
 entrée et qui change les caractères minuscules en caractères majuscules.</p>
@@ -407,22 +406,6 @@ numérique, retourne ce que tu as déjà calculé.</p>
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

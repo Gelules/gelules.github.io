@@ -345,9 +345,9 @@ void swap(int *a, int *b)
 }
 </code></pre>
 <h2 id="chaînes-de-caractères"><a class="header" href="#chaînes-de-caractères">Chaînes de caractères</a></h2>
-<pre><code class="language-c">int strlen(char *s)
+<pre><code class="language-c">unsigned int strlen(char *s)
 {
-    int result = 0;
+    unsigned int result = 0;
     for (int i = 0; s[i] != '\0'; ++i)
     {
         ++result;
@@ -481,22 +481,6 @@ multiplié par -1.</p>
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
