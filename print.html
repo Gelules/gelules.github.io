@@ -587,6 +587,8 @@ d'utilisation, etc.</p>
 interpréteurs.</p>
 <p>Les prochains chapitres t'apprendront à utiliser ton terminal.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="utilisation"><a class="header" href="#utilisation">Utilisation</a></h1>
+<p>J'admets ici que c'est la première fois que tu ouvres un shell qui a sa
+configuration par défaut.</p>
 <p>Une fois sur ton shell, voici ce qui se présente à toi.</p>
 <pre><code class="language-sh">username@hostname:~$
 </code></pre>
@@ -660,11 +662,10 @@ tester <strong>ls</strong> avec des noms de fichiers et répertoires donnés en 
 <p>Comme tu peux le voir, mon explorateur de fichiers s'est actualisé pour afficher
 le nouveau répertoire. Utilise la commande <strong>ls</strong> dans ton terminal pour valider
 que ton terminal le voit également.</p>
-<p>Sache que tu peux créer plusieurs répertoires d'un coup en les donnant à <strong>ls</strong>.</p>
+<p>Sache que tu peux créer plusieurs répertoires d'un coup en les donnant à
+<strong>mkdir</strong>.</p>
 <pre><code class="language-sh">$ mkdir Je suis un seul appel a mkdir
 </code></pre>
-<h1 id="cache-cache"><a class="header" href="#cache-cache">Cache-cache</a></h1>
-<p>Il y a une dernière chose dont je ne t'ai pas parlé. Les fichiers cachés.</p>
 <p>Les commandes shell ont pour habitude de ne rien afficher si tout se passe bien.
 En cas d'erreur, un message s'affichera. Lis toujours tes messages, il ne faut
 pas avoir peur. C'est justement une aide pour comprendre ce qu'il se passe.</p>
@@ -726,6 +727,7 @@ format</em>, pour afficher plein d'informations sur le répertoire où tu te tro
 total 0
 -rw-r--r-- 1 gelules wheel  0 Jul 20 18:56 fichier
 drwxr-xr-x 2 gelules wheel 40 Jul 20 18:55 repertoire
+$
 </code></pre>
 <p>La première ligne indique combien de place sur le disque prend ce que tu listes.
 Pour l'instant c'est 0 car c'est vide.</p>
@@ -862,7 +864,7 @@ $
 intéressantes.</p>
 <pre><code class="language-sh">$ mkdir -p je/suis/un/humain tu/es/un/gateau
 $ cd je/suis/un/humain
-$ cd ../../../tu/es/un/gateau
+$ cd ../../../../tu/es/un/gateau
 $ pwd
 ???
 $ cd -
@@ -945,7 +947,7 @@ $ reboot
 $ cd /tmp
 $ ls
 </code></pre>
-<h1 id="cache-cache-1"><a class="header" href="#cache-cache-1">Cache-cache</a></h1>
+<h1 id="cache-cache"><a class="header" href="#cache-cache">Cache-cache</a></h1>
 <p>Il y a une dernière chose dont je ne t'ai pas parlé. Les fichiers cachés.</p>
 <p>Je vais exprès de cacher certains informations pour te forcer à pratiquer.</p>
 <p>Exécute ces commandes depuis ton <strong>HOME</strong> :</p>
@@ -1370,26 +1372,26 @@ appliqué automatiquement.</p>
 </code></pre>
 <p>Ca, c'est une <strong>fonction</strong> en shell. Une fonction c'est du code que tu pourras
 appeler depuis ton shell.</p>
-<pre><code class="language-sh">    [ ! -d "$1" ] &amp;&amp; mkdir -p $1
+<pre><code class="language-sh">[ ! -d "$1" ] &amp;&amp; mkdir -p $1
 </code></pre>
 <p>Cette ligne est compliquée à lire. Mais tu dois reconnaître la commande <strong>mkdir
 -p</strong>.</p>
-<pre><code class="language-sh">    [ ! -d "$1" ]
+<pre><code class="language-sh">[ ! -d "$1" ]
 </code></pre>
 <p>Ce morceau de code va vérifier si le <strong>1</strong>er argument n'existe pas comme
 répertoire.</p>
-<pre><code class="language-sh">    &amp;&amp; mkdir -p $1
+<pre><code class="language-sh">&amp;&amp; mkdir -p $1
 </code></pre>
 <p><strong>&amp;&amp;</strong> est une porte logique. Dans le contexte du shell, il s'agit de la porte
 <strong>AND</strong> et exécutera la partie à droite seulement si la partie de gauche renvoie
 Vrai.</p>
 <p>La partie de droite créee une arborescence de répertoires.</p>
-<pre><code class="language-sh">    cd $1
+<pre><code class="language-sh">cd $1
 </code></pre>
 <p>cd va te déplacer dans le répertoire envoyé en <strong>1</strong>er argument.</p>
 <p>La fonction mkcd va donc créer un répertoire ou même toute une arborescence de
 répertoire et t'y <strong>cd</strong> automatiquement.</p>
-<pre><code class="language-sh">$ pwd
+<pre><code class="language-text">$ pwd
 /home/gelules
 $ ls /tmp/tests
 ls: cannot access '/tmp/tests': No such file or directory
@@ -1869,10 +1871,11 @@ variable qui permet à ton shell de trouver les programmes à exécuter.</p>
 $ cd /tmp/test
 </code></pre>
 <p>Crée le fichier avec ton éditeur et ajoute la ligne suivante dedans :</p>
-<pre><code class="language-sh">$ vim firefox
+<pre><code class="language-sh">$ cat firefox
 #!/bin/sh
 
 echo Et non, je ne suis pas Firefox
+$
 </code></pre>
 <p>Rends le exécutable.</p>
 <pre><code class="language-sh">$ chmod +x firefox
@@ -5047,18 +5050,71 @@ $
 <pre><code class="language-c">unsigned int mystery(unsigned int n)
 {
     if (n == 0)
-        return n;
+        return 0;
 
-    return mystery(n - 1) + n;
+    return n + mystery(n - 1);
 }
 </code></pre>
 <p>Arrives-tu à déterminer ce que fait cette fonction ?</p>
 <p>Elle somme l'ensemble des nombres dans l'intervalle [0;n].</p>
 <p>En effet, la fonction va sans cesse se rappeler en décrémentant n de 1 jusqu'à
 arriver à 0.</p>
+<p>Voilà ce qu'il se passe en mémoire avec <strong>n = 3</strong>.</p>
+<p><img src="c/./recursive/recursive.svg" alt="n = 3" title="n = 3" /></p>
+<p>\[ 3 + 2 + 1 + 0 = 6 \]</p>
 <p>Tu verras pendant ta Piscine d'autres cas d'utilisation de la récursivité. Sache
-que c'est utile pour résoudre des problèmes en découpant le problème en
+que c'est utile pour résoudre des gros problèmes en découpant un problème en
 sous-problème et en itérant dessus.</p>
+<p>La récursivité a l'avantage d'être plus élégante mais a le défaut d'être plus
+lente qu'une boucle à l'exécution car à chaque rappel de la fonction, se créé en
+mémoire tout le contexte nécessaire pour créer une fonction, et à la fin de la
+récursion, il faut remonter tous les appels effectués pour revenir au point de
+départ. Si tu fais des récursions sur des milliers et milliers de nombres, tu
+perdras rapidement en efficacité.</p>
+<p>Voici par exemple, la <a href="https://fr.wikipedia.org/wiki/Fonction_d%27Ackermann">fonction d'Ackermann</a> :</p>
+<pre><code class="language-c">#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+
+int ackermann(int m, int n)
+{
+    if (m == 0)
+    {
+        return n + 1;
+    }
+
+    if (m &gt; 0 &amp;&amp; n == 0)
+    {
+        return ackermann(m - 1, 1);
+    }
+
+    if (m &gt; 0 &amp;&amp; n &gt; 0)
+    {
+        return ackermann(m - 1, ackermann(m, n - 1));
+    }
+}
+
+
+int main(int argc, char *argv[])
+{
+    if (argc != 3)
+        return 1;
+
+    int m = atoi(argv[1]);
+    int n = atoi(argv[2]);
+    int a = ackermann(m, n);
+
+    printf("ackermann(%d, %d) = %d\n", m, n, a);
+
+    return 0;
+}
+</code></pre>
+<pre><code class="language-text">$ gcc test.c -o mon_super_programme
+$ time ./mon_super_programme 3 14
+ackermann(3, 14) = 131069
+./ackermann 3 14  69.22s user 0.56s system 98% cpu 1:10.59 total
+$
+</code></pre>
+<p>La fonction met 69 secondes à s'exécuter sur ma machine.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="pointeurs-avancés"><a class="header" href="#pointeurs-avancés">Pointeurs avancés</a></h1>
 <h2 id="arithmétique-des-pointeurs-2ème-partie"><a class="header" href="#arithmétique-des-pointeurs-2ème-partie">Arithmétique des pointeurs, 2ème partie</a></h2>
 <p>Plus tôt, je t'ai dit qu'on pouvait incrémenter un pointeur pour avancer dans un

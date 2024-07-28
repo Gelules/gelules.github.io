@@ -190,10 +190,11 @@ variable qui permet à ton shell de trouver les programmes à exécuter.</p>
 $ cd /tmp/test
 </code></pre>
 <p>Crée le fichier avec ton éditeur et ajoute la ligne suivante dedans :</p>
-<pre><code class="language-sh">$ vim firefox
+<pre><code class="language-sh">$ cat firefox
 #!/bin/sh
 
 echo Et non, je ne suis pas Firefox
+$
 </code></pre>
 <p>Rends le exécutable.</p>
 <pre><code class="language-sh">$ chmod +x firefox

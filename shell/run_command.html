@@ -214,26 +214,26 @@ appliqué automatiquement.</p>
 </code></pre>
 <p>Ca, c'est une <strong>fonction</strong> en shell. Une fonction c'est du code que tu pourras
 appeler depuis ton shell.</p>
-<pre><code class="language-sh">    [ ! -d "$1" ] &amp;&amp; mkdir -p $1
+<pre><code class="language-sh">[ ! -d "$1" ] &amp;&amp; mkdir -p $1
 </code></pre>
 <p>Cette ligne est compliquée à lire. Mais tu dois reconnaître la commande <strong>mkdir
 -p</strong>.</p>
-<pre><code class="language-sh">    [ ! -d "$1" ]
+<pre><code class="language-sh">[ ! -d "$1" ]
 </code></pre>
 <p>Ce morceau de code va vérifier si le <strong>1</strong>er argument n'existe pas comme
 répertoire.</p>
-<pre><code class="language-sh">    &amp;&amp; mkdir -p $1
+<pre><code class="language-sh">&amp;&amp; mkdir -p $1
 </code></pre>
 <p><strong>&amp;&amp;</strong> est une porte logique. Dans le contexte du shell, il s'agit de la porte
 <strong>AND</strong> et exécutera la partie à droite seulement si la partie de gauche renvoie
 Vrai.</p>
 <p>La partie de droite créee une arborescence de répertoires.</p>
-<pre><code class="language-sh">    cd $1
+<pre><code class="language-sh">cd $1
 </code></pre>
 <p>cd va te déplacer dans le répertoire envoyé en <strong>1</strong>er argument.</p>
 <p>La fonction mkcd va donc créer un répertoire ou même toute une arborescence de
 répertoire et t'y <strong>cd</strong> automatiquement.</p>
-<pre><code class="language-sh">$ pwd
+<pre><code class="language-text">$ pwd
 /home/gelules
 $ ls /tmp/tests
 ls: cannot access '/tmp/tests': No such file or directory
