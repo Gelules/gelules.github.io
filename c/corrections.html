@@ -401,12 +401,7 @@ l'intervalle minuscule à majuscule et inversement.</p>
 </code></pre>
 <pre><code class="language-c">int is_num(char c);
 {
-    if ('0' &lt;= c &amp;&amp; c &lt;= '9')
-    {
-        return 1;
-    }
-
-    return 0;
+    return ('0' &lt;= c &amp;&amp; c &lt;= '9');
 }
 
 int miniatoi(char *str)
