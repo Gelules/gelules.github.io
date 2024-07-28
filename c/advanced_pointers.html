@@ -176,6 +176,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="pointeurs-avancés"><a class="header" href="#pointeurs-avancés">Pointeurs avancés</a></h1>
+<h2 id="arithmétique-des-pointeurs-2ème-partie"><a class="header" href="#arithmétique-des-pointeurs-2ème-partie">Arithmétique des pointeurs, 2ème partie</a></h2>
 <p>Plus tôt, je t'ai dit qu'on pouvait incrémenter un pointeur pour avancer dans un
 tableau. Mais comment penses-tu que cela se passe en mémoire ?</p>
 <p>Prends deux tableaux de types différents.</p>
@@ -320,22 +321,6 @@ l'élément est la <strong>struct player</strong> qui fait 48 octets.</p>
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

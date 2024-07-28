@@ -388,7 +388,7 @@ utilise la notion de pointeurs pour accéder à ses valeurs.</p>
 qu'un pointeur fait 8 octets, car il ne pointe que sur une valeur. Il peut
 accéder aux prochaines valeurs comme un tableau mais est défini autrement en
 mémoire.</p>
-<h1 id="arithmétique-des-pointeurs-1ere-partie"><a class="header" href="#arithmétique-des-pointeurs-1ere-partie">## Arithmétique des pointeurs, 1ere partie</a></h1>
+<h2 id="arithmétique-des-pointeurs-1ere-partie"><a class="header" href="#arithmétique-des-pointeurs-1ere-partie">Arithmétique des pointeurs, 1ere partie</a></h2>
 <p>Tu peux changer la valeur d'un pointeur et te déplacer vers la suite de la
 chaine.</p>
 <p>Pour ça, il suffit d'incrémenter le pointeur.</p>
@@ -430,22 +430,6 @@ printf("%c\n", *str); // =&gt; 'n'
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
