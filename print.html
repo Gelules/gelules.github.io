@@ -1101,7 +1101,7 @@ nom en paramètre.</p>
 <h2 id="lire-un-fichier"><a class="header" href="#lire-un-fichier">Lire un fichier</a></h2>
 <p>Pour lire un fichier, tu peux utiliser la redirection gauche '&lt;' en mettant le
 nom de ton fichier.</p>
-<pre><code class="language-sh">$ fichier_test
+<pre><code class="language-sh">$ &lt; fichier_test
 # Contenu du fichier
 $
 </code></pre>
@@ -1277,6 +1277,9 @@ quels fichiers correspondent.</p>
 <p>Si jamais tu as lancé un programme ou un script depuis ton terminal et que tu
 veux arrêter son exécution, exécute la combinaison de touches <strong>ctrl+c</strong> pour
 envoyer un signal d'arrêt et reprendre la main sur ton terminal.</p>
+<h1 id="nettoyer-le-terminal"><a class="header" href="#nettoyer-le-terminal">Nettoyer le terminal</a></h1>
+<p>Si tu veux nettoyer tout ce qui est affiché sur ton terminal pour repartir sur
+une vue propre, exécute la combinaison de touches <strong>ctrl+l</strong>.</p>
 <h1 id="recherche-arrière"><a class="header" href="#recherche-arrière">Recherche arrière</a></h1>
 <p>Avec <strong>ctrl+r</strong>, tu peux recherche une commande. Par exemple <strong>ctrl+r</strong> <em>cp -</em>
 te montrera la dernière commande qui contient <em>cp -r</em>, si tu rappuies sur
@@ -6451,6 +6454,22 @@ donnant le nom du programme. Une fois dans le prompt de GDB, exécute</p>
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
