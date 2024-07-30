@@ -180,7 +180,7 @@
 <p>Tu te rappelles du <em>long listing format</em> de <strong>ls</strong> avec toutes ces informations
 imbitables ? C'est le moment de les biter.</p>
 <p>Reprenons dans répertoire Test vide.</p>
-<pre><code class="language-sh">$ touch fichier
+<pre><code class="language-text">$ touch fichier
 $ mkdir repertoire
 $ cp /bin/ls . # Si tu as une erreur, essaie avec /usr/bin/ls
 $ ls -l
@@ -217,7 +217,7 @@ possède le fichier est <strong>wheel</strong>.</p>
 <p><strong>Other</strong> est le reste du monde qui n'est ni l'utilisateur gelules ni les
 utilisateurs dans le groupe wheel.</p>
 <p>Tu peux voir dans quel groupe tu es avec la commande <strong>group</strong>.</p>
-<pre><code class="language-sh">$ group
+<pre><code class="language-text">$ group
 </code></pre>
 <p>Revenons aux lettres.</p>
 <p><strong>r</strong> signifie <strong>r</strong>ead, pour lecture.</p>
@@ -252,7 +252,7 @@ modifier le fichier et les autres ne peuvent qu'exécuter le fichier.</p>
 <p>110 = 6</p>
 <p>001 = 1</p>
 <p>Le droit à appliquer sera 761.</p>
-<pre><code class="language-sh">$ chmod 761 ls
+<pre><code class="language-text">$ chmod 761 ls
 $ ls -l ls
 -rwxrw---x 1 gelules wheel 129728 Jul 20 21:29 ls
 $
@@ -261,11 +261,11 @@ $
 <p>Sache qu'un répertoire a des droits d'exécution. Le droit d'exécution d'un
 répertoire permet de s'y <strong>cd</strong>.</p>
 <p>Faisons un autre exemple.</p>
-<pre><code class="language-sh">$ chmod 300 repertoire
+<pre><code class="language-text">$ chmod 300 repertoire
 </code></pre>
 <p>Maintenant je n'ai que les droits de mofidication et d'exécution sur le
 répertoire <strong>repertoire</strong>.</p>
-<pre><code class="language-sh">$ nano repertoire/test
+<pre><code class="language-text">$ nano repertoire/test
 ...
 $ ls repertoire
 ls: cannot open directory 'repertoire': Permission denied

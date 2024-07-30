@@ -180,14 +180,14 @@
 que tu lances depuis ton shell.</p>
 <p>Dans cet exemple, il faut que je seul programme lancé soit ton shell, rien
 d'autre.</p>
-<pre><code class="language-sh">firefox
+<pre><code class="language-text">firefox
 ...
 </code></pre>
 <p>Maintenant que firefox est lancé, tu n'as plus la main sur ton shell. Firefox
 l'utilise pour afficher son stdout et stderr.</p>
 <p>Exécute la combinaison <strong>ctrl+z</strong> pour mettre Firefox en pause et regagner la
 main sur ton shell.</p>
-<pre><code class="language-sh">...
+<pre><code class="language-text">...
 ctrl+z
 zsh: suspended  firefox
 $
@@ -195,7 +195,7 @@ $
 <p>Selon le shell que tu utilises, tu peux avoir un message sensiblement différent.</p>
 <p>Tu vas maintenant démarrer vlc  et gimp et pareil, exécuter <strong>ctrl+z</strong> pour
 reprendre la main à chaque fois.</p>
-<pre><code class="language-sh">$ vlc
+<pre><code class="language-text">$ vlc
 ...
 ctrl+z
 zsh: suspended  vlc
@@ -207,7 +207,7 @@ $
 </code></pre>
 <p>Exécute la commande <strong>jobs</strong> pour voir l'état des jobs (processus) démarrés par
 ton shell.</p>
-<pre><code class="language-sh">$ jobs
+<pre><code class="language-text">$ jobs
 [1]    suspended  firefox
 [2]  - suspended  vlc
 [3]  + suspended  gimp
@@ -218,32 +218,32 @@ jobs que tu as suspendu, et le signe '+' et le dernier jobs que tu as suspendu.<
 <p>Si tu veux remettre un job en <strong>foreground</strong>, c'est à dire que tu relances son
 exécution en lui laisant la main sur ton shell, utilise <strong>fg %IDENTIFIANT</strong> en
 remplaçant <strong>IDENTIFIANT</strong> par le numéro du job.</p>
-<pre><code class="language-sh">$ fg %1 # firefox est réexécuté et on perd la main sur le shell
+<pre><code class="language-text">$ fg %1 # firefox est réexécuté et on perd la main sur le shell
 ...
 ctrl+z
 </code></pre>
 <p>Si tu veux mettre un job en <strong>background</strong>, c'est à dire que tu relances son
 exécution tout en gardant la main sur ton shell, utilise <strong>bg %IDENTIFIANT</strong> en
 remplaçant <strong>IDENTIFIANT</strong> par le numéro du job.</p>
-<pre><code class="language-sh">$ fg %1
+<pre><code class="language-text">$ fg %1
 $ # firefox reprend son exécution et on garde la main sur le shell
 </code></pre>
 <p>Pour arrêter un job, utilise la commande <strong>kill %IDENTIFIANT</strong> en remplaçant
 <strong>IDENTIFIANT</strong> par le numéro du job.</p>
-<pre><code class="language-sh">kill %1
+<pre><code class="language-text">kill %1
 [1]  + terminated  firefox
 $
 </code></pre>
 <p>Enfin, si tu veux lancer un processus en arrière-plan directement depuis ton
 shell, ajoute le caractère <strong>esperluette</strong> '&amp;' à la fin de ta commande.</p>
-<pre><code class="language-sh">$ vlc  &amp;
+<pre><code class="language-text">$ vlc  &amp;
 [1] 22258
 $
 </code></pre>
 <p>Le nombre affiché est le numéro du processus dans le système, il est plus que
 probable que tu n'aies pas le même. Tu peux retrouver le nom d'un processus avec
 son identidiant et la commande <strong>ps</strong>.</p>
-<pre><code class="language-sh">$ ps -p 22258
+<pre><code class="language-text">$ ps -p 22258
     PID TTY          TIME CMD
   22258 pts/0    00:00:00 vlc
 </code></pre>

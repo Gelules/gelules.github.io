@@ -180,30 +180,30 @@
 <p>La sortie standard (ou <strong>stdout</strong>) est le flux de texte affiché sur ton terminal
 quand tout se passe bien.</p>
 <p>Par exemple, quand tu exécutes</p>
-<pre><code class="language-sh">$ ls -l fichier_existant # assure toi que le fichier existe
+<pre><code class="language-text">$ ls -l fichier_existant # assure toi que le fichier existe
 </code></pre>
 <p>Tout ce qui est affiché passe par <strong>stdout</strong>.</p>
 <p>Tu peux rediriger le flux dans un fichier en utilisant un chevron.</p>
-<pre><code class="language-sh">$ ls -l &gt; fichier_stdout
+<pre><code class="language-text">$ ls -l &gt; fichier_stdout
 $ cat fichier_stdout
 </code></pre>
 <p>Comme tu peux le voir, <strong>ls -l</strong> n'a pas affiché de résultat, tout a été
 redirigé dans un fichier qui n'existait pas.</p>
 <p>Recommence l'opération.</p>
-<pre><code class="language-sh">$ ls -l &gt; fichier_stdout
+<pre><code class="language-text">$ ls -l &gt; fichier_stdout
 $ cat fichier_stdout
 </code></pre>
 <p>Le fichier n'a pas gardé l'information précédente. Il a été <em>tronqué</em>.</p>
 <p>Si tu veux garder le contenu du fichier à chaque redirection, tu peux utiliser
 la <strong>double redirection</strong>.</p>
-<pre><code class="language-sh">$ ls -l &gt;&gt; fichier_stdout
+<pre><code class="language-text">$ ls -l &gt;&gt; fichier_stdout
 $ cat fichier_stdout
 </code></pre>
 <p>Et là, le contenu déjà présent reste dans le fichier.</p>
 <p>Si tu veux rediriger stdout dans le <strong>vide</strong>, c'est à dire ne pas l'afficher et
 ne pas le rediriger dans un fichier, tu peux utiliser le fichier <strong>/dev/null</strong>
 comme fichier de redirection.</p>
-<pre><code class="language-sh">$ ls -l &gt; /dev/null
+<pre><code class="language-text">$ ls -l &gt; /dev/null
 </code></pre>
 <p>C'est un fichier spécial utilisé uniquement pour rediriger des flux dans le
 vide.</p>
@@ -211,7 +211,7 @@ vide.</p>
 <p>Le flux standard des erreurs (ou <strong>stderr</strong>) s'affiche aussi sur ton terminal
 mais en empruntant un autre flux. Il ne s'affiche qu'en cas d'erreur.</p>
 <p>Prenons la situtation suivante :</p>
-<pre><code class="language-sh">$ ls
+<pre><code class="language-text">$ ls
 fichier_existant
 $ ls -l fichier_existant fichier_inexistant
 ls: cannot access 'fichier_inexistant': No such file or directory
@@ -221,7 +221,7 @@ $
 <p>La première ligne avec le message d'erreur emprunte le flux d'erreur, et la
 seconde emprunte stdout.</p>
 <p>Tu peux les séparer dans des fichiers différents ainsi :</p>
-<pre><code class="language-sh">$ ls -l fichier_existant fichier_inexistant &gt;stdout.txt 2&gt;stderr.txt
+<pre><code class="language-text">$ ls -l fichier_existant fichier_inexistant &gt;stdout.txt 2&gt;stderr.txt
 $ cat stdout.txt stderr.txt
 ...
 </code></pre>
@@ -229,7 +229,7 @@ $ cat stdout.txt stderr.txt
 mais tu n'es pas obligé de l'écrire, sauf à une condition.</p>
 <p>Si tu veux rediriger <strong>stderr</strong> vers <strong>stdout</strong>, tu dois le faire de cette
 façon.</p>
-<pre><code class="language-sh">$ ls -l fichier_existant fichier_inexistant 1&gt;stdout.txt 2&gt;&amp;1
+<pre><code class="language-text">$ ls -l fichier_existant fichier_inexistant 1&gt;stdout.txt 2&gt;&amp;1
 </code></pre>
 <p>Le caractère <strong>esperluette</strong> '&amp;' indique au shell que <strong>1</strong> n'est pas un nom de
 fichier mais le flux numéro 1.</p>
@@ -242,26 +242,23 @@ d'un autre programme.</p>
 l'entrée clavier. Ce que fais ton shell à chaque fois que tu appuies sur Entrée,
 il lit son entrée standard pour recevoir ta commande.</p>
 <p>Faisons quelques exemples plus parlant :</p>
-<pre><code class="language-sh">$ ls
+<pre><code class="language-text">$ ls
 $ ls -l / &gt; racine.txt
 $ wc -l racine.txt
 </code></pre>
 <p><strong>wc -l</strong> te permet de compter le nombre de lignes dans un fichier. Mais tu
 aurais pu faire ça en une seule commande grâce au <strong>pipe</strong> (tuyau).</p>
-<pre><code class="language-sh">$ ls -l / | wc -l
+<pre><code class="language-text">$ ls -l / | wc -l
 </code></pre>
 <p>Le pipe '|' te permet de passer la sortie de <strong>ls</strong> dans l'entrée de <strong>wc</strong>.</p>
 <p>Beaucoup d'outils sur Linux fonctionne ainsi.</p>
-<p>Prenons un enchaînement de commandes plus drôle :```sh
-$ ls -l / | cut -d ' ' -f 1 | tee permissions | wc -l</p>
-<pre><code>
-Voici deux nouvelles commandes.
-
-**cut** va couper des colonnes selon un délimiteur.
-
-Prenons la sortie de **ls -l /**.
-```sh
-$ ls -l /
+<p>Prenons un enchaînement de commandes plus drôle :</p>
+<pre><code class="language-text">$ ls -l / | cut -d ' ' -f 1 | tee permissions | wc -l
+</code></pre>
+<p>Voici deux nouvelles commandes.</p>
+<p><strong>cut</strong> va couper des colonnes selon un délimiteur.</p>
+<p>Prenons la sortie de <strong>ls -l /</strong>.</p>
+<pre><code class="language-text">$ ls -l /
 total 56
 lrwxrwxrwx   1 root root       7 Apr  7 20:02 bin -&gt; usr/bin
 drwxr-xr-x   4 root root    4096 Jul 19 01:59 boot
@@ -288,7 +285,7 @@ drwxr-xr-x  12 root root    4096 Jul 20 16:52 var
 le délimiteur ESPACE ' '.</p>
 <p>On n'aura donc que la première colonne avec <strong>cut</strong>.
 On n'aura donc que la première colonne avec <strong>cut -d ' ' -f 1</strong></p>
-<pre><code class="language-sh">$ ls -l / | cut -d ' ' -f1
+<pre><code class="language-text">$ ls -l / | cut -d ' ' -f1
 total
 lrwxrwxrwx
 drwxr-xr-x
@@ -316,7 +313,7 @@ drwxr-xr-x
 Imagine la lettre 'T' (tee en pronociation Anglaise), la barre de gauche est son
 entrée standard, la barre qui descend est le fichier, la barre de droite est
 <strong>stdout</strong>.</p>
-<pre><code class="language-sh">$ ls -l / | cut -d ' ' -f1 | tee permissions
+<pre><code class="language-text">$ ls -l / | cut -d ' ' -f1 | tee permissions
 total
 lrwxrwxrwx
 drwxr-xr-x

@@ -193,14 +193,14 @@ $
 </code></pre>
 <p>Evidemment, change les informations avec les tiennes.</p>
 <p>Ces informations seront utiles pour savoir qui a créé quel commit.</p>
-<pre><code class="language-sh">$ mkdir projet
+<pre><code class="language-text">$ mkdir projet
 $ cd projet
 $ git init
 </code></pre>
 <p>Voilà, le répertoire <strong>projet</strong> est prêt à utiliser git.</p>
 <p>Comment ça fonctionne ? Git crée en secret un répertoire caché qu'il utilise
 pour suivre l'état du projet.</p>
-<pre><code class="language-sh">$ ls -l .git
+<pre><code class="language-text">$ ls -l .git
 ...
 $
 </code></pre>
@@ -213,7 +213,7 @@ fichiers.</p>
 <h2 id="add"><a class="header" href="#add">add</a></h2>
 <p>Tu vas créer deux fichiers, <strong>README</strong> et <strong>file_creator.sh</strong>. Pour l'instant
 ils seront vides.</p>
-<pre><code class="language-sh">$ touch README file_creator.sh
+<pre><code class="language-text">$ touch README file_creator.sh
 $ git status
 Untracked files:
   (use "git add &lt;file&gt;..." to include in what will be committed)
@@ -232,7 +232,7 @@ $
 <p>Pour créer un commit, il faut penser d'abord réfléchir à un message de commit
 <strong>intelligent</strong>. Le tout premier est en <em>général</em> un simple <strong>initial commit</strong>.
 Les prochains seront plus réfléchis selon le projet que tu effectues.</p>
-<pre><code class="language-sh">$ git commit -m "initial commit"
+<pre><code class="language-text">$ git commit -m "initial commit"
 [master (root-commit) 8a87f72] initial commit
  2 files changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 README
@@ -249,7 +249,7 @@ exécutable en local, il le sera aussi sur la remote.</p>
 <h2 id="log"><a class="header" href="#log">log</a></h2>
 <p>Maintenant que tu as crée ton premier commit, tu peux voir les logs du projet
 évoluer avec la commande <strong>git log</strong>.</p>
-<pre><code class="language-sh">$ git log
+<pre><code class="language-text">$ git log
 commit 8a87f728e30904f1cd837fd3ca2d4f17d11c0e58 (HEAD -&gt; master)
 Author: Gélules &lt;gelules@gelules.gelules&gt;
 Date:   Sun Jul 21 22:15:07 2024 +0200

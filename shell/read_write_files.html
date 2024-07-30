@@ -183,7 +183,7 @@
 veut extrêmement simple d'utilisation et surtout s'exécute dans le terminal.</p>
 <p>Mettons que tu sois dans ton <strong>HOME</strong>, nous allons faire les tests d'écriture et
 lecture dans le répertoire Test.</p>
-<pre><code class="language-sh">$ mkdir Test
+<pre><code class="language-text">$ mkdir Test
 $ cd Test
 </code></pre>
 <p>Tu peux appeler <strong>nano</strong> sans nom de fichier derrière, tu pourras donner un nom
@@ -242,17 +242,17 @@ sauvegarder ailleurs. Appelle ton fichier fichier_test.</p>
 entretemps, il te demandera si tu veux sauvegarder avant de quitter.</p>
 <p>De retour sur le shell, tu peux rouvrir ton fichier avec nano en lui donnant son
 nom en paramètre.</p>
-<pre><code class="language-sh">$ nano fichier_test
+<pre><code class="language-text">$ nano fichier_test
 </code></pre>
 <h2 id="lire-un-fichier"><a class="header" href="#lire-un-fichier">Lire un fichier</a></h2>
 <p>Pour lire un fichier, tu peux utiliser la redirection gauche '&lt;' en mettant le
 nom de ton fichier.</p>
-<pre><code class="language-sh">$ &lt; fichier_test
+<pre><code class="language-text">$ &lt; fichier_test
 # Contenu du fichier
 $
 </code></pre>
 <p>Tu peux aussi utiliser la commande <strong>cat</strong></p>
-<pre><code class="language-sh">$ cat fichier_test
+<pre><code class="language-text">$ cat fichier_test
 # Contenu du fichier
 $
 </code></pre>
@@ -261,7 +261,7 @@ de la norme. La norme en piscine est le style de code (la coding style) à suivr
 pour que tes fichiers soient considérés comme valides.</p>
 <p>Rouvre ton fichier avec nano et ajoute des espaces à la fin d'une ou plusieurs
 lignes de texte. Exécute maintenant</p>
-<pre><code class="language-sh">$ cat -e fichier_test
+<pre><code class="language-text">$ cat -e fichier_test
 # Contenu du fichier avec des '$' en fin de ligne
 $
 </code></pre>
@@ -271,7 +271,7 @@ avoir d'espace qui donne ensuite sur une fin de ligne. Ce sont des caractères
 inutiles présents dans tes fichiers. Ca prend de la place pour rien et c'est
 moche, bouh !</p>
 <p>Rouvre ton fichier avec nano et supprime ces espaces en trop.</p>
-<pre><code class="language-sh">$ cat -e fichier_test
+<pre><code class="language-text">$ cat -e fichier_test
 Je suis un fichier$
 avec     $
 des $
@@ -282,7 +282,7 @@ $ # Bouh c'est moche
 $ nano fichier_test
 ...
 </code></pre>
-<pre><code class="language-sh">$ cat -e fichier_test
+<pre><code class="language-text">$ cat -e fichier_test
 Je suis un fichier$
 avec$
 des$

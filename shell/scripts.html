@@ -189,7 +189,7 @@ qui fermera ton shell).</p>
 <p>Ce qui fait que tout ce que tu vas voir à partir d'ici est possible à exécuter
 dans ton terminal.</p>
 <p>Voici le minimum d'un script shell :</p>
-<pre><code>#!/bin/sh
+<pre><code class="language-sh">#!/bin/sh
 </code></pre>
 <p>C'est un commentaire particulier qui indique quel interpréteur utiliser. Par
 habtiude on utilise <strong>/bin/sh</strong> car c'est un interpréteur présent sur tous les
@@ -199,10 +199,10 @@ utiliser une fonctionnalité qui n'est pas présente sur <strong>sh</strong>, ca
 systèmes n'ont pas <strong>zsh</strong> installés.</p>
 <p>Pour rendre exécutable ton script, tu peux calculer les valeurs qui vont bien
 avec <strong>chmod</strong>, ou aller plus vite en exécutant cette commande :</p>
-<pre><code class="language-sh">$ chmod +x script.sh
+<pre><code class="language-text">$ chmod +x script.sh
 </code></pre>
 <p>Et maintenant pour l'exécuter :</p>
-<pre><code class="language-sh">$ ./script.sh
+<pre><code class="language-text">$ ./script.sh
 </code></pre>
 <p>Voilà. Ton script ne fait pas encore grand chose.</p>
 <p>Pour information, je vais écrire un énorme script, mais ne t'inquiète pas, il
@@ -210,7 +210,7 @@ est <strong>commenté</strong> pour que tu comprennes ce que fait le script. Je 
 ensuite des exemples d'exécution pour que tu voies les différences.</p>
 <p>Avant de montrer le script, je dois te présenter une nouvelle commande :
 <strong>echo</strong>. Elle affiche ce que tu lui donnes en paramètre sur <strong>stdout</strong>.</p>
-<pre><code class="language-sh">$ echo Coucou les amis !
+<pre><code class="language-text">$ echo Coucou les amis !
 Coucou les amis !
 $
 </code></pre>
@@ -244,7 +244,7 @@ echo $@
 <p>Ce que tu vois ici sont des variables spéciales. Elles sont en lien avec le
 script et auront des valeurs différentes selon comment tu exécutes le script.</p>
 <p>Exécute le script avec ces paramètres et regarde ce qu'il se passe.</p>
-<pre><code class="language-sh">$ ./script.sh
+<pre><code class="language-text">$ ./script.sh
 ...
 $ ./script.sh toto
 ...

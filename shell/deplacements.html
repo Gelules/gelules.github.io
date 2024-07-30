@@ -197,20 +197,20 @@ jouer au miroir.</p>
 aussi. La différence c'est que Thunar me liste directement tous mes fichiers.</p>
 <h2 id="lister-un-répertoire"><a class="header" href="#lister-un-répertoire">Lister un répertoire</a></h2>
 <p>Pour lister ton répertoire courant, utilises la commande <strong>ls</strong>.</p>
-<pre><code class="language-sh">$ ls
+<pre><code class="language-text">$ ls
 Desktop  Development  Documents  Downloads  Formation  mount_vbox_share.sh  Music  Pictures  Public  School  Templates  Videos
 $
 </code></pre>
 <p>Tu peux donner un ou plusieurs noms de fichiers et répertoires à <strong>ls</strong> pour
 lister leurs contenus.</p>
 <p>Depuis ton HOME, exécute</p>
-<pre><code class="language-sh">ls Desktop Documents Downloads
+<pre><code class="language-text">ls Desktop Documents Downloads
 </code></pre>
 <p>Si ces répertoires n'existent pas chez toi, attends de savoir en créer pour
 tester <strong>ls</strong> avec des noms de fichiers et répertoires donnés en paramètres.</p>
 <h2 id="créer-un-répertoire"><a class="header" href="#créer-un-répertoire">Créer un répertoire</a></h2>
 <p>Pour créer un répertoire, utilise la commande <strong>mkdir</strong>.</p>
-<pre><code class="language-sh">mkdir Test
+<pre><code class="language-text">mkdir Test
 </code></pre>
 <p><img src="./deplacements/mkdir_test.png" alt="mkdir Test" title="mkdir Test" /></p>
 <p>Comme tu peux le voir, mon explorateur de fichiers s'est actualisé pour afficher
@@ -218,7 +218,7 @@ le nouveau répertoire. Utilise la commande <strong>ls</strong> dans ton termina
 que ton terminal le voit également.</p>
 <p>Sache que tu peux créer plusieurs répertoires d'un coup en les donnant à
 <strong>mkdir</strong>.</p>
-<pre><code class="language-sh">$ mkdir Je suis un seul appel a mkdir
+<pre><code class="language-text">$ mkdir Je suis un seul appel a mkdir
 </code></pre>
 <p>Les commandes shell ont pour habitude de ne rien afficher si tout se passe bien.
 En cas d'erreur, un message s'affichera. Lis toujours tes messages, il ne faut
@@ -230,14 +230,14 @@ pas avoir peur. C'est justement une aide pour comprendre ce qu'il se passe.</p>
 doubles-cliques dessus.</p>
 <p>Pour te déplacer dans un répertoire en terminal, c'est facile, tu utilises la
 commande <strong>cd</strong>.</p>
-<pre><code class="language-sh">$ cd Test
+<pre><code class="language-text">$ cd Test
 </code></pre>
 <p>Déplace toi dans le répertoire <strong>Test</strong>.</p>
 <p><img src="./deplacements/cd_test.png" alt="cd Test" title="cd Test" /></p>
 <p>Ton shell affiche maintenant <strong>~/Test</strong>. Ca veut dire qu'il se situe dans le
 répertoire <strong>Test</strong> lui-même situé dans ton <strong>HOME</strong>.</p>
 <p>Tu peux créer une arborescence complète en donnant le paramètre <strong>-p</strong> à mkdir.</p>
-<pre><code class="language-sh">$ mkdir -p je/suis/une/longue/arborescence
+<pre><code class="language-text">$ mkdir -p je/suis/une/longue/arborescence
 $
 </code></pre>
 <p><img src="./deplacements/mkdir_path.png" alt="mkdir path" title="mkdir path" /></p>
@@ -245,7 +245,7 @@ $
 <p>Tu ne vas pas encore voir comment éditer des fichiers. Tu vas commencer par
 créer des fichiers vides.</p>
 <p>Pour se faire, utilise la commande <strong>touch</strong>.</p>
-<pre><code class="language-sh">$ touch je_suis_un_fichier
+<pre><code class="language-text">$ touch je_suis_un_fichier
 $ ls
 </code></pre>
 <h1 id="listing-long-format"><a class="header" href="#listing-long-format">Listing long format</a></h1>
@@ -254,7 +254,7 @@ affichées sur le terminal avec <strong>ls</strong>. Cette coloration est dûe �
 configuration de <strong>ls</strong>.</p>
 <p>Dans mon cas, si j'exécuter <strong>which ls</strong> pour en savoir plus sur la commande
 <strong>ls</strong>, j'ai ceci :</p>
-<pre><code class="language-sh">$ which ls
+<pre><code class="language-text">$ which ls
 ls: aliased to ls --color=auto
 $
 </code></pre>
@@ -262,7 +262,7 @@ $
 colore les noms des fichiers et répertoires dans ton terminal.</p>
 <p>Exécute maintenant ceci, je fais exprès de cacher certains informations pour te
 forcer à exécuter les commandes :</p>
-<pre><code class="language-sh">$ ls
+<pre><code class="language-text">$ ls
 $ mkdir repertoire
 $ touch fichier
 $ /bin/ls
@@ -277,7 +277,7 @@ par défaut, comment savoir si ce que tu listes et un fichier ou un répertoire 
 <p>Tu vas utiliser le paramètre <strong>-l</strong> à <strong>ls</strong> pour afficher le <em>long listing
 format</em>, pour afficher plein d'informations sur le répertoire où tu te trouves.</p>
 <p>Exécute</p>
-<pre><code class="language-sh">$ ls -l
+<pre><code class="language-text">$ ls -l
 total 0
 -rw-r--r-- 1 gelules wheel  0 Jul 20 18:56 fichier
 drwxr-xr-x 2 gelules wheel 40 Jul 20 18:55 repertoire
@@ -297,7 +297,7 @@ pour lui demander de lister <strong>récursivement</strong> les répertoires.</p
 <p>Pour information, le '.' situé au début de chaque résultat représente ton
 dossier courant (le <em>working directory</em>). Ca veut dire que si tu fais la
 commande</p>
-<pre><code class="language-sh">$ cd .
+<pre><code class="language-text">$ cd .
 </code></pre>
 <p>Tu te déplaceras... où tu te trouves.</p>
 <p>J'ai un exemple pratique qui sera présenté plus tard.</p>
@@ -307,7 +307,7 @@ commande</p>
 va supprimer un répertoire et toute son arborescence récursivement.</p>
 <p>Essaie le commandes suivantes, je n'affiche pas le résultat pour te forcer à
 visualiser par toi-même ce qu'il se passe.</p>
-<pre><code class="language-sh">$ ls
+<pre><code class="language-text">$ ls
 je je_suis_un_fichier
 $ rmdir je_suis_un_fichier
 ??? # Mais diantre, que se passe t-il ?
@@ -347,15 +347,15 @@ pas encore vu ce cas.</p>
 supprimer plusieurs. Attention, <strong>rm</strong> doit toujours avoir son paramètre <strong>-r</strong>
 si tu supprimes des répertoires. Dans le cas de fichiers, tu n'as pas besoin de
 l'utiliser.</p>
-<pre><code class="language-sh">$ rmdir Je suis un seul appel a mkdir
+<pre><code class="language-text">$ rmdir Je suis un seul appel a mkdir
 </code></pre>
 <p>ou</p>
-<pre><code class="language-sh">$ rm -r Je suis un seul appel a mkdir
+<pre><code class="language-text">$ rm -r Je suis un seul appel a mkdir
 </code></pre>
 <h2 id="copier-des-fichiers-et-répertoires"><a class="header" href="#copier-des-fichiers-et-répertoires">Copier des fichiers et répertoires</a></h2>
 <p>Pour copier des fichiers et des répertoires, tu peux utiliser la commande
 <strong>cp</strong>.</p>
-<pre><code class="language-sh">$ ls
+<pre><code class="language-text">$ ls
 $ touch fichier_1
 $ cp fichier_1 fichier_2
 $ mkdir repertoire_1
@@ -380,7 +380,7 @@ récursivement avec l'option <strong>-r</strong>.</p>
 <h2 id="renommer-des-fichiers-et-répertoires"><a class="header" href="#renommer-des-fichiers-et-répertoires">Renommer des fichiers et répertoires</a></h2>
 <p>Pour renommer ou déplacer un répertoire ou un fichier, utilise la commande
 <strong>mv</strong>, pour <em>M</em>o<em>V</em>e.</p>
-<pre><code class="language-sh">$ touch gato
+<pre><code class="language-text">$ touch gato
 $ ls
 gato
 $ mv gato gateau
@@ -401,7 +401,7 @@ répertoire avec un nouveau nom.</p>
 <p>Il faut donner <strong>..</strong> à cd pour revenir en arrière. Chaque <strong>..</strong> part en
 arrière d'un niveau.</p>
 <p>Un exemple sera plus parlant.</p>
-<pre><code class="language-sh">$ mkdir -p toto/titi/tutu
+<pre><code class="language-text">$ mkdir -p toto/titi/tutu
 $ cd toto/titi/tutu
 $ cd ..
 $ ls
@@ -416,7 +416,7 @@ $
 à <strong>cd</strong>.</p>
 <p>Je te laisse faire les commandes pour apprécier, j'ai caché exprès les parties
 intéressantes.</p>
-<pre><code class="language-sh">$ mkdir -p je/suis/un/humain tu/es/un/gateau
+<pre><code class="language-text">$ mkdir -p je/suis/un/humain tu/es/un/gateau
 $ cd je/suis/un/humain
 $ cd ../../../../tu/es/un/gateau
 $ pwd
@@ -434,7 +434,7 @@ $
 simplement <strong>cd</strong> sans paramètre.</p>
 <p>Je te laisse faire les commandes pour apprécier, j'ai caché exprès les parties
 intéressantes.</p>
-<pre><code class="language-sh">$ cd je/suis/un/humain
+<pre><code class="language-text">$ cd je/suis/un/humain
 $ pwd
 ???
 $ cd
@@ -444,24 +444,24 @@ $
 </code></pre>
 <h3 id="cas-particuliers"><a class="header" href="#cas-particuliers">Cas particuliers</a></h3>
 <p>Crée le répertoire <strong>canare</strong> et <strong>cd</strong> y toi dedans.</p>
-<pre><code class="language-sh">~ $ mkdir canare
+<pre><code class="language-text">~ $ mkdir canare
 ~ $ cd canare
 ~/canare $
 </code></pre>
 <p>Tu te rends compte que tu as fait une faute de frappe.</p>
 <p>Renomme le répertoire dans lequel tu te trouves ainsi :</p>
-<pre><code class="language-sh">~/canare $ mv ../canare ../canard
+<pre><code class="language-text">~/canare $ mv ../canare ../canard
 ~/canare $
 </code></pre>
 <p>Horreur et damnation, ton shell affiche encore <strong>canare</strong>. Il faut que tu
 exécutes <strong>cd .</strong> pour que ton shell se mette à jour.</p>
-<pre><code class="language-sh">~/canare $ cd .
+<pre><code class="language-text">~/canare $ cd .
 ~/canard $
 </code></pre>
 <p>Maintenant plus drôle. Tu vas créer ce qu'on appelle un <strong>undefined behavior</strong>
 ou <strong>comportement indéfini</strong>.</p>
 <p>Voici quelques commandes :</p>
-<pre><code class="language-sh">$ mkdir toto
+<pre><code class="language-text">$ mkdir toto
 $ cd toto
 $ rmdir ../toto
 $ cd .
@@ -478,7 +478,7 @@ comportement différent.</p>
 lui-même dans un répertoire nommé <strong>/</strong> (slash).</p>
 <p>Exécute la commande <strong>ls /</strong> pour voir ce qui se trouve à la racine de ton
 système de fichier (filesystem).</p>
-<pre><code class="language-sh">$ ls /
+<pre><code class="language-text">$ ls /
 bin  boot  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 </code></pre>
 <p>Tu n'as peut-être pas exactement le même résultat. Ce n'est pas grave. Tu
@@ -492,7 +492,7 @@ te déplacer et lister ce qu'il s'y trouve.</p>
 <strong>/tmp</strong> qui est, dans beaucoup de distributions Linux, remis à zéro à chaque
 démarrage. Il peut être configuré pour être remis à zéro tous les jours,
 semaines, mois...</p>
-<pre><code class="language-sh">$ cd /tmp
+<pre><code class="language-text">$ cd /tmp
 $ touch je_vais_disparaitre
 $ ls
 je_vais_disparaitre
@@ -505,7 +505,7 @@ $ ls
 <p>Il y a une dernière chose dont je ne t'ai pas parlé. Les fichiers cachés.</p>
 <p>Je vais exprès de cacher certains informations pour te forcer à pratiquer.</p>
 <p>Exécute ces commandes depuis ton <strong>HOME</strong> :</p>
-<pre><code class="language-sh">$ mkdir Test
+<pre><code class="language-text">$ mkdir Test
 $ cd Test
 $ touch .cache affiche
 $ ls
@@ -517,13 +517,13 @@ dont le nom commencent par un point '.' ne sont pas affichés, car il s'agit en
 général de fichier de configuration personnelle pour tes programmes et c'est
 plus élégant de ne pas toujours les afficher.</p>
 <p>Si tu veux les afficher, exécute :</p>
-<pre><code class="language-sh">$ ls -a
+<pre><code class="language-text">$ ls -a
 . .. .cache affiche
 </code></pre>
 <p>Mais que sont '.' et '..' ? Rappelle toi, le '.' représente le répertoire dans
 lequel tu te trouves et '..' représente le répertoire parent.</p>
 <p>Si tu veux afficher tout ce qui est caché sauf '.' et '..', exécute :</p>
-<pre><code class="language-sh">$ ls -A
+<pre><code class="language-text">$ ls -A
 .cache affiche
 </code></pre>
 <p>Je te laisse maintenant exécuter cette dernière commande <strong>dans ton HOME</strong>. Tu

@@ -186,18 +186,18 @@ variable qui permet à ton shell de trouver les programmes à exécuter.</p>
 <strong>/usr/bin</strong>, et ainsi de suite.</p>
 <p>On va faire un petit jeu.</p>
 <p>Crée le répertoire <strong>/tmp/test/</strong> et <strong>cd</strong> dedans.</p>
-<pre><code class="language-sh">$ mkdir /tmp/test
+<pre><code class="language-text">$ mkdir /tmp/test
 $ cd /tmp/test
 </code></pre>
 <p>Crée le fichier avec ton éditeur et ajoute la ligne suivante dedans :</p>
-<pre><code class="language-sh">$ cat firefox
+<pre><code class="language-text">$ cat firefox
 #!/bin/sh
 
 echo Et non, je ne suis pas Firefox
 $
 </code></pre>
 <p>Rends le exécutable.</p>
-<pre><code class="language-sh">$ chmod +x firefox
+<pre><code class="language-text">$ chmod +x firefox
 </code></pre>
 <p>On va mettre la variable d'environnement PATH à jour. Elle ne le sera que pour
 ton shell actuel, les futurs shells ne seront pas impactés.</p>
@@ -209,7 +209,7 @@ $
 <p>Tu peux voir que ton shell trouve d'abord le fichier <strong>firefox</strong> que tu viens de
 créer.</p>
 <p>Tu peux voir quel programme ton shell trouvera avec la commande <strong>which</strong>.</p>
-<pre><code class="language-sh">$ which firefox
+<pre><code class="language-text">$ which firefox
 /tmp/test/firefox
 $
 </code></pre>

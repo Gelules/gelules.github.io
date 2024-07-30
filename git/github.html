@@ -194,7 +194,7 @@ les droits de pousser ton travail sur GitHub.</p>
 <p>Ca semble compliqué dit comme ça, ne t'inquiète pas, tout est transparant pour
 toi, tu n'auras rien à faire une fois que tout est installé.</p>
 <p>Va dans ton <strong>HOME</strong> et crée le répertoire <strong>.ssh</strong>. Dedans, crée les clés SSH.</p>
-<pre><code class="language-sh">$ cd
+<pre><code class="language-text">$ cd
 $ mkdir .ssh
 $ cd .ssh
 $ ssh-keygen -t ed25519
@@ -206,7 +206,7 @@ une connexion avec la remote de GitHub, tu devras rentrer ce mot de passe.</p>
 <p>Met un mot de passe si tu veux.</p>
 <p><strong>ATTENTION</strong>, si tu veux absolument mettre un mot de passe, alors je te
 conseille de changer la génération de tes clés avec cette commande</p>
-<pre><code class="language-sh">$ ssh-keygen -t ed25519 -a 100
+<pre><code class="language-text">$ ssh-keygen -t ed25519 -a 100
 </code></pre>
 <p>La différence est qu'il y aura une centaine de passages sur ta clé avec un
 chiffrement particulier. Par défaut la valeur est 16. 100 est une assez bonne
@@ -252,7 +252,7 @@ privée au choix.</p>
 sur <strong>SSH</strong>. Copie le lien qui est inscrit. Le mien ressemble à ceci :
 git@github.com:Gelules/file_creator.git</p>
 <p>Retourne dans ton <strong>HOME</strong> et exécute la commande suivante :</p>
-<pre><code class="language-sh">$ git clone git@github.com:Gelules/file_creator.git
+<pre><code class="language-text">$ git clone git@github.com:Gelules/file_creator.git
 ...
 $ cd file_creator
 </code></pre>
@@ -266,7 +266,7 @@ et les commit avec le message <strong>initial commit</strong>.</p>
 <h2 id="push"><a class="header" href="#push">push</a></h2>
 <p>Maintenant que tu es retourné à l'état du chapitre précédent, tu vas pousser tes
 fichiers vides.</p>
-<pre><code class="language-sh">$ git push
+<pre><code class="language-text">$ git push
 Enumerating objects: 3, done.
 Counting objects: 100% (3/3), done.
 Delta compression using up to 4 threads
@@ -286,7 +286,7 @@ qui indique qu'un fichier est exécutable ou non.</p>
 exécuter <strong>git status</strong>, tu verras qu'il t'indique d'ajouter le fichier.</p>
 <p>Rends le exécutable, ajoute le, crée un commit pour indiquer que le fichier doit
 être exécutable et pousse ton travail.</p>
-<pre><code class="language-sh">$ chmod +x file_creator.sh
+<pre><code class="language-text">$ chmod +x file_creator.sh
 $ git status
 $ git add file_creator.sh
 $ git commit -m "file_creator must be executable"
@@ -385,7 +385,7 @@ done
 <p>J'ai besoin que tu connaisses la commande <strong>git pull</strong>. Pour ça tu vas cloner
 une deuxième fois ton dépôt ailleurs. Dans le répertoire <strong>/tmp</strong> par exemple.</p>
 <p>Ouvre un deuxième terminal et effectue ces commandes.</p>
-<pre><code class="language-sh">$ cd /tmp
+<pre><code class="language-text">$ cd /tmp
 $ git clone git@github.com:Gelules/file_creator.git
 ...
 $ cd file_creator
@@ -429,7 +429,7 @@ done
 <p>Ce répertoire n'est plus à jour avec la nouvelle modification ! Tu vas y
 remédier.</p>
 <p>Sur ton deuxième terminal :</p>
-<pre><code class="language-sh">$ git pull
+<pre><code class="language-text">$ git pull
 ...
 $
 </code></pre>

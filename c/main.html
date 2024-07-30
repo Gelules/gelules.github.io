@@ -201,7 +201,7 @@ auras un <strong>exit status</strong> à 42.</p>
     return 42;
 }
 </code></pre>
-<pre><code class="language-sh">$ gcc test.c -o mon_super_programme
+<pre><code class="language-text">$ gcc test.c -o mon_super_programme
 $ ./mon_super_programme
 $ echo $?
 42
@@ -264,7 +264,7 @@ après sera remplacé et aura sa valeur affichée entre les crochets.</p>
 contient des chaines de caractères.</p>
 <p>Enfin, \n signifie <strong>saut à la ligne</strong>. Plus exactement <em>linefeed</em>.</p>
 <p>Compile et exécute ton programme ainsi :</p>
-<pre><code class="language-sh">$ gcc test.c -o mon_super_programme
+<pre><code class="language-text">$ gcc test.c -o mon_super_programme
 $ ./mon_super_programme coucou les loulous 0 1 10
 argv[0] = ./mon_super_programme
 argv[1] = coucou
@@ -346,13 +346,13 @@ nombre, sinon il renvoie 0.</p>
 <h3 id="man-et-bibliothèque"><a class="header" href="#man-et-bibliothèque">man et bibliothèque</a></h3>
 <p>Pour savoir quel bibliothèque utiliser, tu vas utiliser ton meilleur ami, le
 man.</p>
-<pre><code class="language-sh">$ man atoi
+<pre><code class="language-text">$ man atoi
 ...
 </code></pre>
 <p>Tu peux voir dans le man de atoi qu'il faut inclure stdlib.h.</p>
 <p>Tu peux également vérifier dans le main quelle est la bibliothèque à inclure
 pour printf. Il s'agit bien de stdio.h.</p>
-<pre><code class="language-sh">$ man 3 printf
+<pre><code class="language-text">$ man 3 printf
 ...
 </code></pre>
 <p>Attention à bien mettre 3 pour bien dire que c'est le printf du langage C que tu
@@ -360,24 +360,24 @@ veux utiliser, pas le binaire installé sur le système.</p>
 <p>Plus tard dans ton cursus, tu utiliseras des <em>syscalls</em>, des appels systèmes. Ce
 sont des fonctions fournies par le kernel Linux. La différence est qu'il faut
 demander la 2eme section du manuel.</p>
-<pre><code class="language-sh">$ man 2 write
+<pre><code class="language-text">$ man 2 write
 </code></pre>
 <p>Tu sauras avec le temps si tu cherches un syscall ou une fonction.</p>
 <h4 id="recherche-dans-le-man"><a class="header" href="#recherche-dans-le-man">Recherche dans le man</a></h4>
 <p>Si tu veux lister les sections pour un mot en particulier dans le man, tu peux
 utiliser la commande suivante :</p>
-<pre><code class="language-sh">$ man -k printf
+<pre><code class="language-text">$ man -k printf
 ...
 </code></pre>
 <p>Tu verras que ça va générer <strong>BEAUCOUP</strong> de lignes. Tu peux filter en rajoutant
 un circonflexe '^' au début du mot et un dollar '$' à a fin, le tout entre
 simple quote.</p>
-<pre><code class="language-sh">$ man -k '^printf$'
+<pre><code class="language-test">$ man -k '^printf$'
 ...
 </code></pre>
 <p>Ce sont des caractères spéciaux. ^ signifie début de ligne et $ signifie fin de
 ligne.</p>
-<pre><code class="language-sh">$ man -k '^read$'
+<pre><code class="language-text">$ man -k '^read$'
 ...
 </code></pre>
 <p>Tu peux voir que <em>read</em> existe dans la section 1p, 2 et 3p. Si tu n'avais pas

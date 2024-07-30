@@ -179,19 +179,19 @@
 <p>Pour en apprendre d'avantages quant aux commandes que tu ne maitrises pas, il
 faut que tu fasses confiance à ton meilleur ami : <del>Google</del> le manuel.</p>
 <p>Pour l'invoquer, utilise la commande <strong>man</strong>.</p>
-<pre><code class="language-sh">$ man ls
+<pre><code class="language-text">$ man ls
 </code></pre>
 <p>Le manuel s'affiche. Pour t'y déplacer, utilise les touches fléchées. Pour le
 quitter, appuie sur <strong>q</strong>.</p>
 <p>Chaque commande a son manuel, mais aussi certaines notions de Linux.</p>
 <p>Par exemple, si tu veux en apprendre plus sur ton système de fichier, exécute la
 commande</p>
-<pre><code class="language-sh">$ man hier
+<pre><code class="language-text">$ man hier
 </code></pre>
 <p>hier pour <em>hierarchy</em>.</p>
 <p>Et si tu veux apprendre à utiliser le manuel, alors consulte le manuel du
 manuel.</p>
-<pre><code class="language-sh">$ man man
+<pre><code class="language-text">$ man man
 </code></pre>
 <p>Chose intéressante dedans, les sections.</p>
 <pre><code class="language-text">The table below shows the section numbers of the manual followed by the types of pages they contain.
@@ -215,14 +215,14 @@ sont les fonctions de la libc (bibliothèque C).</p>
 <p>Un exemple. Si tu veux afficher le manuel de la fonction C printf (tu ne sais
 peut-être pas encore ce que c'est, ce n'est pas grave), tu serais tenté
 d'exécuter.</p>
-<pre><code class="language-sh">$ man printf
+<pre><code class="language-text">$ man printf
 </code></pre>
 <p>Si tu le fais, tu verras en haut à gauche <strong>printf(1)</strong>, le '1' entre
 parenthèses signifie que tu es dans la <strong>1</strong>ère section du manuel. Ce que tu
 veux c'est la <strong>3</strong>ème, pour les appels de la bibliothèque C (library calls).</p>
 <p><img src="./rtfm/printf_wrong.png" alt="mauvais printf" title="mauvais printf" /></p>
 <p>Il faut alors utiliser une de ces deux notations :</p>
-<pre><code class="language-sh">$ man 3 printf
+<pre><code class="language-text">$ man 3 printf
 $ man printf.3
 </code></pre>
 <p><img src="./rtfm/printf_good.png" alt="bon printf" title="bon printf" /></p>

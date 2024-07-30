@@ -590,7 +590,7 @@ interpréteurs.</p>
 <p>J'admets ici que c'est la première fois que tu ouvres un shell qui a sa
 configuration par défaut.</p>
 <p>Une fois sur ton shell, voici ce qui se présente à toi.</p>
-<pre><code class="language-sh">username@hostname:~$
+<pre><code class="language-text">username@hostname:~$
 </code></pre>
 <p>Décortiquons tout ça.</p>
 <p><strong>username</strong> est ton nom d'utiisateur.</p>
@@ -605,21 +605,21 @@ comme simple utilisateur.</p>
 seront exécutées en tant que <strong>root</strong> (admin).</p>
 <p>Pour simplifier la lecture des codes que je vais présenter, mon shell sera
 présenté ainsi :</p>
-<pre><code class="language-sh">$
+<pre><code class="language-text">$
 </code></pre>
 <p>Pour essayer, entre la commande <strong>pwd</strong>, et vois la différence de résultat avec
 la mienne.</p>
-<pre><code class="language-sh">$ pwd
+<pre><code class="language-text">$ pwd
 /home/gelules
 $
 </code></pre>
 <p>La commande <strong>pwd</strong> te dit où te trouves. C'est ton <strong>P</strong>ath <strong>W</strong>orking <strong>D</strong>irectory.</p>
 <h1 id="shutdown-et-reboot"><a class="header" href="#shutdown-et-reboot">Shutdown et reboot</a></h1>
 <p>Si tu veux arrêter ta machine, exécute la commande</p>
-<pre><code class="language-sh">$ shutdown now
+<pre><code class="language-text">$ shutdown now
 </code></pre>
 <p>Si tu veux rebooter ta machine, exécute la commande</p>
-<pre><code class="language-sh">$ reboot
+<pre><code class="language-text">$ reboot
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="se-déplacer"><a class="header" href="#se-déplacer">Se déplacer</a></h1>
 <h2 id="introduction-1"><a class="header" href="#introduction-1">Introduction</a></h2>
@@ -643,20 +643,20 @@ jouer au miroir.</p>
 aussi. La différence c'est que Thunar me liste directement tous mes fichiers.</p>
 <h2 id="lister-un-répertoire"><a class="header" href="#lister-un-répertoire">Lister un répertoire</a></h2>
 <p>Pour lister ton répertoire courant, utilises la commande <strong>ls</strong>.</p>
-<pre><code class="language-sh">$ ls
+<pre><code class="language-text">$ ls
 Desktop  Development  Documents  Downloads  Formation  mount_vbox_share.sh  Music  Pictures  Public  School  Templates  Videos
 $
 </code></pre>
 <p>Tu peux donner un ou plusieurs noms de fichiers et répertoires à <strong>ls</strong> pour
 lister leurs contenus.</p>
 <p>Depuis ton HOME, exécute</p>
-<pre><code class="language-sh">ls Desktop Documents Downloads
+<pre><code class="language-text">ls Desktop Documents Downloads
 </code></pre>
 <p>Si ces répertoires n'existent pas chez toi, attends de savoir en créer pour
 tester <strong>ls</strong> avec des noms de fichiers et répertoires donnés en paramètres.</p>
 <h2 id="créer-un-répertoire"><a class="header" href="#créer-un-répertoire">Créer un répertoire</a></h2>
 <p>Pour créer un répertoire, utilise la commande <strong>mkdir</strong>.</p>
-<pre><code class="language-sh">mkdir Test
+<pre><code class="language-text">mkdir Test
 </code></pre>
 <p><img src="shell/./deplacements/mkdir_test.png" alt="mkdir Test" title="mkdir Test" /></p>
 <p>Comme tu peux le voir, mon explorateur de fichiers s'est actualisé pour afficher
@@ -664,7 +664,7 @@ le nouveau répertoire. Utilise la commande <strong>ls</strong> dans ton termina
 que ton terminal le voit également.</p>
 <p>Sache que tu peux créer plusieurs répertoires d'un coup en les donnant à
 <strong>mkdir</strong>.</p>
-<pre><code class="language-sh">$ mkdir Je suis un seul appel a mkdir
+<pre><code class="language-text">$ mkdir Je suis un seul appel a mkdir
 </code></pre>
 <p>Les commandes shell ont pour habitude de ne rien afficher si tout se passe bien.
 En cas d'erreur, un message s'affichera. Lis toujours tes messages, il ne faut
@@ -676,14 +676,14 @@ pas avoir peur. C'est justement une aide pour comprendre ce qu'il se passe.</p>
 doubles-cliques dessus.</p>
 <p>Pour te déplacer dans un répertoire en terminal, c'est facile, tu utilises la
 commande <strong>cd</strong>.</p>
-<pre><code class="language-sh">$ cd Test
+<pre><code class="language-text">$ cd Test
 </code></pre>
 <p>Déplace toi dans le répertoire <strong>Test</strong>.</p>
 <p><img src="shell/./deplacements/cd_test.png" alt="cd Test" title="cd Test" /></p>
 <p>Ton shell affiche maintenant <strong>~/Test</strong>. Ca veut dire qu'il se situe dans le
 répertoire <strong>Test</strong> lui-même situé dans ton <strong>HOME</strong>.</p>
 <p>Tu peux créer une arborescence complète en donnant le paramètre <strong>-p</strong> à mkdir.</p>
-<pre><code class="language-sh">$ mkdir -p je/suis/une/longue/arborescence
+<pre><code class="language-text">$ mkdir -p je/suis/une/longue/arborescence
 $
 </code></pre>
 <p><img src="shell/./deplacements/mkdir_path.png" alt="mkdir path" title="mkdir path" /></p>
@@ -691,7 +691,7 @@ $
 <p>Tu ne vas pas encore voir comment éditer des fichiers. Tu vas commencer par
 créer des fichiers vides.</p>
 <p>Pour se faire, utilise la commande <strong>touch</strong>.</p>
-<pre><code class="language-sh">$ touch je_suis_un_fichier
+<pre><code class="language-text">$ touch je_suis_un_fichier
 $ ls
 </code></pre>
 <h1 id="listing-long-format"><a class="header" href="#listing-long-format">Listing long format</a></h1>
@@ -700,7 +700,7 @@ affichées sur le terminal avec <strong>ls</strong>. Cette coloration est dûe �
 configuration de <strong>ls</strong>.</p>
 <p>Dans mon cas, si j'exécuter <strong>which ls</strong> pour en savoir plus sur la commande
 <strong>ls</strong>, j'ai ceci :</p>
-<pre><code class="language-sh">$ which ls
+<pre><code class="language-text">$ which ls
 ls: aliased to ls --color=auto
 $
 </code></pre>
@@ -708,7 +708,7 @@ $
 colore les noms des fichiers et répertoires dans ton terminal.</p>
 <p>Exécute maintenant ceci, je fais exprès de cacher certains informations pour te
 forcer à exécuter les commandes :</p>
-<pre><code class="language-sh">$ ls
+<pre><code class="language-text">$ ls
 $ mkdir repertoire
 $ touch fichier
 $ /bin/ls
@@ -723,7 +723,7 @@ par défaut, comment savoir si ce que tu listes et un fichier ou un répertoire 
 <p>Tu vas utiliser le paramètre <strong>-l</strong> à <strong>ls</strong> pour afficher le <em>long listing
 format</em>, pour afficher plein d'informations sur le répertoire où tu te trouves.</p>
 <p>Exécute</p>
-<pre><code class="language-sh">$ ls -l
+<pre><code class="language-text">$ ls -l
 total 0
 -rw-r--r-- 1 gelules wheel  0 Jul 20 18:56 fichier
 drwxr-xr-x 2 gelules wheel 40 Jul 20 18:55 repertoire
@@ -743,7 +743,7 @@ pour lui demander de lister <strong>récursivement</strong> les répertoires.</p
 <p>Pour information, le '.' situé au début de chaque résultat représente ton
 dossier courant (le <em>working directory</em>). Ca veut dire que si tu fais la
 commande</p>
-<pre><code class="language-sh">$ cd .
+<pre><code class="language-text">$ cd .
 </code></pre>
 <p>Tu te déplaceras... où tu te trouves.</p>
 <p>J'ai un exemple pratique qui sera présenté plus tard.</p>
@@ -753,7 +753,7 @@ commande</p>
 va supprimer un répertoire et toute son arborescence récursivement.</p>
 <p>Essaie le commandes suivantes, je n'affiche pas le résultat pour te forcer à
 visualiser par toi-même ce qu'il se passe.</p>
-<pre><code class="language-sh">$ ls
+<pre><code class="language-text">$ ls
 je je_suis_un_fichier
 $ rmdir je_suis_un_fichier
 ??? # Mais diantre, que se passe t-il ?
@@ -793,15 +793,15 @@ pas encore vu ce cas.</p>
 supprimer plusieurs. Attention, <strong>rm</strong> doit toujours avoir son paramètre <strong>-r</strong>
 si tu supprimes des répertoires. Dans le cas de fichiers, tu n'as pas besoin de
 l'utiliser.</p>
-<pre><code class="language-sh">$ rmdir Je suis un seul appel a mkdir
+<pre><code class="language-text">$ rmdir Je suis un seul appel a mkdir
 </code></pre>
 <p>ou</p>
-<pre><code class="language-sh">$ rm -r Je suis un seul appel a mkdir
+<pre><code class="language-text">$ rm -r Je suis un seul appel a mkdir
 </code></pre>
 <h2 id="copier-des-fichiers-et-répertoires"><a class="header" href="#copier-des-fichiers-et-répertoires">Copier des fichiers et répertoires</a></h2>
 <p>Pour copier des fichiers et des répertoires, tu peux utiliser la commande
 <strong>cp</strong>.</p>
-<pre><code class="language-sh">$ ls
+<pre><code class="language-text">$ ls
 $ touch fichier_1
 $ cp fichier_1 fichier_2
 $ mkdir repertoire_1
@@ -826,7 +826,7 @@ récursivement avec l'option <strong>-r</strong>.</p>
 <h2 id="renommer-des-fichiers-et-répertoires"><a class="header" href="#renommer-des-fichiers-et-répertoires">Renommer des fichiers et répertoires</a></h2>
 <p>Pour renommer ou déplacer un répertoire ou un fichier, utilise la commande
 <strong>mv</strong>, pour <em>M</em>o<em>V</em>e.</p>
-<pre><code class="language-sh">$ touch gato
+<pre><code class="language-text">$ touch gato
 $ ls
 gato
 $ mv gato gateau
@@ -847,7 +847,7 @@ répertoire avec un nouveau nom.</p>
 <p>Il faut donner <strong>..</strong> à cd pour revenir en arrière. Chaque <strong>..</strong> part en
 arrière d'un niveau.</p>
 <p>Un exemple sera plus parlant.</p>
-<pre><code class="language-sh">$ mkdir -p toto/titi/tutu
+<pre><code class="language-text">$ mkdir -p toto/titi/tutu
 $ cd toto/titi/tutu
 $ cd ..
 $ ls
@@ -862,7 +862,7 @@ $
 à <strong>cd</strong>.</p>
 <p>Je te laisse faire les commandes pour apprécier, j'ai caché exprès les parties
 intéressantes.</p>
-<pre><code class="language-sh">$ mkdir -p je/suis/un/humain tu/es/un/gateau
+<pre><code class="language-text">$ mkdir -p je/suis/un/humain tu/es/un/gateau
 $ cd je/suis/un/humain
 $ cd ../../../../tu/es/un/gateau
 $ pwd
@@ -880,7 +880,7 @@ $
 simplement <strong>cd</strong> sans paramètre.</p>
 <p>Je te laisse faire les commandes pour apprécier, j'ai caché exprès les parties
 intéressantes.</p>
-<pre><code class="language-sh">$ cd je/suis/un/humain
+<pre><code class="language-text">$ cd je/suis/un/humain
 $ pwd
 ???
 $ cd
@@ -890,24 +890,24 @@ $
 </code></pre>
 <h3 id="cas-particuliers"><a class="header" href="#cas-particuliers">Cas particuliers</a></h3>
 <p>Crée le répertoire <strong>canare</strong> et <strong>cd</strong> y toi dedans.</p>
-<pre><code class="language-sh">~ $ mkdir canare
+<pre><code class="language-text">~ $ mkdir canare
 ~ $ cd canare
 ~/canare $
 </code></pre>
 <p>Tu te rends compte que tu as fait une faute de frappe.</p>
 <p>Renomme le répertoire dans lequel tu te trouves ainsi :</p>
-<pre><code class="language-sh">~/canare $ mv ../canare ../canard
+<pre><code class="language-text">~/canare $ mv ../canare ../canard
 ~/canare $
 </code></pre>
 <p>Horreur et damnation, ton shell affiche encore <strong>canare</strong>. Il faut que tu
 exécutes <strong>cd .</strong> pour que ton shell se mette à jour.</p>
-<pre><code class="language-sh">~/canare $ cd .
+<pre><code class="language-text">~/canare $ cd .
 ~/canard $
 </code></pre>
 <p>Maintenant plus drôle. Tu vas créer ce qu'on appelle un <strong>undefined behavior</strong>
 ou <strong>comportement indéfini</strong>.</p>
 <p>Voici quelques commandes :</p>
-<pre><code class="language-sh">$ mkdir toto
+<pre><code class="language-text">$ mkdir toto
 $ cd toto
 $ rmdir ../toto
 $ cd .
@@ -924,7 +924,7 @@ comportement différent.</p>
 lui-même dans un répertoire nommé <strong>/</strong> (slash).</p>
 <p>Exécute la commande <strong>ls /</strong> pour voir ce qui se trouve à la racine de ton
 système de fichier (filesystem).</p>
-<pre><code class="language-sh">$ ls /
+<pre><code class="language-text">$ ls /
 bin  boot  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 </code></pre>
 <p>Tu n'as peut-être pas exactement le même résultat. Ce n'est pas grave. Tu
@@ -938,7 +938,7 @@ te déplacer et lister ce qu'il s'y trouve.</p>
 <strong>/tmp</strong> qui est, dans beaucoup de distributions Linux, remis à zéro à chaque
 démarrage. Il peut être configuré pour être remis à zéro tous les jours,
 semaines, mois...</p>
-<pre><code class="language-sh">$ cd /tmp
+<pre><code class="language-text">$ cd /tmp
 $ touch je_vais_disparaitre
 $ ls
 je_vais_disparaitre
@@ -951,7 +951,7 @@ $ ls
 <p>Il y a une dernière chose dont je ne t'ai pas parlé. Les fichiers cachés.</p>
 <p>Je vais exprès de cacher certains informations pour te forcer à pratiquer.</p>
 <p>Exécute ces commandes depuis ton <strong>HOME</strong> :</p>
-<pre><code class="language-sh">$ mkdir Test
+<pre><code class="language-text">$ mkdir Test
 $ cd Test
 $ touch .cache affiche
 $ ls
@@ -963,13 +963,13 @@ dont le nom commencent par un point '.' ne sont pas affichés, car il s'agit en
 général de fichier de configuration personnelle pour tes programmes et c'est
 plus élégant de ne pas toujours les afficher.</p>
 <p>Si tu veux les afficher, exécute :</p>
-<pre><code class="language-sh">$ ls -a
+<pre><code class="language-text">$ ls -a
 . .. .cache affiche
 </code></pre>
 <p>Mais que sont '.' et '..' ? Rappelle toi, le '.' représente le répertoire dans
 lequel tu te trouves et '..' représente le répertoire parent.</p>
 <p>Si tu veux afficher tout ce qui est caché sauf '.' et '..', exécute :</p>
-<pre><code class="language-sh">$ ls -A
+<pre><code class="language-text">$ ls -A
 .cache affiche
 </code></pre>
 <p>Je te laisse maintenant exécuter cette dernière commande <strong>dans ton HOME</strong>. Tu
@@ -980,19 +980,19 @@ c'est configurable).</p>
 <p>Pour en apprendre d'avantages quant aux commandes que tu ne maitrises pas, il
 faut que tu fasses confiance à ton meilleur ami : <del>Google</del> le manuel.</p>
 <p>Pour l'invoquer, utilise la commande <strong>man</strong>.</p>
-<pre><code class="language-sh">$ man ls
+<pre><code class="language-text">$ man ls
 </code></pre>
 <p>Le manuel s'affiche. Pour t'y déplacer, utilise les touches fléchées. Pour le
 quitter, appuie sur <strong>q</strong>.</p>
 <p>Chaque commande a son manuel, mais aussi certaines notions de Linux.</p>
 <p>Par exemple, si tu veux en apprendre plus sur ton système de fichier, exécute la
 commande</p>
-<pre><code class="language-sh">$ man hier
+<pre><code class="language-text">$ man hier
 </code></pre>
 <p>hier pour <em>hierarchy</em>.</p>
 <p>Et si tu veux apprendre à utiliser le manuel, alors consulte le manuel du
 manuel.</p>
-<pre><code class="language-sh">$ man man
+<pre><code class="language-text">$ man man
 </code></pre>
 <p>Chose intéressante dedans, les sections.</p>
 <pre><code class="language-text">The table below shows the section numbers of the manual followed by the types of pages they contain.
@@ -1016,14 +1016,14 @@ sont les fonctions de la libc (bibliothèque C).</p>
 <p>Un exemple. Si tu veux afficher le manuel de la fonction C printf (tu ne sais
 peut-être pas encore ce que c'est, ce n'est pas grave), tu serais tenté
 d'exécuter.</p>
-<pre><code class="language-sh">$ man printf
+<pre><code class="language-text">$ man printf
 </code></pre>
 <p>Si tu le fais, tu verras en haut à gauche <strong>printf(1)</strong>, le '1' entre
 parenthèses signifie que tu es dans la <strong>1</strong>ère section du manuel. Ce que tu
 veux c'est la <strong>3</strong>ème, pour les appels de la bibliothèque C (library calls).</p>
 <p><img src="shell/./rtfm/printf_wrong.png" alt="mauvais printf" title="mauvais printf" /></p>
 <p>Il faut alors utiliser une de ces deux notations :</p>
-<pre><code class="language-sh">$ man 3 printf
+<pre><code class="language-text">$ man 3 printf
 $ man printf.3
 </code></pre>
 <p><img src="shell/./rtfm/printf_good.png" alt="bon printf" title="bon printf" /></p>
@@ -1037,7 +1037,7 @@ t'invite très fortement à lire le manuel à chaque fois.</p>
 veut extrêmement simple d'utilisation et surtout s'exécute dans le terminal.</p>
 <p>Mettons que tu sois dans ton <strong>HOME</strong>, nous allons faire les tests d'écriture et
 lecture dans le répertoire Test.</p>
-<pre><code class="language-sh">$ mkdir Test
+<pre><code class="language-text">$ mkdir Test
 $ cd Test
 </code></pre>
 <p>Tu peux appeler <strong>nano</strong> sans nom de fichier derrière, tu pourras donner un nom
@@ -1096,17 +1096,17 @@ sauvegarder ailleurs. Appelle ton fichier fichier_test.</p>
 entretemps, il te demandera si tu veux sauvegarder avant de quitter.</p>
 <p>De retour sur le shell, tu peux rouvrir ton fichier avec nano en lui donnant son
 nom en paramètre.</p>
-<pre><code class="language-sh">$ nano fichier_test
+<pre><code class="language-text">$ nano fichier_test
 </code></pre>
 <h2 id="lire-un-fichier"><a class="header" href="#lire-un-fichier">Lire un fichier</a></h2>
 <p>Pour lire un fichier, tu peux utiliser la redirection gauche '&lt;' en mettant le
 nom de ton fichier.</p>
-<pre><code class="language-sh">$ &lt; fichier_test
+<pre><code class="language-text">$ &lt; fichier_test
 # Contenu du fichier
 $
 </code></pre>
 <p>Tu peux aussi utiliser la commande <strong>cat</strong></p>
-<pre><code class="language-sh">$ cat fichier_test
+<pre><code class="language-text">$ cat fichier_test
 # Contenu du fichier
 $
 </code></pre>
@@ -1115,7 +1115,7 @@ de la norme. La norme en piscine est le style de code (la coding style) à suivr
 pour que tes fichiers soient considérés comme valides.</p>
 <p>Rouvre ton fichier avec nano et ajoute des espaces à la fin d'une ou plusieurs
 lignes de texte. Exécute maintenant</p>
-<pre><code class="language-sh">$ cat -e fichier_test
+<pre><code class="language-text">$ cat -e fichier_test
 # Contenu du fichier avec des '$' en fin de ligne
 $
 </code></pre>
@@ -1125,7 +1125,7 @@ avoir d'espace qui donne ensuite sur une fin de ligne. Ce sont des caractères
 inutiles présents dans tes fichiers. Ca prend de la place pour rien et c'est
 moche, bouh !</p>
 <p>Rouvre ton fichier avec nano et supprime ces espaces en trop.</p>
-<pre><code class="language-sh">$ cat -e fichier_test
+<pre><code class="language-text">$ cat -e fichier_test
 Je suis un fichier$
 avec     $
 des $
@@ -1136,7 +1136,7 @@ $ # Bouh c'est moche
 $ nano fichier_test
 ...
 </code></pre>
-<pre><code class="language-sh">$ cat -e fichier_test
+<pre><code class="language-text">$ cat -e fichier_test
 Je suis un fichier$
 avec$
 des$
@@ -1150,7 +1150,7 @@ $ # Que c'est beau, je suis amoureux
 <p>Tu te rappelles du <em>long listing format</em> de <strong>ls</strong> avec toutes ces informations
 imbitables ? C'est le moment de les biter.</p>
 <p>Reprenons dans répertoire Test vide.</p>
-<pre><code class="language-sh">$ touch fichier
+<pre><code class="language-text">$ touch fichier
 $ mkdir repertoire
 $ cp /bin/ls . # Si tu as une erreur, essaie avec /usr/bin/ls
 $ ls -l
@@ -1187,7 +1187,7 @@ possède le fichier est <strong>wheel</strong>.</p>
 <p><strong>Other</strong> est le reste du monde qui n'est ni l'utilisateur gelules ni les
 utilisateurs dans le groupe wheel.</p>
 <p>Tu peux voir dans quel groupe tu es avec la commande <strong>group</strong>.</p>
-<pre><code class="language-sh">$ group
+<pre><code class="language-text">$ group
 </code></pre>
 <p>Revenons aux lettres.</p>
 <p><strong>r</strong> signifie <strong>r</strong>ead, pour lecture.</p>
@@ -1222,7 +1222,7 @@ modifier le fichier et les autres ne peuvent qu'exécuter le fichier.</p>
 <p>110 = 6</p>
 <p>001 = 1</p>
 <p>Le droit à appliquer sera 761.</p>
-<pre><code class="language-sh">$ chmod 761 ls
+<pre><code class="language-text">$ chmod 761 ls
 $ ls -l ls
 -rwxrw---x 1 gelules wheel 129728 Jul 20 21:29 ls
 $
@@ -1231,11 +1231,11 @@ $
 <p>Sache qu'un répertoire a des droits d'exécution. Le droit d'exécution d'un
 répertoire permet de s'y <strong>cd</strong>.</p>
 <p>Faisons un autre exemple.</p>
-<pre><code class="language-sh">$ chmod 300 repertoire
+<pre><code class="language-text">$ chmod 300 repertoire
 </code></pre>
 <p>Maintenant je n'ai que les droits de mofidication et d'exécution sur le
 répertoire <strong>repertoire</strong>.</p>
-<pre><code class="language-sh">$ nano repertoire/test
+<pre><code class="language-text">$ nano repertoire/test
 ...
 $ ls repertoire
 ls: cannot open directory 'repertoire': Permission denied
@@ -1259,17 +1259,17 @@ commande.</p>
 <h1 id="autocomplétion"><a class="header" href="#autocomplétion">Autocomplétion</a></h1>
 <p>Ton shell est capable d'autocompléter tes commandes. Appuie sur sur la touche de
 tabulation pour lui demander d'autocompléter.</p>
-<pre><code class="language-sh">$ touch travail ventre ventricule
+<pre><code class="language-text">$ touch travail ventre ventricule
 $ ls t&lt;TAB&gt;
 </code></pre>
 <p>Tu verras que le fichier <strong>travail</strong> va s'autocompléter tout seul.</p>
-<pre><code class="language-sh">$ ls v&lt;TAB&gt;
+<pre><code class="language-text">$ ls v&lt;TAB&gt;
      ventr
 </code></pre>
 <p>Là il va faire face à un problème. Le shell ne peut pas deviner à ta place si tu
 veux ventre ou ventricule. En appuyant une deuxième fois sur TAB, il t'affichera
 quels fichiers correspondent.</p>
-<pre><code class="language-sh">$ ls v&lt;TAB&gt;&lt;TAB&gt;
+<pre><code class="language-text">$ ls v&lt;TAB&gt;&lt;TAB&gt;
      ventre ventricule
 </code></pre>
 <p>A toi de régler l'ambiguïté en ajoute <strong>e</strong> ou <strong>i</strong>.</p>
@@ -1313,7 +1313,7 @@ surtout je n'ai pas 6 doigts à chaque main pour ça. Mais je sais que votre
 me donne envie pour le moment de changer.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="vscode"><a class="header" href="#vscode">VSCode</a></h1>
 <p>Pour installer vscode, installer le paquet code</p>
-<pre><code class="language-sh">$ sudo apt install code # Ubuntu
+<pre><code class="language-text">$ sudo apt install code # Ubuntu
 $ sudo pacman -S code # Arch et Manjaro
 $ sudo dnf install code # Fedora
 $ nix-env -i nixos.vscode # NixOS
@@ -1324,7 +1324,7 @@ $ nix-env -i nixos.vscode # NixOS
 <p>Maintenant sur la page d'accueil, tu peux ouvrir un fichier ou un répertoire qui
 contient des fichiers.</p>
 <p>Tu peux également appeler vscode avec des fichiers en paramètres.</p>
-<pre><code class="language-sh">code fichier_1 fichier_2
+<pre><code class="language-text">code fichier_1 fichier_2
 </code></pre>
 <p>Il se peut qu'il te dise que les fichiers ne sont pas "trustés". C'est parce que
 tu n'as pas crée de projet vscode. Tu peux dire "Oui" sans problème.</p>
@@ -1340,10 +1340,10 @@ allergique à la ligne de commande.</p>
 <p>Tu ne le sais peut-être pas, ton shell est configuré par un fichier <strong>Run
 Command</strong>. C'est un fichier caché dans ton <strong>HOME</strong>.</p>
 <p>Si tu es sur bash, ton fichier de configuration est</p>
-<pre><code class="language-sh">$ ~/.bashrc
+<pre><code class="language-text">$ ~/.bashrc
 </code></pre>
 <p>Si tu es sur zsh, ton fichier de configuration est</p>
-<pre><code class="language-sh">$ ~/.zshrc
+<pre><code class="language-text">$ ~/.zshrc
 </code></pre>
 <p>Si tu es sur un autre shell... regarde le man de ton shell pour savoir où se
 trouve ton fichier de configuration.</p>
@@ -1358,7 +1358,7 @@ sympathique que j'aime bien.</p>
 }
 </code></pre>
 <p>Pour mettre à jour la configuration du shell où tu te trouves, exécute</p>
-<pre><code class="language-sh">$ . ~/.zshrc
+<pre><code class="language-text">$ . ~/.zshrc
 </code></pre>
 <p>Accorde la commande avec ton fichier de configuration.</p>
 <p>La commande '.' exécute le fichier que tu donnes. Ton shell va donc exécuter son
@@ -1423,30 +1423,30 @@ t'aider à appréhender une piscine, pas de devenir une brute en informatique.</
 <p>La sortie standard (ou <strong>stdout</strong>) est le flux de texte affiché sur ton terminal
 quand tout se passe bien.</p>
 <p>Par exemple, quand tu exécutes</p>
-<pre><code class="language-sh">$ ls -l fichier_existant # assure toi que le fichier existe
+<pre><code class="language-text">$ ls -l fichier_existant # assure toi que le fichier existe
 </code></pre>
 <p>Tout ce qui est affiché passe par <strong>stdout</strong>.</p>
 <p>Tu peux rediriger le flux dans un fichier en utilisant un chevron.</p>
-<pre><code class="language-sh">$ ls -l &gt; fichier_stdout
+<pre><code class="language-text">$ ls -l &gt; fichier_stdout
 $ cat fichier_stdout
 </code></pre>
 <p>Comme tu peux le voir, <strong>ls -l</strong> n'a pas affiché de résultat, tout a été
 redirigé dans un fichier qui n'existait pas.</p>
 <p>Recommence l'opération.</p>
-<pre><code class="language-sh">$ ls -l &gt; fichier_stdout
+<pre><code class="language-text">$ ls -l &gt; fichier_stdout
 $ cat fichier_stdout
 </code></pre>
 <p>Le fichier n'a pas gardé l'information précédente. Il a été <em>tronqué</em>.</p>
 <p>Si tu veux garder le contenu du fichier à chaque redirection, tu peux utiliser
 la <strong>double redirection</strong>.</p>
-<pre><code class="language-sh">$ ls -l &gt;&gt; fichier_stdout
+<pre><code class="language-text">$ ls -l &gt;&gt; fichier_stdout
 $ cat fichier_stdout
 </code></pre>
 <p>Et là, le contenu déjà présent reste dans le fichier.</p>
 <p>Si tu veux rediriger stdout dans le <strong>vide</strong>, c'est à dire ne pas l'afficher et
 ne pas le rediriger dans un fichier, tu peux utiliser le fichier <strong>/dev/null</strong>
 comme fichier de redirection.</p>
-<pre><code class="language-sh">$ ls -l &gt; /dev/null
+<pre><code class="language-text">$ ls -l &gt; /dev/null
 </code></pre>
 <p>C'est un fichier spécial utilisé uniquement pour rediriger des flux dans le
 vide.</p>
@@ -1454,7 +1454,7 @@ vide.</p>
 <p>Le flux standard des erreurs (ou <strong>stderr</strong>) s'affiche aussi sur ton terminal
 mais en empruntant un autre flux. Il ne s'affiche qu'en cas d'erreur.</p>
 <p>Prenons la situtation suivante :</p>
-<pre><code class="language-sh">$ ls
+<pre><code class="language-text">$ ls
 fichier_existant
 $ ls -l fichier_existant fichier_inexistant
 ls: cannot access 'fichier_inexistant': No such file or directory
@@ -1464,7 +1464,7 @@ $
 <p>La première ligne avec le message d'erreur emprunte le flux d'erreur, et la
 seconde emprunte stdout.</p>
 <p>Tu peux les séparer dans des fichiers différents ainsi :</p>
-<pre><code class="language-sh">$ ls -l fichier_existant fichier_inexistant &gt;stdout.txt 2&gt;stderr.txt
+<pre><code class="language-text">$ ls -l fichier_existant fichier_inexistant &gt;stdout.txt 2&gt;stderr.txt
 $ cat stdout.txt stderr.txt
 ...
 </code></pre>
@@ -1472,7 +1472,7 @@ $ cat stdout.txt stderr.txt
 mais tu n'es pas obligé de l'écrire, sauf à une condition.</p>
 <p>Si tu veux rediriger <strong>stderr</strong> vers <strong>stdout</strong>, tu dois le faire de cette
 façon.</p>
-<pre><code class="language-sh">$ ls -l fichier_existant fichier_inexistant 1&gt;stdout.txt 2&gt;&amp;1
+<pre><code class="language-text">$ ls -l fichier_existant fichier_inexistant 1&gt;stdout.txt 2&gt;&amp;1
 </code></pre>
 <p>Le caractère <strong>esperluette</strong> '&amp;' indique au shell que <strong>1</strong> n'est pas un nom de
 fichier mais le flux numéro 1.</p>
@@ -1485,26 +1485,23 @@ d'un autre programme.</p>
 l'entrée clavier. Ce que fais ton shell à chaque fois que tu appuies sur Entrée,
 il lit son entrée standard pour recevoir ta commande.</p>
 <p>Faisons quelques exemples plus parlant :</p>
-<pre><code class="language-sh">$ ls
+<pre><code class="language-text">$ ls
 $ ls -l / &gt; racine.txt
 $ wc -l racine.txt
 </code></pre>
 <p><strong>wc -l</strong> te permet de compter le nombre de lignes dans un fichier. Mais tu
 aurais pu faire ça en une seule commande grâce au <strong>pipe</strong> (tuyau).</p>
-<pre><code class="language-sh">$ ls -l / | wc -l
+<pre><code class="language-text">$ ls -l / | wc -l
 </code></pre>
 <p>Le pipe '|' te permet de passer la sortie de <strong>ls</strong> dans l'entrée de <strong>wc</strong>.</p>
 <p>Beaucoup d'outils sur Linux fonctionne ainsi.</p>
-<p>Prenons un enchaînement de commandes plus drôle :```sh
-$ ls -l / | cut -d ' ' -f 1 | tee permissions | wc -l</p>
-<pre><code>
-Voici deux nouvelles commandes.
-
-**cut** va couper des colonnes selon un délimiteur.
-
-Prenons la sortie de **ls -l /**.
-```sh
-$ ls -l /
+<p>Prenons un enchaînement de commandes plus drôle :</p>
+<pre><code class="language-text">$ ls -l / | cut -d ' ' -f 1 | tee permissions | wc -l
+</code></pre>
+<p>Voici deux nouvelles commandes.</p>
+<p><strong>cut</strong> va couper des colonnes selon un délimiteur.</p>
+<p>Prenons la sortie de <strong>ls -l /</strong>.</p>
+<pre><code class="language-text">$ ls -l /
 total 56
 lrwxrwxrwx   1 root root       7 Apr  7 20:02 bin -&gt; usr/bin
 drwxr-xr-x   4 root root    4096 Jul 19 01:59 boot
@@ -1531,7 +1528,7 @@ drwxr-xr-x  12 root root    4096 Jul 20 16:52 var
 le délimiteur ESPACE ' '.</p>
 <p>On n'aura donc que la première colonne avec <strong>cut</strong>.
 On n'aura donc que la première colonne avec <strong>cut -d ' ' -f 1</strong></p>
-<pre><code class="language-sh">$ ls -l / | cut -d ' ' -f1
+<pre><code class="language-text">$ ls -l / | cut -d ' ' -f1
 total
 lrwxrwxrwx
 drwxr-xr-x
@@ -1559,7 +1556,7 @@ drwxr-xr-x
 Imagine la lettre 'T' (tee en pronociation Anglaise), la barre de gauche est son
 entrée standard, la barre qui descend est le fichier, la barre de droite est
 <strong>stdout</strong>.</p>
-<pre><code class="language-sh">$ ls -l / | cut -d ' ' -f1 | tee permissions
+<pre><code class="language-text">$ ls -l / | cut -d ' ' -f1 | tee permissions
 total
 lrwxrwxrwx
 drwxr-xr-x
@@ -1594,14 +1591,14 @@ l'entrée d'un autre programme.</p>
 que tu lances depuis ton shell.</p>
 <p>Dans cet exemple, il faut que je seul programme lancé soit ton shell, rien
 d'autre.</p>
-<pre><code class="language-sh">firefox
+<pre><code class="language-text">firefox
 ...
 </code></pre>
 <p>Maintenant que firefox est lancé, tu n'as plus la main sur ton shell. Firefox
 l'utilise pour afficher son stdout et stderr.</p>
 <p>Exécute la combinaison <strong>ctrl+z</strong> pour mettre Firefox en pause et regagner la
 main sur ton shell.</p>
-<pre><code class="language-sh">...
+<pre><code class="language-text">...
 ctrl+z
 zsh: suspended  firefox
 $
@@ -1609,7 +1606,7 @@ $
 <p>Selon le shell que tu utilises, tu peux avoir un message sensiblement différent.</p>
 <p>Tu vas maintenant démarrer vlc  et gimp et pareil, exécuter <strong>ctrl+z</strong> pour
 reprendre la main à chaque fois.</p>
-<pre><code class="language-sh">$ vlc
+<pre><code class="language-text">$ vlc
 ...
 ctrl+z
 zsh: suspended  vlc
@@ -1621,7 +1618,7 @@ $
 </code></pre>
 <p>Exécute la commande <strong>jobs</strong> pour voir l'état des jobs (processus) démarrés par
 ton shell.</p>
-<pre><code class="language-sh">$ jobs
+<pre><code class="language-text">$ jobs
 [1]    suspended  firefox
 [2]  - suspended  vlc
 [3]  + suspended  gimp
@@ -1632,32 +1629,32 @@ jobs que tu as suspendu, et le signe '+' et le dernier jobs que tu as suspendu.<
 <p>Si tu veux remettre un job en <strong>foreground</strong>, c'est à dire que tu relances son
 exécution en lui laisant la main sur ton shell, utilise <strong>fg %IDENTIFIANT</strong> en
 remplaçant <strong>IDENTIFIANT</strong> par le numéro du job.</p>
-<pre><code class="language-sh">$ fg %1 # firefox est réexécuté et on perd la main sur le shell
+<pre><code class="language-text">$ fg %1 # firefox est réexécuté et on perd la main sur le shell
 ...
 ctrl+z
 </code></pre>
 <p>Si tu veux mettre un job en <strong>background</strong>, c'est à dire que tu relances son
 exécution tout en gardant la main sur ton shell, utilise <strong>bg %IDENTIFIANT</strong> en
 remplaçant <strong>IDENTIFIANT</strong> par le numéro du job.</p>
-<pre><code class="language-sh">$ fg %1
+<pre><code class="language-text">$ fg %1
 $ # firefox reprend son exécution et on garde la main sur le shell
 </code></pre>
 <p>Pour arrêter un job, utilise la commande <strong>kill %IDENTIFIANT</strong> en remplaçant
 <strong>IDENTIFIANT</strong> par le numéro du job.</p>
-<pre><code class="language-sh">kill %1
+<pre><code class="language-text">kill %1
 [1]  + terminated  firefox
 $
 </code></pre>
 <p>Enfin, si tu veux lancer un processus en arrière-plan directement depuis ton
 shell, ajoute le caractère <strong>esperluette</strong> '&amp;' à la fin de ta commande.</p>
-<pre><code class="language-sh">$ vlc  &amp;
+<pre><code class="language-text">$ vlc  &amp;
 [1] 22258
 $
 </code></pre>
 <p>Le nombre affiché est le numéro du processus dans le système, il est plus que
 probable que tu n'aies pas le même. Tu peux retrouver le nom d'un processus avec
 son identidiant et la commande <strong>ps</strong>.</p>
-<pre><code class="language-sh">$ ps -p 22258
+<pre><code class="language-text">$ ps -p 22258
     PID TTY          TIME CMD
   22258 pts/0    00:00:00 vlc
 </code></pre>
@@ -1675,7 +1672,7 @@ qui fermera ton shell).</p>
 <p>Ce qui fait que tout ce que tu vas voir à partir d'ici est possible à exécuter
 dans ton terminal.</p>
 <p>Voici le minimum d'un script shell :</p>
-<pre><code>#!/bin/sh
+<pre><code class="language-sh">#!/bin/sh
 </code></pre>
 <p>C'est un commentaire particulier qui indique quel interpréteur utiliser. Par
 habtiude on utilise <strong>/bin/sh</strong> car c'est un interpréteur présent sur tous les
@@ -1685,10 +1682,10 @@ utiliser une fonctionnalité qui n'est pas présente sur <strong>sh</strong>, ca
 systèmes n'ont pas <strong>zsh</strong> installés.</p>
 <p>Pour rendre exécutable ton script, tu peux calculer les valeurs qui vont bien
 avec <strong>chmod</strong>, ou aller plus vite en exécutant cette commande :</p>
-<pre><code class="language-sh">$ chmod +x script.sh
+<pre><code class="language-text">$ chmod +x script.sh
 </code></pre>
 <p>Et maintenant pour l'exécuter :</p>
-<pre><code class="language-sh">$ ./script.sh
+<pre><code class="language-text">$ ./script.sh
 </code></pre>
 <p>Voilà. Ton script ne fait pas encore grand chose.</p>
 <p>Pour information, je vais écrire un énorme script, mais ne t'inquiète pas, il
@@ -1696,7 +1693,7 @@ est <strong>commenté</strong> pour que tu comprennes ce que fait le script. Je 
 ensuite des exemples d'exécution pour que tu voies les différences.</p>
 <p>Avant de montrer le script, je dois te présenter une nouvelle commande :
 <strong>echo</strong>. Elle affiche ce que tu lui donnes en paramètre sur <strong>stdout</strong>.</p>
-<pre><code class="language-sh">$ echo Coucou les amis !
+<pre><code class="language-text">$ echo Coucou les amis !
 Coucou les amis !
 $
 </code></pre>
@@ -1730,7 +1727,7 @@ echo $@
 <p>Ce que tu vois ici sont des variables spéciales. Elles sont en lien avec le
 script et auront des valeurs différentes selon comment tu exécutes le script.</p>
 <p>Exécute le script avec ces paramètres et regarde ce qu'il se passe.</p>
-<pre><code class="language-sh">$ ./script.sh
+<pre><code class="language-text">$ ./script.sh
 ...
 $ ./script.sh toto
 ...
@@ -1839,7 +1836,7 @@ echo $c
 <p>Les variables d'environnement sont des variables initialisées au lancement de
 ton shell.</p>
 <p>Tu peux les avoir avec cette commande :</p>
-<pre><code class="language-sh">$ env
+<pre><code class="language-text">$ env
 </code></pre>
 <p>Voici les variables que tu utiliseras le plus :</p>
 <p>Tu peux connaitre le shell exécuté avec la variable <strong>$SHELL</strong></p>
@@ -1870,18 +1867,18 @@ variable qui permet à ton shell de trouver les programmes à exécuter.</p>
 <strong>/usr/bin</strong>, et ainsi de suite.</p>
 <p>On va faire un petit jeu.</p>
 <p>Crée le répertoire <strong>/tmp/test/</strong> et <strong>cd</strong> dedans.</p>
-<pre><code class="language-sh">$ mkdir /tmp/test
+<pre><code class="language-text">$ mkdir /tmp/test
 $ cd /tmp/test
 </code></pre>
 <p>Crée le fichier avec ton éditeur et ajoute la ligne suivante dedans :</p>
-<pre><code class="language-sh">$ cat firefox
+<pre><code class="language-text">$ cat firefox
 #!/bin/sh
 
 echo Et non, je ne suis pas Firefox
 $
 </code></pre>
 <p>Rends le exécutable.</p>
-<pre><code class="language-sh">$ chmod +x firefox
+<pre><code class="language-text">$ chmod +x firefox
 </code></pre>
 <p>On va mettre la variable d'environnement PATH à jour. Elle ne le sera que pour
 ton shell actuel, les futurs shells ne seront pas impactés.</p>
@@ -1893,7 +1890,7 @@ $
 <p>Tu peux voir que ton shell trouve d'abord le fichier <strong>firefox</strong> que tu viens de
 créer.</p>
 <p>Tu peux voir quel programme ton shell trouvera avec la commande <strong>which</strong>.</p>
-<pre><code class="language-sh">$ which firefox
+<pre><code class="language-text">$ which firefox
 /tmp/test/firefox
 $
 </code></pre>
@@ -2129,7 +2126,7 @@ fi
 <p>Je te laisse essayer le script.</p>
 <p>Il n'est pas optimisé du tout. Comme tu peux le voir, il y a du code qui se
 répète. On retrouve beaucoup de fois</p>
-<pre><code class="language-sh">    echo "TP $login dans 'LIEU'" &gt;&gt; "$save_file"
+<pre><code class="language-sh">echo "TP $login dans 'LIEU'" &gt;&gt; "$save_file"
 </code></pre>
 <p>mais c'est un problème pour plus tard. Pour l'instant il faut que tu apprennes à
 jouer avec les tests.</p>
@@ -2353,14 +2350,14 @@ $
 </code></pre>
 <p>Evidemment, change les informations avec les tiennes.</p>
 <p>Ces informations seront utiles pour savoir qui a créé quel commit.</p>
-<pre><code class="language-sh">$ mkdir projet
+<pre><code class="language-text">$ mkdir projet
 $ cd projet
 $ git init
 </code></pre>
 <p>Voilà, le répertoire <strong>projet</strong> est prêt à utiliser git.</p>
 <p>Comment ça fonctionne ? Git crée en secret un répertoire caché qu'il utilise
 pour suivre l'état du projet.</p>
-<pre><code class="language-sh">$ ls -l .git
+<pre><code class="language-text">$ ls -l .git
 ...
 $
 </code></pre>
@@ -2373,7 +2370,7 @@ fichiers.</p>
 <h2 id="add"><a class="header" href="#add">add</a></h2>
 <p>Tu vas créer deux fichiers, <strong>README</strong> et <strong>file_creator.sh</strong>. Pour l'instant
 ils seront vides.</p>
-<pre><code class="language-sh">$ touch README file_creator.sh
+<pre><code class="language-text">$ touch README file_creator.sh
 $ git status
 Untracked files:
   (use "git add &lt;file&gt;..." to include in what will be committed)
@@ -2392,7 +2389,7 @@ $
 <p>Pour créer un commit, il faut penser d'abord réfléchir à un message de commit
 <strong>intelligent</strong>. Le tout premier est en <em>général</em> un simple <strong>initial commit</strong>.
 Les prochains seront plus réfléchis selon le projet que tu effectues.</p>
-<pre><code class="language-sh">$ git commit -m "initial commit"
+<pre><code class="language-text">$ git commit -m "initial commit"
 [master (root-commit) 8a87f72] initial commit
  2 files changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 README
@@ -2409,7 +2406,7 @@ exécutable en local, il le sera aussi sur la remote.</p>
 <h2 id="log"><a class="header" href="#log">log</a></h2>
 <p>Maintenant que tu as crée ton premier commit, tu peux voir les logs du projet
 évoluer avec la commande <strong>git log</strong>.</p>
-<pre><code class="language-sh">$ git log
+<pre><code class="language-text">$ git log
 commit 8a87f728e30904f1cd837fd3ca2d4f17d11c0e58 (HEAD -&gt; master)
 Author: Gélules &lt;gelules@gelules.gelules&gt;
 Date:   Sun Jul 21 22:15:07 2024 +0200
@@ -2441,7 +2438,7 @@ les droits de pousser ton travail sur GitHub.</p>
 <p>Ca semble compliqué dit comme ça, ne t'inquiète pas, tout est transparant pour
 toi, tu n'auras rien à faire une fois que tout est installé.</p>
 <p>Va dans ton <strong>HOME</strong> et crée le répertoire <strong>.ssh</strong>. Dedans, crée les clés SSH.</p>
-<pre><code class="language-sh">$ cd
+<pre><code class="language-text">$ cd
 $ mkdir .ssh
 $ cd .ssh
 $ ssh-keygen -t ed25519
@@ -2453,7 +2450,7 @@ une connexion avec la remote de GitHub, tu devras rentrer ce mot de passe.</p>
 <p>Met un mot de passe si tu veux.</p>
 <p><strong>ATTENTION</strong>, si tu veux absolument mettre un mot de passe, alors je te
 conseille de changer la génération de tes clés avec cette commande</p>
-<pre><code class="language-sh">$ ssh-keygen -t ed25519 -a 100
+<pre><code class="language-text">$ ssh-keygen -t ed25519 -a 100
 </code></pre>
 <p>La différence est qu'il y aura une centaine de passages sur ta clé avec un
 chiffrement particulier. Par défaut la valeur est 16. 100 est une assez bonne
@@ -2499,7 +2496,7 @@ privée au choix.</p>
 sur <strong>SSH</strong>. Copie le lien qui est inscrit. Le mien ressemble à ceci :
 git@github.com:Gelules/file_creator.git</p>
 <p>Retourne dans ton <strong>HOME</strong> et exécute la commande suivante :</p>
-<pre><code class="language-sh">$ git clone git@github.com:Gelules/file_creator.git
+<pre><code class="language-text">$ git clone git@github.com:Gelules/file_creator.git
 ...
 $ cd file_creator
 </code></pre>
@@ -2513,7 +2510,7 @@ et les commit avec le message <strong>initial commit</strong>.</p>
 <h2 id="push"><a class="header" href="#push">push</a></h2>
 <p>Maintenant que tu es retourné à l'état du chapitre précédent, tu vas pousser tes
 fichiers vides.</p>
-<pre><code class="language-sh">$ git push
+<pre><code class="language-text">$ git push
 Enumerating objects: 3, done.
 Counting objects: 100% (3/3), done.
 Delta compression using up to 4 threads
@@ -2533,7 +2530,7 @@ qui indique qu'un fichier est exécutable ou non.</p>
 exécuter <strong>git status</strong>, tu verras qu'il t'indique d'ajouter le fichier.</p>
 <p>Rends le exécutable, ajoute le, crée un commit pour indiquer que le fichier doit
 être exécutable et pousse ton travail.</p>
-<pre><code class="language-sh">$ chmod +x file_creator.sh
+<pre><code class="language-text">$ chmod +x file_creator.sh
 $ git status
 $ git add file_creator.sh
 $ git commit -m "file_creator must be executable"
@@ -2632,7 +2629,7 @@ done
 <p>J'ai besoin que tu connaisses la commande <strong>git pull</strong>. Pour ça tu vas cloner
 une deuxième fois ton dépôt ailleurs. Dans le répertoire <strong>/tmp</strong> par exemple.</p>
 <p>Ouvre un deuxième terminal et effectue ces commandes.</p>
-<pre><code class="language-sh">$ cd /tmp
+<pre><code class="language-text">$ cd /tmp
 $ git clone git@github.com:Gelules/file_creator.git
 ...
 $ cd file_creator
@@ -2676,7 +2673,7 @@ done
 <p>Ce répertoire n'est plus à jour avec la nouvelle modification ! Tu vas y
 remédier.</p>
 <p>Sur ton deuxième terminal :</p>
-<pre><code class="language-sh">$ git pull
+<pre><code class="language-text">$ git pull
 ...
 $
 </code></pre>
@@ -2711,7 +2708,7 @@ transformer ton code course en <strong>langage machine</strong>.</p>
 <p>Tu vas pour ce cours faire tes codes de test dans un seul et unique fichier que
 tu vas appeler <strong>test.c</strong>. Ton compilateur est <strong>gcc</strong>. Installe le si tu ne
 l'as pas.</p>
-<pre><code class="language-sh">$ which gcc
+<pre><code class="language-text">$ which gcc
 /usr/bin/gcc
 $
 </code></pre>
@@ -2723,7 +2720,7 @@ $
 </code></pre>
 <p>Tu peux écrire ton code entre les accolades pour commencer.</p>
 <p>Pour compiler et essayer ton programme, voici la commande à utiliser :</p>
-<pre><code class="language-sh">$ gcc test.c -o mon_super_programme
+<pre><code class="language-text">$ gcc test.c -o mon_super_programme
 $ ./mon_super_programme
 $
 </code></pre>
@@ -2766,7 +2763,7 @@ auras un <strong>exit status</strong> à 42.</p>
     return 42;
 }
 </code></pre>
-<pre><code class="language-sh">$ gcc test.c -o mon_super_programme
+<pre><code class="language-text">$ gcc test.c -o mon_super_programme
 $ ./mon_super_programme
 $ echo $?
 42
@@ -2829,7 +2826,7 @@ après sera remplacé et aura sa valeur affichée entre les crochets.</p>
 contient des chaines de caractères.</p>
 <p>Enfin, \n signifie <strong>saut à la ligne</strong>. Plus exactement <em>linefeed</em>.</p>
 <p>Compile et exécute ton programme ainsi :</p>
-<pre><code class="language-sh">$ gcc test.c -o mon_super_programme
+<pre><code class="language-text">$ gcc test.c -o mon_super_programme
 $ ./mon_super_programme coucou les loulous 0 1 10
 argv[0] = ./mon_super_programme
 argv[1] = coucou
@@ -2911,13 +2908,13 @@ nombre, sinon il renvoie 0.</p>
 <h3 id="man-et-bibliothèque"><a class="header" href="#man-et-bibliothèque">man et bibliothèque</a></h3>
 <p>Pour savoir quel bibliothèque utiliser, tu vas utiliser ton meilleur ami, le
 man.</p>
-<pre><code class="language-sh">$ man atoi
+<pre><code class="language-text">$ man atoi
 ...
 </code></pre>
 <p>Tu peux voir dans le man de atoi qu'il faut inclure stdlib.h.</p>
 <p>Tu peux également vérifier dans le main quelle est la bibliothèque à inclure
 pour printf. Il s'agit bien de stdio.h.</p>
-<pre><code class="language-sh">$ man 3 printf
+<pre><code class="language-text">$ man 3 printf
 ...
 </code></pre>
 <p>Attention à bien mettre 3 pour bien dire que c'est le printf du langage C que tu
@@ -2925,24 +2922,24 @@ veux utiliser, pas le binaire installé sur le système.</p>
 <p>Plus tard dans ton cursus, tu utiliseras des <em>syscalls</em>, des appels systèmes. Ce
 sont des fonctions fournies par le kernel Linux. La différence est qu'il faut
 demander la 2eme section du manuel.</p>
-<pre><code class="language-sh">$ man 2 write
+<pre><code class="language-text">$ man 2 write
 </code></pre>
 <p>Tu sauras avec le temps si tu cherches un syscall ou une fonction.</p>
 <h4 id="recherche-dans-le-man"><a class="header" href="#recherche-dans-le-man">Recherche dans le man</a></h4>
 <p>Si tu veux lister les sections pour un mot en particulier dans le man, tu peux
 utiliser la commande suivante :</p>
-<pre><code class="language-sh">$ man -k printf
+<pre><code class="language-text">$ man -k printf
 ...
 </code></pre>
 <p>Tu verras que ça va générer <strong>BEAUCOUP</strong> de lignes. Tu peux filter en rajoutant
 un circonflexe '^' au début du mot et un dollar '$' à a fin, le tout entre
 simple quote.</p>
-<pre><code class="language-sh">$ man -k '^printf$'
+<pre><code class="language-test">$ man -k '^printf$'
 ...
 </code></pre>
 <p>Ce sont des caractères spéciaux. ^ signifie début de ligne et $ signifie fin de
 ligne.</p>
-<pre><code class="language-sh">$ man -k '^read$'
+<pre><code class="language-text">$ man -k '^read$'
 ...
 </code></pre>
 <p>Tu peux voir que <em>read</em> existe dans la section 1p, 2 et 3p. Si tu n'avais pas
