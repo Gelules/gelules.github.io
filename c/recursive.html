@@ -178,12 +178,23 @@
                         <h1 id="récursivité"><a class="header" href="#récursivité">Récursivité</a></h1>
 <p>Avais-tu pensé à appeler la fonction dans laquelle tu étais ?</p>
 <p>Voici un exemple :</p>
-<pre><code class="language-c">unsigned int mystery(unsigned int n)
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+unsigned int mystery(unsigned int n)
 {
     if (n == 0)
         return 0;
 
     return n + mystery(n - 1);
+}
+
+int main(void)
+{
+    unsigned int value = 3;
+    unsigned int result = mystery(value);
+    printf("mystery(%u) = %u\n", value, result);
+
+    return 0;
 }
 </code></pre>
 <p>Arrives-tu à déterminer ce que fait cette fonction ?</p>
@@ -193,6 +204,68 @@ arriver à 0.</p>
 <p>Voilà ce qu'il se passe en mémoire avec <strong>n = 3</strong>.</p>
 <p><img src="./recursive/recursive.svg" alt="n = 3" title="n = 3" /></p>
 <p>\[ 3 + 2 + 1 + 0 = 6 \]</p>
+<p>Prenons un autre exemple extrêmement simple :</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+void counter(unsigned int n)
+{
+    printf("%u\n", n);
+
+    if (n == 0)
+        return;
+
+    counter(n - 1);
+}
+
+int main(void)
+{
+    counter(10);
+    return 0;
+}
+</code></pre>
+<p>Avec <strong>n = 10</strong>, ça crée un compteur qui va de 10 à 0.</p>
+<pre><code class="language-text">$ gcc test.c -o mon_super_programme
+$ ./mon_super_programme
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+$
+</code></pre>
+<p>Il faut faire attention à une chose avec la récursivité : <strong>la condition
+d'arrêt</strong>.</p>
+<p>Dans les deux exemples ci-dessus, on vérifie toujours le cas où <strong>n == 0</strong>. Si
+la condition est vraie, on quitte la fonction. Dans le cas contraire, on
+rappelle la fonction avec <strong>n</strong> qui décrémente de 1.</p>
+<p>Si tu ne mets pas de condition d'arrêt, tu vas partir en récursion infinie, et
+avoir ce qu'on appelle un <strong>stack overflow</strong>.</p>
+<p>Je te laisse essayer ce bout ce code qui n'a pas de condition d'arrêt :</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+void counter(unsigned int n)
+{
+    printf("%u\n", n);
+
+    counter(n - 1);
+}
+
+int main(void)
+{
+    counter(10);
+    return 0;
+}
+</code></pre>
+<p>A chaque appel de la fonction <strong>counter</strong>, la mémoire recrée une zone mémoire
+pour la nouvelle fonction appelée, qui est une <strong>stack</strong>. Ta mémoire n'étant pas
+infinie, quand elle n'a pas de place pour une nouvelle <strong>stack</strong>, le programme
+crash avec un <strong>stack overflow</strong>.</p>
 <p>Tu verras pendant ta Piscine d'autres cas d'utilisation de la récursivité. Sache
 que c'est utile pour résoudre des gros problèmes en découpant un problème en
 sous-problème et en itérant dessus.</p>
@@ -276,22 +349,6 @@ $
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
