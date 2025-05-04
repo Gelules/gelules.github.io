@@ -176,7 +176,7 @@ de ton PC. Tout est dans une <strong>mémoire virtuelle</strong>. Qui va de 0 à
 <p>Et dans ces cases mémoires, se trouvent tout ton programme, avec les valeurs de
 tes variables.</p>
 <h2 id="initialiser-un-pointeur-à-zéro"><a class="header" href="#initialiser-un-pointeur-à-zéro">Initialiser un pointeur à zéro</a></h2>
-<p>Avant d'utiliser un pointeur, tu vas voir comment initialiser unpointeur <em>à
+<p>Avant d'utiliser un pointeur, tu vas voir comment initialiser un pointeur <em>à
 zéro</em>.</p>
 <p>Pour cela, tu vas lui affecter la valeur <strong>NULL</strong>. C'est un <em>alias</em> sur un
 pointeur sur void à la valeur 0. C'est à dire (void *)0.</p>
@@ -412,22 +412,6 @@ printf("%c\n", *str); // =&gt; 'n'
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
