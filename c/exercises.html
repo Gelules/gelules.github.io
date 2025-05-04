@@ -246,12 +246,12 @@ int is_alphanum(char c)
 </code></pre>
 <p>Ecris la fonction <strong>graduate</strong> qui :</p>
 <ul>
-<li>Affiche "Mauvais" si la note est compris dans l'intervalle [0;8]</li>
-<li>Affiche "Moyen" si la note est compris dans l'intervalle [9;12]</li>
-<li>Affiche "Bien" si la note est compris dans l'intervalle [13;16]</li>
-<li>Affiche "Très bien" si la note est compris dans l'intervalle [17;19]</li>
+<li>Affiche "Mauvais" si la note est comprise dans l'intervalle [0;8]</li>
+<li>Affiche "Moyen" si la note est comprise dans l'intervalle [9;12]</li>
+<li>Affiche "Bien" si la note est comprise dans l'intervalle [13;16]</li>
+<li>Affiche "Très bien" si la note est comprise dans l'intervalle [17;19]</li>
 <li>Affiche "Parfait" si la note est à 20</li>
-<li>Affiche "Quoi ?" si la note n'est pas compris dans l'intervalle [0;20]</li>
+<li>Affiche "Quoi ?" si la note n'est pas comprise dans l'intervalle [0;20]</li>
 </ul>
 <pre><code class="language-c">void graduate(int n);
 </code></pre>
@@ -388,22 +388,6 @@ numérique, retourne ce que tu as déjà calculé.</p>
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
